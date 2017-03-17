@@ -1,0 +1,98 @@
+
+header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+footer {
+  margin-top: 5em;
+  text-align: center;
+}
+
+
+/* ------ layout ------ */
+
+
+.main {
+  margin: auto;
+  width: 899px;
+  height: 754px;
+  border: 5px solid grey;
+}
+
+.rowofBricks {
+  height: 62px;
+}
+
+.base {
+  background-color: rgba(154, 94, 17, 0.88);
+}
+
+.wall {
+    width: 890px;
+    background-color: #85dfef;
+    border: 1px solid orange;
+}
+
+.bricks {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/bricks.jpg');
+    background-size: contain;
+}
+
+.realBrick {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/bricks.jpg');
+    background-size: contain;
+    height: 62px;
+    width: 74px;
+    float: left;
+    border: 1px solid red;
+}
+
+#ground {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/ground.png');
+    background-size: cover;
+    background-color: rgba(154, 94, 17, 0.88);
+    height: 124px;
+}
+
+/* end layout */
+
+
+
+
+/*Testing */
+
+.columnBricks {
+    width: 74px;
+    background: #9C27B0;
+    height: 62px;
+}
+
+#sky {
+    width: 74px;
+    background: rgba(0, 255, 228, 0.19);
+    height: 124px;
+}
+
+
+/* Kaysser */
+
+
+.column {
+    width: 11.11%;
+    height: 100%;
+    background-color: red;
+    display: inline-block;
+}
+
+
+
+.block {
+    height: 11.11%;
+    width: 100%;
+    display: inline-block;
+    border: 1px solid green;
+    vertical-align: top;
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/bricks.jpg');
+    background-size: contain;
+}
