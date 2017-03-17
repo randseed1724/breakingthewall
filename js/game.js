@@ -11,7 +11,6 @@ var game = {
     var column = new Column(i);
     column.createColumn();
   }
-
   }
 
 

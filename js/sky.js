@@ -1,13 +1,12 @@
 
+    function Sky(index, column){
+      this.index = index;
+      this.column = column;
+      console.log("this is sky constructor", this.index);
+    }
 
-function sky(index, column){
-  this.index = index;
-  this.column = column;
-  console.log("this is Block constructor", this.index);
-}
+        Sky.prototype.createSky = function() {
+        var sky = "<div class='sky' id='sky_" +this.index+"' >";
+        this.column.append(sky);
 
-Block.prototype.createBlock = function() {
-var block = "<div class='block' id='block_" +this.index+"' >";
-this.column.append(block);
-
-};
+        };
