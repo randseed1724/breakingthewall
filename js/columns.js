@@ -11,6 +11,7 @@ function Column(index){
     this.createSkys();
     this.createBlocks();
     this.createFloors();
+    this.attachListener();
     //HERE goes attach listener
   };
 
@@ -41,10 +42,7 @@ function Column(index){
   }
   };
 
-
-
-
-Column.prototype.attachListener = function() {
-  var that = this;
-  $(this.column).on("click", that.handleClick);
-};
+  Column.prototype.attachListener = function() {
+    var that = this;
+    $(this.column).on("click", that.handleClick);
+  };
