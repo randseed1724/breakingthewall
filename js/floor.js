@@ -8,5 +8,4 @@
         Floor.prototype.createFloor = function() {
         var floor = "<div class='floor' id='floor_" +this.index+"' >";
         this.column.append(floor);
-
         };
