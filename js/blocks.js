@@ -15,3 +15,10 @@
           var currentTarget = $(this) ;
 
         };
+
+// Hides a target block
+        Column.prototype.handleClick = function(event) {
+          var target = $(event.target);
+
+          target.hide();
+        };

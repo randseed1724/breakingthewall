@@ -1,11 +1,11 @@
 
 
-
 var game = {
   init: function () {
     console.log("Hi");
+    this.layout();
     this.renderRows();
-    $("#sky_1").append('<img id="trump" src="img/characters/t-front.png" />');
+    this.trumpInGame();
 
   },
   renderRows: function() {
@@ -13,6 +13,14 @@ var game = {
     var column = new Column(i);
     column.createColumn();
   }
+  },
+  trumpInGame: function() {
+  var theTrump = new Trump();
+   theTrump.displayTrump();
+  },
+  layout: function() {
+  var gameLayout = new Layout();
+  gameLayout.displayLayout();
   }
 
 

@@ -1,25 +1,24 @@
 
-function Column(index){
-  this.index = index;
-  console.log("this is the Column contruction function", this.index);
-}
+    function Column(index){
+      this.index = index;
+      console.log("this is the Column contruction function", this.index);
+    }
 
 
 
-  Column.prototype.createColumn = function() {
+    Column.prototype.createColumn = function() {
     var main = $(".main");
     var column = "<div class='column' id='column_" +this.index+"' >";
     main.append(column);
     this.createSkys();
     this.createBlocks();
     this.createFloors();
+    //HERE goes attachers listener
     this.attachListener();
-    //HERE goes attach listener
+    this.attachSky();
+    };
 
-    //characters
-    // this.createTrumps();
 
-  };
 
   Column.prototype.createSkys = function() {
 
@@ -51,28 +50,19 @@ function Column(index){
   }
   };
 
+  // attachers
+
   Column.prototype.attachListener = function() {
     var that = this;
-    $(this.column).find(".block").on("click", that.handleClick);   // This is part of mexican acctions
+    $(this.column).find(".block").on("click", that.handleClick);
   };
 
-//   Column.prototype.addSky = function() {
-//   var skySpace = $(this.column).find(".sky").length;
-//
-//   $(this.column).find(".sky").on("click", that.addSky);
-//   console.log('This sky lenght is: ', skySpace);
-//   // if ( this.column ) {
-//
-//   // }
-// };
+  Column.prototype.attachSky = function() {
+    var that = this;
+    $(this.column).find(".block").on("click", that.addSky);
+  };
 
-  // characters
-
-  Column.prototype.createTrumps = function() {
-    for (var i = 0; i < 2; i++) {
-    var column = $("#column_"+this.index);
-    this.column = column;
-    var sky = new Sky (i, column);
-    sky.createSky();
-  }
+  Column.prototype.attachTrump = function() {
+    var that = this;
+    $(this.column).find("#sky_1").one("click", that.displayTrump);
   };
