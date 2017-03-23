@@ -1,163 +1,161 @@
 
 
+
     function Trump(direction){
       this.direction = direction;
       console.log("this is Trump's constructor");
     }
 
-
     Trump.prototype.displayTrump = function() {
-    var canvas = document.createElement("canvas");
-    var ctx = canvas.getContext("2d");
-    canvas.width = 890;
-    canvas.height = 580;
-    canvas.setAttribute("id", "place1");
-    canvas.css({'src':'url(img/characters/t-front.png'} );
-    $('#sky_0').append(canvas);
 
-    make_base();
+    var myGrid = [];
 
-    function make_base()
-    {
-      trumpCanvas.id = 'trumpCanvas-front';
-      trumpCanvas.src = 'img/characters/t-front-98.png';
-      trumpCanvas.onload = function(){
-      var x = 0;
-      var y = 85;
+     $(".column #sky_1").each(function(index) {
+      myGrid.push(this);
+      $(this).addClass( "trump" );
+      console.log('This is it', myGrid);
+      // $(this).toggleClass("trump");
+      $(myGrid[2]).toggleClass("trump");
+      });
 
+      // for (x = 0; x < myGrid.length; x++) {
+      // $(myGrid[x]).onclick.toggleClass("trump");
+      // }
 
-      ctx.drawImage(trumpCanvas, x, y);
-
-       window.addEventListener('keydown', moveobj, true);
-        function moveobj(evt) {
-            switch (evt.keyCode) {
-                case 39:
-                    ctx.drawImage(trumpCanvas, x + 100, y);
-                    counter++;
-                    break;
-                case 37:
-                    ctx.drawImage(trumpCanvas, x - 50, y);
-                    break;
-            }
-
-          }
-      };
-    }
-    };
-    // window.addEventListener('keydown', moveobj, true);
-    //
-    // var right = 35;
-    // function moveobj(evt) {
-    //     switch (evt.keyCode) {
-    //         case 37:
-    //             if (next < 20) {
-    //                 return;
-    //             }
-    //             next = next - 5;
-    //             break;
-    //         case 39:
-    //             if (next > 650) {
-    //                 return;
-    //             }
-    //             next = next + 5;
-    //             break;
-    //     }
-    //     ctx.fillStyle = "#ffffff";
-    //     ctx.rect(0, 5, 650, 300);
-    //     ctx.fill();
-    //     ctx.putImageData(back, next, 50);
-  // }
-
-
-
-
-
-
-
-
-        // Trump.prototype.createTrump = function() {
-        //   $("#sky_1").append('<img id="trump" src="img/characters/t-front.png" />');
-        // };
-
-
-// adds Trump to the game
-
-
-
-        // Column.prototype.displayTrump = function(event) {
-        //   var target = $(event.target);
-        //   var trump = '<img id="trump" src="img/characters/t-front.png" />';
-        //
-        //
-        //    trumPlace =  $(event.target);
-        //    lastPlace =  trumPlace.find("#sky_1");
-        //
-        //    console.log(lastPlace);
-        //    console.log(trumPlace);
-        //
-        //    trumPlace.append(trump);
-        // };
-
-        // Trump inside
-
-
-        // Game objects
-      //   var hero = {
-      //   	speed: 256, // movement in pixels per second
-      //   	x: 0,
-      //   	y: 0
-      //   };
-      //   var monster = {
-      //   	x: 0,
-      //   	y: 0
-      //   };
-      //   var monstersCaught = 0;
+      // Column.prototype.MovingT = function() {
+      //   var that = this;
+      //   $(this.column).find(".block").on("click", that.handleClick);
+      // };
       //
-      //   // Handle keyboard controls
-      // var keysDown = {};
+      // Trump.prototype.moveT = function(event) {
+      // var target = $(event.target);
       //
-      // addEventListener("keydown", function (e) {
-      // 	keysDown[e.keyCode] = true;
-      // }, false);
+      // target.hide();
+      // };
+
+      // Column.prototype.attachListener = function() {
+      //   var that = this;
+      //   $(this.column).find(".block").on("click", that.handleClick);
+      // };
       //
-      // addEventListener("keyup", function (e) {
-      // 	delete keysDown[e.keyCode];
-      // }, false);
+      // Column.prototype.handleClick = function(event) {
+      //   var target = $(event.target);
       //
-      //
-      // // Update game objects
-      // var update = function (modifier) {
-      // 	if (38 in keysDown) { // Player holding up
-      // 		hero.y -= hero.speed * modifier;
-      // 	}
-      // 	if (40 in keysDown) { // Player holding down
-      // 		hero.y += hero.speed * modifier;
-      // 	}
-      // 	if (37 in keysDown) { // Player holding left
-      // 		hero.x -= hero.speed * modifier;
-      // 	}
-      // 	if (39 in keysDown) { // Player holding right
-      // 		hero.x += hero.speed * modifier;
-      // 	}
-      //
-      // 	// Are they touching?
-      // 	if (
-      // 		hero.x <= (monster.x + 32)
-      // 		&& monster.x <= (hero.x + 32)
-      // 		&& hero.y <= (monster.y + 32)
-      // 		&& monster.y <= (hero.y + 32)
-      // 	) {
-      // 		++monstersCaught;
-      // 		reset();
-      // 	}
+      //   target.hide();
       // };
 
 
+ // if () {}
+
+
+
+    // var position =  startTrump;
+    //
+    // var startTrump = $("#column_0 #sky_1").append("<div class='trump'></div>");
+    //
+    // return startTrump;
+    // //
+    // for (var i = 0; i < myGrid.lenght; i++ ) {
+    // var place = $(myGrid[i]).find('#sky_1').prepend("<div id='trump'></div>");
+    // return print;
+    // }
+
+
+};
 
 
 
 
 
 
+
+
+// keyboard - buttons
+    document.getElementById("tetris-keyboard-up").onclick = function() { self.up(); this.blur(); };
+    document.getElementById("tetris-keyboard-down").onclick = function() { self.down(); this.blur(); };
+    document.getElementById("tetris-keyboard-left").onclick = function () { self.left(); this.blur(); };
+    document.getElementById("tetris-keyboard-right").onclick = function() { self.right(); this.blur(); };
+
+    // keyboard
+    var keyboard = new Keyboard();
+    keyboard.set(keyboard.n, this.start);
+    keyboard.set(keyboard.r, this.reset);
+    keyboard.set(keyboard.up, this.up);
+    keyboard.set(keyboard.down, this.down);
+    keyboard.set(keyboard.left, this.left);
+    keyboard.set(keyboard.right, this.right);
+    keyboard.set(keyboard.space, this.space);
+    document.onkeydown = keyboard.event;
+
+
+        function keyDown() {
+    var ieKey = event.keyCode;
+    if (ieKey == 38) {
+    if (blank_pos < 13) {
+    count=blank_pos + 4;
+    X = fun(count);
+    Z = (parseInt(nam[X].top));
+    nam[X].top = Z - 52;
+    Q = pos[X];
+    pos[X] = blank_pos;
+    blank_pos = Q;
+       }
+    }
+    else if (ieKey == 40) {
+    if (blank_pos > 4) {
+    count = blank_pos - 4;
+    X = fun(count);
+    Z = (parseInt(nam[X].top));
+    nam[X].top = Z + 52;
+    Q = pos[X];
+    pos[X] = blank_pos;
+    blank_pos = Q;
+       }
+    }
+    else if (ieKey == 37) {
+    r = blank_pos % 4;
+    if (r === 0) {
+    }
+    else {
+    count = blank_pos + 1;
+    X = fun(count);
+    Z = (parseInt(nam[X].left));
+    nam[X].left = Z - 52;
+    Q = pos[X];
+    pos[X] = blank_pos;
+    blank_pos = Q;
+       }
+    }
+    else if (ieKey == 39) {
+    ch = blank_pos + 3;
+    r = ch % 4;
+    if (r === 0) {
+    }
+    else {
+    count = blank_pos - 1;
+    X = fun(count);
+    Z = (parseInt(nam[X].left));
+    nam[X].left = Z + 52;
+    Q = pos[X];
+    pos[X] = blank_pos;
+    blank_pos = Q;
+       }
+    }
+    else {
+    alert("PLEASE USE PROPER KEYS");
+    }
+    A = false;
+    b = 0;
+    for (i = 1; i < 16; i++) {
+    b++;
+    if (pos[i] == b) {
+    A = true;
+    }
+    else {
+    A = false;
+    break;
+       }
+}
+}
 
               //end

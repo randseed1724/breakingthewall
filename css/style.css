@@ -112,6 +112,9 @@ footer {
     /*background: rgba(213, 186, 63, 0.83);*/
 }
 
-#trump {
-    width: 66px;
+.trump {
+    width: 99px;
+    height: 82px;
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front-98.png');
+    background-size: cover;
 }

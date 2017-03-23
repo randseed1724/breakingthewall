@@ -57,6 +57,7 @@
     $(this.column).find(".block").on("click", that.handleClick);
   };
 
+
   Column.prototype.attachSky = function() {
     var that = this;
     $(this.column).find(".block").on("click", that.addSky);

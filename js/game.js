@@ -3,11 +3,14 @@
 var game = {
   init: function () {
     console.log("Hi");
-    this.layout();
     this.renderRows();
     this.trumpInGame();
+    // this.allElements();
+    this.layout();
 
   },
+
+
   renderRows: function() {
   for (var i = 0; i <= 8; i++) {
     var column = new Column(i);
@@ -21,8 +24,7 @@ var game = {
   layout: function() {
   var gameLayout = new Layout();
   gameLayout.displayLayout();
-  }
-
+  },
 
 
 

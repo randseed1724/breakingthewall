@@ -11,12 +11,8 @@
 
         };
 
-        handleClick = function handlingThatClick() {
-          var currentTarget = $(this) ;
 
-        };
-
-// Hides a target block
+        // Hides a target block
         Column.prototype.handleClick = function(event) {
           var target = $(event.target);
 
