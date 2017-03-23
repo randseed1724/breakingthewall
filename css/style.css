@@ -111,10 +111,35 @@ footer {
     background-size: contain;
     /*background: rgba(213, 186, 63, 0.83);*/
 }
-
+/* Trump Front */
 .trump {
-    width: 99px;
-    height: 82px;
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front-98.png');
-    background-size: cover;
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front.png');
+    background-size: contain;
+    background-repeat: no-repeat;}
+/* Trump Right */
+.trump-right {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* Trump Left */
+.trump-left {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.trump-brick {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front-brick.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.trump-brick-2 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front-brick-2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.trump-brick-3 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front-brick-3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }

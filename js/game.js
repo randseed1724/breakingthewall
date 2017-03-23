@@ -2,12 +2,10 @@
 
 var game = {
   init: function () {
-    console.log("Hi");
     this.renderRows();
-    this.trumpInGame();
-    // this.allElements();
-    this.layout();
-
+    // this.trumpInGame();
+    this.layout(); //layouts affects columns don't move up
+    this.gamekeys();
   },
 
 
@@ -24,6 +22,10 @@ var game = {
   layout: function() {
   var gameLayout = new Layout();
   gameLayout.displayLayout();
+  },
+  gamekeys: function() {
+  var gamePlay = new GameKey();
+  gamePlay.moveKey();
   },
 
 
