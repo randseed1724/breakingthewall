@@ -25,6 +25,7 @@
 
 
     $(document).on("keydown", function(e) {
+
      function walking() {
       before.removeClass('trump');
       console.log('testing this before',before);
@@ -32,18 +33,15 @@
      walking();
 
       console.log('Game Control Present 2');
-    counter = 0;
-    console.log('Initial Counter', counter);
+      counter = 0;
+      console.log('Initial Counter', counter);
 
 //directions
 //right key
+
         if (e.keyCode == 39) {
         console.log('Counter inside right direction',counter);
         console.log(directionRight);
-
-
-        start.removeClass("trump");
-        start.addClass("trump-right");
 
 
         directionRight += 9;
@@ -57,18 +55,21 @@
         moveRight.removeClass("trump-right");
         moveRight.addClass( "trump" );
         moveRight.addClass("trump");
+
         before = moveRight;
+
         console.log("This the one is before",before);
- e.preventDefault();
+        e.preventDefault();
       }, 400);
 
-      setTimeout(function() {
-e.preventDefault();
-    }, 400);
-
-
-
+        setTimeout(function() {
+        e.preventDefault();
+        }, 400);
     }
+
+
+
+
 //left key
       if (e.keyCode == 37) {
         $("#grid1").removeClass("trump");
