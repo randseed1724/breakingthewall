@@ -8,25 +8,77 @@
 
 
   GameKey.prototype.moveKey = function() {
-    $("#grid1").addClass( "trump" );
+
+    var directionRight = 1 ;
+    var start = $("#grid"+ directionRight);
+
+    start.addClass( "trump" );  //Inicial Position
+
+
+
+    var moveRight = $("#grid"+ directionRight);
+
+    var goLeft = 0;
+    goLeft -= 9;
+
+    var before = start;
+
 
     $(document).on("keydown", function(e) {
+     function walking() {
+      before.removeClass('trump');
+      console.log('testing this before',before);
+     }
+     walking();
+
       console.log('Game Control Present 2');
+    counter = 0;
+    console.log('Initial Counter', counter);
 
-      if (e.keyCode == 39) {
-        $("#grid1").removeClass("trump");
-        $("#grid1").addClass("trump-right");
-        setTimeout(function() { $("#grid1").removeClass("trump-right");
-        $("#grid1").addClass( "trump" ); e.preventDefault();
-        }, 400); }
+//directions
+//right key
+        if (e.keyCode == 39) {
+        console.log('Counter inside right direction',counter);
+        console.log(directionRight);
 
+
+        start.removeClass("trump");
+        start.addClass("trump-right");
+
+
+        directionRight += 9;
+        moveRight = $("#grid"+ directionRight);
+        moveRight.addClass("trump-right");
+
+
+
+        setTimeout(function() {
+        start.removeClass("trump-right");
+        moveRight.removeClass("trump-right");
+        moveRight.addClass( "trump" );
+        moveRight.addClass("trump");
+        before = moveRight;
+        console.log("This the one is before",before);
+ e.preventDefault();
+      }, 400);
+
+      setTimeout(function() {
+e.preventDefault();
+    }, 400);
+
+
+
+    }
+//left key
       if (e.keyCode == 37) {
         $("#grid1").removeClass("trump");
         $("#grid1").addClass("trump-left");
         setTimeout(function() { $("#grid1").removeClass("trump-left");
         $("#grid1").addClass( "trump" ); e.preventDefault();
-      }, 1000); }
+      }, 400); }
 
+//Dropping Bricks
+//down key
       if (e.keyCode == 40) {
         $("#grid1").removeClass("trump");
         $("#grid1").addClass("trump-brick");
@@ -48,6 +100,9 @@
       }
     });
   };
+
+// DONT DELATE THIS EVER  element.parentNode.children would be all siblings.
+// DONT DELATE THIS EVER  nextElementSibling and previousElementSibling will get you the next/prev siblings
 
 
 
