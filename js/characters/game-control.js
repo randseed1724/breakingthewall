@@ -13,22 +13,17 @@
     var start = $("#grid"+ directionRight);
 
     start.addClass( "trump" );  //Inicial Position
-
-
-
+    var before = start;
+    var enterPressed = false;
     var moveRight = $("#grid"+ directionRight);
 
-    var goLeft = 0;
-    goLeft -= 9;
 
-    var before = start;
 
 
     $(document).on("keydown", function(e) {
 
      function walking() {
       before.removeClass('trump');
-      console.log('testing this before',before);
      }
      walking();
 
@@ -39,7 +34,7 @@
 //directions
 //right key
 
-        if (e.keyCode == 39) {
+        if (e.keyCode == 39 && ! enterPressed) {
         console.log('Counter inside right direction',counter);
         console.log(directionRight);
 
@@ -48,23 +43,16 @@
         moveRight = $("#grid"+ directionRight);
         moveRight.addClass("trump-right");
 
-
+        enterPressed = true;
 
         setTimeout(function() {
         start.removeClass("trump-right");
         moveRight.removeClass("trump-right");
-        moveRight.addClass( "trump" );
-        moveRight.addClass("trump");
 
         before = moveRight;
+        enterPressed = false;
 
-        console.log("This the one is before",before);
-        e.preventDefault();
-      }, 400);
-
-        setTimeout(function() {
-        e.preventDefault();
-        }, 400);
+      }, 600);
     }
 
 
@@ -96,10 +84,21 @@
         $("#grid1").addClass( "trump" ); e.preventDefault();
       }, 1000);
       }
-      else {
-        return  console.log('not working') ;
-      }
     });
+
+
+//KEY UP
+
+
+    $(document).on("keyup", function(e) {
+             if (e.keyCode == 39 ) {
+           moveRight.addClass("trump");
+           console.log('KEY UP:',moveRight);
+           console.log('HERE HERE');
+     }
+     });
+
+
   };
 
 // DONT DELATE THIS EVER  element.parentNode.children would be all siblings.
