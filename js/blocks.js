@@ -8,7 +8,6 @@
         Block.prototype.createBlock = function() {
         var block = "<div class='block' id='block_" +this.index+"' >";
         this.column.append(block);
-
         };
 
 

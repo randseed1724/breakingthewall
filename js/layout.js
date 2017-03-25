@@ -11,6 +11,8 @@
 
       $('.column *').each(function(i) {
           $(this).attr('id', 'grid' + i);
+
+
           // You can also add more code here if you wish to manipulate each IMG element further
       });
   };

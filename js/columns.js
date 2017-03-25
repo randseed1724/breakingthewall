@@ -67,3 +67,8 @@
     var that = this;
     $(this.column).find("#sky_1").one("click", that.displayTrump);
   };
+
+  // Column.prototype.attachTrump = function() {
+  //   var that = this;
+  //   $(this.column).find("#sky_1").one("click", that.displayTrump);
+  // };

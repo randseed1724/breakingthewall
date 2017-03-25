@@ -24,7 +24,7 @@
         $(document).on("keydown", function(e) {
 
         var x = e.keyCode;
-        if (x == 65 || x == 87 || x == 68 || x == 83 ) {
+        if (x == 65 || x == 68 || x == 83 ) {
           before.removeClass('trump');
 }
 
