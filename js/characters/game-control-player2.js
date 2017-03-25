@@ -77,8 +77,8 @@
             }, 600);
 }
 
-//Dropping Bricks
-// key down
+//Breaking Bricks
+// key up
       if (e.keyCode == 38 && ! keyPressed) {
         keyPressed = true;
         move.removeClass("trump");
@@ -95,18 +95,27 @@
       setTimeout(function() { move.removeClass("trump-brick-3");
       var newSky = 'newSky';
       var sky = "<div class='sky' id='sky_"+ newSky +"' >";
-      move.parent().prepend(sky);
 
-
+  if (move.prevAll('.block:visible')) {
+    console.log('THIS IMPORTANT: ',move.prevAll('.block:visible'));
        move.addClass( "trump" );
-       move.prevAll(':visible:first').hide();
+       move.prevAll('.block:visible:first').hide();
+       console.log('LENGHT: ', move.siblings().length);
+     }
 
+  if (  move.siblings().length < 13) {
+       move.parent().prepend(sky);
+     }
+     else {
+       move.addClass( "trump" );
+     }
 
-console.log(   'This is going on',    move.prev());
        keyPressed = false;
       }, 1000);
       }
     });
+
+
 
 
 
