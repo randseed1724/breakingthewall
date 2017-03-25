@@ -32,11 +32,11 @@
 //right key
 
         if (e.keyCode == 39 && ! keyPressed) {
-          if (direction >= 65) {
+          if (direction >= 79) {
             move.addClass("trump");
             return;
           }
-            if (direction < 65) {
+            if (direction < 79) {
             direction += 9;
             move = $("#grid"+ direction);
             move.addClass("trump-right");
@@ -55,11 +55,11 @@
 //left key
 
         if (e.keyCode == 37 && ! keyPressed) {
-          if (direction < 2 ) {
+          if (direction < 8 ) {
             move.addClass("trump");
             return;
           }
-            if (direction > 2) {
+            if (direction > 7) {
             direction -= 9;
             move = $("#grid"+ direction);
             move.addClass("trump-left");
