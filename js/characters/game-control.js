@@ -9,60 +9,70 @@
 
   GameKey.prototype.moveKey = function() {
 
-    var directionRight = 1 ;
-    var start = $("#grid"+ directionRight);
-
-    start.addClass( "trump" );  //Inicial Position
+// movement
+    var direction = 1 ;
+    var start = $("#grid"+ direction);
     var before = start;
+    start.addClass( "trump" );  //Inicial Position
+    var move = $("#grid"+ direction);
+
     var enterPressed = false;
-    var moveRight = $("#grid"+ directionRight);
-
-
 
 
         $(document).on("keydown", function(e) {
-
 
         function walking() {
         before.removeClass('trump');
         }
         walking();
 
-
-
-//directions
 //right key
 
         if (e.keyCode == 39 && ! enterPressed) {
-          if (directionRight >= 65) {
-            moveRight.addClass("trump");
+          if (direction >= 65) {
+            move.addClass("trump");
             return;
           }
-            if (directionRight < 65) {
-            directionRight += 9;
-            moveRight = $("#grid"+ directionRight);
-            moveRight.addClass("trump-right");
+            if (direction < 65) {
+            direction += 9;
+            move = $("#grid"+ direction);
+            move.addClass("trump-right");
             }
 
             enterPressed = true;
 
             setTimeout(function() {
-            start.removeClass("trump-right");
-            moveRight.removeClass("trump-right");
+            move.removeClass("trump-right");
 
-            before = moveRight;
+            before = move;
             enterPressed = false;
             }, 600);
           }
 
 //left key
 
-        if (e.keyCode == 37) {
-          $("#grid1").removeClass("trump");
-          $("#grid1").addClass("trump-left");
-          setTimeout(function() { $("#grid1").removeClass("trump-left");
-          $("#grid1").addClass( "trump" ); e.preventDefault();
-        }, 400); }
+        if (e.keyCode == 37 && ! enterPressed) {
+          if (direction < 1 ) {
+            move.addClass("trump");
+            return;
+          }
+            if (direction > 1) {
+            direction -= 9;
+            move = $("#grid"+ direction);
+            move.addClass("trump-left");
+            }
+
+            enterPressed = true;
+
+            setTimeout(function() {
+            move.removeClass("trump-left");
+            // move.removeClass("trump-right");
+
+
+            before = move;
+            enterPressed = false;
+            }, 600);
+}
 
 //Dropping Bricks
 //down key
@@ -90,10 +100,17 @@
 
     $(document).on("keyup", function(e) {
              if (e.keyCode == 39 ) {
-           moveRight.addClass("trump");
-           console.log('KEY UP:',moveRight);
+           move.addClass("trump");
+           console.log('KEY UP:',move);
      }
      });
+
+     $(document).on("keyup", function(e) {
+              if (e.keyCode == 37 ) {
+            move.addClass("trump");
+            console.log('KEY UP:',move);
+      }
+      });
 
 
   };
