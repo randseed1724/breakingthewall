@@ -10,7 +10,9 @@
   GameKey.prototype.moveKey = function() {
 
 // movement
+
     var direction = 1 ;
+
     var start = $("#grid"+ direction);
     var before = start;
     start.addClass( "trump" );  //Inicial Position
@@ -21,10 +23,11 @@
 
         $(document).on("keydown", function(e) {
 
-        function walking() {
-        before.removeClass('trump');
-        }
-        walking();
+        var x = e.keyCode;
+        if (x == 37 || x == 38 || x == 39 || x == 40 ) {
+          before.removeClass('trump');
+}
+        
 
 //right key
 
