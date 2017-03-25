@@ -5,7 +5,9 @@ var game = {
     this.renderRows();
     // this.trumpInGame();
     this.layout(); //layouts affects columns don't move up
-    this.gamekeys();
+    this.gamePlayer1();
+    this.gamePlayer2();
+
   },
 
 
@@ -23,10 +25,15 @@ var game = {
   var gameLayout = new Layout();
   gameLayout.displayLayout();
   },
-  gamekeys: function() {
-  var gamePlay = new GameKey();
-  gamePlay.moveKey();
+  gamePlayer1: function() {
+  var gamePlay = new GameKeyPlayer1();
+  gamePlay.controlPlayer1();
   },
+  gamePlayer2: function() {
+  var gamePlay = new GameKeyPlayer2();
+  gamePlay.controlPlayer2();
+  },
+
 
 
 
