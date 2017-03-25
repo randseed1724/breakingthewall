@@ -20,51 +20,49 @@
 
 
 
-    $(document).on("keydown", function(e) {
+        $(document).on("keydown", function(e) {
 
-     function walking() {
-      before.removeClass('trump');
-     }
-     walking();
 
-      console.log('Game Control Present 2');
-      counter = 0;
-      console.log('Initial Counter', counter);
+        function walking() {
+        before.removeClass('trump');
+        }
+        walking();
+
+
 
 //directions
 //right key
 
         if (e.keyCode == 39 && ! enterPressed) {
-        console.log('Counter inside right direction',counter);
-        console.log(directionRight);
+          if (directionRight >= 65) {
+            moveRight.addClass("trump");
+            return;
+          }
+            if (directionRight < 65) {
+            directionRight += 9;
+            moveRight = $("#grid"+ directionRight);
+            moveRight.addClass("trump-right");
+            }
 
+            enterPressed = true;
 
-        directionRight += 9;
-        moveRight = $("#grid"+ directionRight);
-        moveRight.addClass("trump-right");
+            setTimeout(function() {
+            start.removeClass("trump-right");
+            moveRight.removeClass("trump-right");
 
-        enterPressed = true;
-
-        setTimeout(function() {
-        start.removeClass("trump-right");
-        moveRight.removeClass("trump-right");
-
-        before = moveRight;
-        enterPressed = false;
-
-      }, 600);
-    }
-
-
-
+            before = moveRight;
+            enterPressed = false;
+            }, 600);
+          }
 
 //left key
-      if (e.keyCode == 37) {
-        $("#grid1").removeClass("trump");
-        $("#grid1").addClass("trump-left");
-        setTimeout(function() { $("#grid1").removeClass("trump-left");
-        $("#grid1").addClass( "trump" ); e.preventDefault();
-      }, 400); }
+
+        if (e.keyCode == 37) {
+          $("#grid1").removeClass("trump");
+          $("#grid1").addClass("trump-left");
+          setTimeout(function() { $("#grid1").removeClass("trump-left");
+          $("#grid1").addClass( "trump" ); e.preventDefault();
+        }, 400); }
 
 //Dropping Bricks
 //down key
@@ -94,7 +92,6 @@
              if (e.keyCode == 39 ) {
            moveRight.addClass("trump");
            console.log('KEY UP:',moveRight);
-           console.log('HERE HERE');
      }
      });
 
