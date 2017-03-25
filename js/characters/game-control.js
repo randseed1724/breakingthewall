@@ -16,7 +16,7 @@
     start.addClass( "trump" );  //Inicial Position
     var move = $("#grid"+ direction);
 
-    var enterPressed = false;
+    var keyPressed = false;
 
 
         $(document).on("keydown", function(e) {
@@ -28,7 +28,7 @@
 
 //right key
 
-        if (e.keyCode == 39 && ! enterPressed) {
+        if (e.keyCode == 39 && ! keyPressed) {
           if (direction >= 65) {
             move.addClass("trump");
             return;
@@ -39,30 +39,30 @@
             move.addClass("trump-right");
             }
 
-            enterPressed = true;
+            keyPressed = true;
 
             setTimeout(function() {
             move.removeClass("trump-right");
 
             before = move;
-            enterPressed = false;
+            keyPressed = false;
             }, 600);
           }
 
 //left key
 
-        if (e.keyCode == 37 && ! enterPressed) {
-          if (direction < 1 ) {
+        if (e.keyCode == 37 && ! keyPressed) {
+          if (direction < 2 ) {
             move.addClass("trump");
             return;
           }
-            if (direction > 1) {
+            if (direction > 2) {
             direction -= 9;
             move = $("#grid"+ direction);
             move.addClass("trump-left");
             }
 
-            enterPressed = true;
+            keyPressed = true;
 
             setTimeout(function() {
             move.removeClass("trump-left");
@@ -70,26 +70,31 @@
 
 
             before = move;
-            enterPressed = false;
+            keyPressed = false;
             }, 600);
 }
 
 //Dropping Bricks
-//down key
-      if (e.keyCode == 40) {
-        $("#grid1").removeClass("trump");
-        $("#grid1").addClass("trump-brick");
+// key down
+      if (e.keyCode == 40 && ! keyPressed) {
+        keyPressed = true;
+        move.removeClass("trump");
+        move.addClass("trump-brick");
 
-        setTimeout(function() { $("#grid1").removeClass("trump-brick");
-        $("#grid1").addClass( "trump-brick-2" ); e.preventDefault();
+        setTimeout(function() { move.removeClass("trump-brick");
+        move.addClass( "trump-brick-2" ); e.preventDefault();
       }, 300);
 
-        setTimeout(function() { $("#grid1").removeClass("trump-brick-2");
-        $("#grid1").addClass( "trump-brick-3" ); e.preventDefault();
+        setTimeout(function() { move.removeClass("trump-brick-2");
+        move.addClass( "trump-brick-3" ); e.preventDefault();
       }, 600);
 
-        setTimeout(function() { $("#grid1").removeClass("trump-brick-3");
-        $("#grid1").addClass( "trump" ); e.preventDefault();
+        setTimeout(function() { move.removeClass("trump-brick-3");
+       move.addClass( "trump" ); e.preventDefault();
+       move.nextAll(':hidden:first').show();
+       move.prev().prev().detach();
+console.log(   'This is going on',    move.prev());
+       keyPressed = false;
       }, 1000);
       }
     });
