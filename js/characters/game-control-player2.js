@@ -79,7 +79,7 @@
 
 //Dropping Bricks
 // key down
-      if (e.keyCode == 40 && ! keyPressed) {
+      if (e.keyCode == 38 && ! keyPressed) {
         keyPressed = true;
         move.removeClass("trump");
         move.addClass("trump-brick");
@@ -92,10 +92,16 @@
         move.addClass( "trump-brick-3" );
       }, 600);
 
-        setTimeout(function() { move.removeClass("trump-brick-3");
+      setTimeout(function() { move.removeClass("trump-brick-3");
+      var newSky = 'newSky';
+      var sky = "<div class='sky' id='sky_"+ newSky +"' >";
+      move.parent().prepend(sky);
+
+
        move.addClass( "trump" );
-       move.nextAll(':hidden:first').show();
-       move.prev().prev().detach();
+       move.prevAll(':visible:first').hide();
+
+
 console.log(   'This is going on',    move.prev());
        keyPressed = false;
       }, 1000);
