@@ -118,6 +118,8 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    bottom: 6em;
 }
 /* Mexican Right */
 .m-right {
@@ -125,6 +127,8 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    bottom: 6em;
 }
 /* Mexican Left */
 .m-left {
@@ -132,6 +136,8 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    bottom: 6em;
 }
 
 .mm1 {
@@ -139,6 +145,8 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    bottom: 6em;
 
 }
 .mm2 {
@@ -146,6 +154,8 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    bottom: 6em;
 
 }
 .mm3 {
@@ -153,6 +163,8 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    bottom: 6em;
 
 }
 /* Trump Front */
