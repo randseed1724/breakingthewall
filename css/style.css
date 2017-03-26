@@ -103,13 +103,57 @@ footer {
 }
 
 .floor {
-    height: 11.11%;
+    height: 16.11%;
     width: 100%;
     display: inline-block;
     /*border: 1px solid green;*/
     vertical-align: top;
     background-size: contain;
     /*background: rgba(213, 186, 63, 0.83);*/
+}
+
+/* Mexican Front */
+.mexican {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mexican.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Mexican Right */
+.m-right {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Mexican Left */
+.m-left {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mm1 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.mm2 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.mm3 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 /* Trump Front */
 .trump {
