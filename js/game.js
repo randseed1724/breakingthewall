@@ -3,10 +3,11 @@
 var game = {
   init: function () {
     this.renderRows();
-    // this.trumpInGame();
     this.layout(); //layouts affects columns don't move up
+    this.hideLayout();
     this.gamePlayer1();
     this.gamePlayer2();
+    this.over();
 
   },
 
@@ -17,21 +18,25 @@ var game = {
     column.createColumn();
   }
   },
-  trumpInGame: function() {
-  var theTrump = new Trump();
-   theTrump.displayTrump();
-  },
   layout: function() {
   var gameLayout = new Layout();
   gameLayout.displayLayout();
+  },
+  hideLayout: function() {
+  var hide = new LayoutHide();
+  hide.hidding();
   },
   gamePlayer1: function() {
   var gamePlay = new GameKeyPlayer1();
   gamePlay.controlPlayer1();
   },
   gamePlayer2: function() {
-  var gamePlay = new GameKeyPlayer2();
-  gamePlay.controlPlayer2();
+  var gamePlay2 = new GameKeyPlayer2();
+  gamePlay2.controlPlayer2();
+  },
+  over: function() {
+  var isOver = new gameOver();
+  isOver.over();
   },
 
 

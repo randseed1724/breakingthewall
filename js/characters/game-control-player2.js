@@ -23,10 +23,17 @@
 
         $(document).on("keydown", function(e) {
 
+            if($('.column').children('.block:visible').length === 0) {
+
+            alert("The Mexican WIN!");
+            }
+
         var x = e.keyCode;
         if (x == 37 || x == 38 || x == 39 ) {
           before.removeClass('mexican');
 }
+
+
 
 
 //right key

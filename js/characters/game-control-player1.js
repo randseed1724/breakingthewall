@@ -23,6 +23,11 @@
 
         $(document).on("keydown", function(e) {
 
+          if($('.column').children('.block:visible').length === 45) {
+
+          alert("Trump WIN!");
+          }
+
         var x = e.keyCode;
         if (x == 65 || x == 68 || x == 83 ) {
           before.removeClass('trump');
