@@ -30,8 +30,6 @@
 
     $(document).on("keydown", function(e) {
     if($('.column').children('.block:visible').length === 0) {
-      $("#gameStart").hide();
-      $(".main").hide();
 
       $("#m-wins").show();
     }
