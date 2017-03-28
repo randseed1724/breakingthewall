@@ -473,22 +473,23 @@ li {
     position: relative;
     top: 6px;
 }
-#m-wins {
+#win {
     width: 700px;
     height: 190px;
     border: 1px solid rgba(0, 0, 0, 0);
     box-shadow: 17px 17px 47px #000000;
-    border-radius: 5%;
+    border-radius: 6%;
     background: #FFB75E;
     background: -webkit-linear-gradient(to left, rgba(255, 199, 29, 0.70) , rgba(255, 228, 51, 0.86));
     background: linear-gradient(to left, rgba(255, 199, 29, 0.70) , rgba(255, 228, 51, 0.86));
     z-index: 10;
-    position: absolute;
-    top: 12%;
-    left: 15%;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-#t-wins {
+/*
+#win {
     width: 500px;
     height: 150px;
     border: 1px solid rgba(0, 0, 0, 0);
@@ -500,4 +501,4 @@ li {
     position: absolute;
     top: 15%;
     left: 30%;
-}
+}*/

@@ -16,8 +16,7 @@
 
   Layout.prototype.displayStart = function() {
     $(".main").hide();
-    $("#m-wins").hide();
-    $("#t-wins").hide();
+    $("#win").hide();
 
 
     $("#play").click(function () {
@@ -26,21 +25,18 @@
     });
   };
 
-  Layout.prototype.mexicanWin = function() {
+  Layout.prototype.Win = function() {
 
     $(document).on("keydown", function(e) {
-    if($('.column').children('.block:visible').length === 0) {
 
-      $("#m-wins").show();
+    if($('.column').children('.block:visible').length === 0 && $('#grid80:visible').length === 1) {
+      $("#win").show();
+      $("#tittle-2").text("Congratulations mexican you win!");
+    }
+
+    if($('.column').children('.block:visible').length === 45) {
+      $("#win").show();
+      $("#tittle-2").text("Congratulations Trump you win!");
     }
   });
-  };
-
-  Layout.prototype.trumpWin = function() {
-    $(".main").hide();
-
-    $("#play").click(function () {
-        $("#gameStart").hide();
-        $(".main").show();
-    });
   };
