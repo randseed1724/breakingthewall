@@ -21,6 +21,7 @@ var game = {
   var gameLayout = new Layout();
   gameLayout.displayLayout();
   gameLayout.displayStart();
+  gameLayout.mexicanWin();
   },
   hideLayout: function() {
   var hide = new LayoutHide();

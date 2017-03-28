@@ -16,6 +16,30 @@
 
   Layout.prototype.displayStart = function() {
     $(".main").hide();
+    $("#m-wins").hide();
+    $("#t-wins").hide();
+
+
+    $("#play").click(function () {
+        $("#gameStart").hide();
+        $(".main").show();
+    });
+  };
+
+  Layout.prototype.mexicanWin = function() {
+
+    $(document).on("keydown", function(e) {
+    if($('.column').children('.block:visible').length === 0) {
+      $("#gameStart").hide();
+      $(".main").hide();
+
+      $("#m-wins").show();
+    }
+  });
+  };
+
+  Layout.prototype.trumpWin = function() {
+    $(".main").hide();
 
     $("#play").click(function () {
         $("#gameStart").hide();
