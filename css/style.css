@@ -5,11 +5,38 @@ header {
 }
 
 footer {
-  margin-top: 5em;
-  text-align: center;
+    margin: auto;
+    margin-top: 6em;
+    text-align: center;
+    background-color: white;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 7%;
+    text-align: center;
+    padding: 5px;
+    padding-bottom: 0px;
+    font-weight: bold;
+}
+body {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/wall2.jpg');
+    background-size: ccontain;
+    background-repeat: space;
 }
 
+li {
+    font-weight: bold;
+}
 
+#bodySkin {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    position: absolute;
+    width: 100%;
+}
+
+#video {
+    width: 210px ;
+    height: 220px ;
+}
 /* ------ layout ------ */
 
 
@@ -223,56 +250,147 @@ footer {
     background-position: center;
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/wall-2.jpg');
 }
-#gameStart {
-    width: 899px;
-    margin: auto;
-    border: 6px dotted red;
-}
+
 .style {
     text-align: center;
 }
 #intro {
-    padding: 2em 0em;
     width: 760px;
-    text-align: left;
-    margin: auto;
-    font-size: x-large;
+    font-size: 20px;
+    margin: 1.5em auto;
+    font-weight: bold;
+    text-align: center;
 }
-#tittle{
-  font-weight: bold;
+#tittle {
+    font-weight: bold;
+    margin-top: 30px;
 }
 #sec {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
 }
 #exple {
     font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 180px;
 }
 
 .keys {
-    width: 30%;
-    margin: auto;
+    width: 26%;
+    float: left;
+    margin: 0.6em 0em 0em 2em;
 }
 .character {
-    width: 14%;
-    margin-left: 4em;
+    width: 12%;
+    margin: 0em 0em 0em 4em;
+    float: left;
 }
 #explanation {
-    width: 530px;
+    width: 600px;
     margin: auto;
+    margin-left: 50px;
     text-align: center;
+    float: left;
+}
+#sideVideo {
+    float: left;
+    width: 210px;
+    margin-top: 4em;
 }
 .player {
-    margin: 2em;
+    margin: 1em;
     font-weight: bold;
+    clear: both;
+    margin-left: 26em;
 }
 #btt {
-    margin: 5em 0em;
+    margin: 2em 0em;
+    clear: both;
+    padding-top: 3em;
 }
-#play {
+/*#play {
     font-size: 32px;
     background-color: chartreuse;
     border: 1px solid black;
     padding: 0.3em;
     width: 400px;
+}*/
+.keysI {
+    list-style: none;
+    float: left;
+    text-align: left;
+    font-size: larger;
+    margin: 1.6em 2em;
+    padding: 0px;
+}
+.rit {
+    margin-left: 2.9em;
+}
+
+#gameStart {
+    width: 899px;
+    height: 758px;
+    margin: 4em auto;
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 17px 17px 47px #000000;
+    border-radius: 5%;
+}
+#gameStart {
+    background: #FFB75E;
+    background: -webkit-linear-gradient(to left, rgba(255, 199, 29, 0.70) , rgba(255, 228, 51, 0.86));
+    background: linear-gradient(to left, rgba(255, 199, 29, 0.70) , rgba(255, 228, 51, 0.86));
+}
+
+
+
+
+.button12 {
+    position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 3em;
+    display: block;
+    padding: 4px;
+    padding-top: 6px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: auto;
+    width: 220px;
+    text-align: center;
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+.button12:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button12:link {
+  color: #fff;
+  text-decoration: none;
+}
+.button12:visited {
+  color: #fff;
+  text-decoration: none;
+}
+.button12:active {
+  color: #fff;
+  text-decoration: none;
+}
+.button12:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
 }

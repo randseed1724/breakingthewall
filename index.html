@@ -8,7 +8,8 @@
 	<title>Breaking the Wall</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/layout.js"></script>
 	<script type="text/javascript" src="js/dom.js"></script>
 	<script type="text/javascript" src="js/columns.js"></script>
@@ -25,6 +26,8 @@
 
 </head>
 <body>
+	<div id="bodySkin">
+
 <div  id="gameStart">
 	<h1 class="style" id="tittle">Breaking the Wall</h1>
 	<h2 class="style" id="sec">...or buidling it</h2>
@@ -33,20 +36,38 @@ Call a friend and choose your character. Depending on your selection you will ha
 Accomplish your task and win!
 </p>
 <div id="explanation">
-<h3 class="style" id="exple">How to play?</h3>
 <h4 class="player style">1st Player</h4>
+<h3 class="style" id="exple">How to play?</h3>
+
+	<ul class="keysI">
+	<li>Key S: Builds it</li>
+		<li>Key A: Move Left</li>
+		<li>Key D: Move Right</li>
+	</ul>
 <img class="keys" src="/home/alejandro/Desktop/Breaking the wall/img/arrow-keys-2nd.png"/>
 <img class="character" src="/home/alejandro/Desktop/Breaking the wall/img/characters/t-front.png"/>
 
 <h4 class="player style">2nd Player</h4>
-<img class="keys" src="/home/alejandro/Desktop/Breaking the wall/img/arrow-keys.png" />
+	<ul class="keysI">
+	<li>Key Up: Destroys it</li>
+	<li>Key Left: Move Left</li>
+	<li>Key Right: Move Right</li>
+</ul>
+<img class="keys rit" src="/home/alejandro/Desktop/Breaking the wall/img/arrow-keys.png" />
 <img class="character" src="/home/alejandro/Desktop/Breaking the wall/img/characters/mexican.png"/>
-<div id="btt">
-	<button id="play">
-	Play now!
-	</button>
-</div>
 
+</div>
+<div id="sideVideo">
+	<video id="video" autoplay="autoplay"  loop="loop" >
+	  <source src="/home/alejandro/Desktop/Breaking the wall/img/video.mp4" type="video/mp4">
+	</video>
+	<script type="text/javascript">
+  /* play video twice as fast */
+	document.getElementById("video").playbackRate = 3;
+</script>
+</div>
+<div id="btt">
+<a  class="button12" id="play" href="javascript:void(0);">Play Now!</a>
 </div>
 
 </div>
@@ -54,9 +75,10 @@ Accomplish your task and win!
 
 <div class="main"></div>
 <footer>
-	<p>Developed by <a href="https://www.ouwebs.com">randseed1724</a></p>
+	<p>Developed by <a href="https://www.linkedin.com/in/alejandro-ou/">Alejandro Jimenez</a></p>
 </footer>
 
+</div>
 </body>
 
 </html>
