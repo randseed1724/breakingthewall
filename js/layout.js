@@ -40,3 +40,17 @@
     }
   });
   };
+
+  Layout.prototype.playAgain = function() {
+
+    $("#playAgain").click(function () {
+     location.reload();
+    });
+  };
+
+  Layout.prototype.feedback = function() {
+
+    $("#feedback").click(function () {
+      $(location).attr('href', 'http://www.ouwebs.com');
+    });
+  };
