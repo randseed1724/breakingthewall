@@ -214,3 +214,65 @@ footer {
     background-position: center;
 
 }
+#welcome {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/wall-2.jpg');
+}
+#gameStart {
+    width: 899px;
+    margin: auto;
+    border: 6px dotted red;
+}
+.style {
+    text-align: center;
+}
+#intro {
+    padding: 2em 0em;
+    width: 760px;
+    text-align: left;
+    margin: auto;
+    font-size: x-large;
+}
+#tittle{
+  font-weight: bold;
+}
+#sec {
+    font-size: 22px;
+    font-weight: bold;
+}
+#exple {
+    font-weight: bold;
+}
+
+.keys {
+    width: 30%;
+    margin: auto;
+}
+.character {
+    width: 14%;
+    margin-left: 4em;
+}
+#explanation {
+    width: 530px;
+    margin: auto;
+    text-align: center;
+}
+.player {
+    margin: 2em;
+    font-weight: bold;
+}
+#btt {
+    margin: 5em 0em;
+}
+#play {
+    font-size: 32px;
+    background-color: chartreuse;
+    border: 1px solid black;
+    padding: 0.3em;
+    width: 400px;
+}

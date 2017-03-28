@@ -7,7 +7,6 @@ var game = {
     this.hideLayout();
     this.gamePlayer1();
     this.gamePlayer2();
-    this.over();
 
   },
 
@@ -21,6 +20,7 @@ var game = {
   layout: function() {
   var gameLayout = new Layout();
   gameLayout.displayLayout();
+  gameLayout.displayStart();
   },
   hideLayout: function() {
   var hide = new LayoutHide();
@@ -34,12 +34,13 @@ var game = {
   var gamePlay2 = new GameKeyPlayer2();
   gamePlay2.controlPlayer2();
   },
-  over: function() {
-  var isOver = new gameOver();
-  isOver.over();
-  },
-
-
-
+  // over: function() {
+  // var isOver = new gameOver();
+  // isOver.over();
+  // },
+  // welcome: function() {
+  // var begin = new Layout();
+  // begin.displayStart();
+  // },
 
 };

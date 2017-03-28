@@ -25,32 +25,34 @@
 
 </head>
 <body>
+<div  id="gameStart">
+	<h1 class="style" id="tittle">Breaking the Wall</h1>
+	<h2 class="style" id="sec">...or buidling it</h2>
+<p id="intro">
+Call a friend and choose your character. Depending on your selection you will have to build or distroy the wall.
+Accomplish your task and win!
+</p>
+<div id="explanation">
+<h3 class="style" id="exple">How to play?</h3>
+<h4 class="player style">1st Player</h4>
+<img class="keys" src="/home/alejandro/Desktop/Breaking the wall/img/arrow-keys-2nd.png"/>
+<img class="character" src="/home/alejandro/Desktop/Breaking the wall/img/characters/t-front.png"/>
 
-	<header>
-	<h1>Breaking the Wall</h1>
-	</header>
+<h4 class="player style">2nd Player</h4>
+<img class="keys" src="/home/alejandro/Desktop/Breaking the wall/img/arrow-keys.png" />
+<img class="character" src="/home/alejandro/Desktop/Breaking the wall/img/characters/mexican.png"/>
+<div id="btt">
+	<button id="play">
+	Play now!
+	</button>
+</div>
 
-<button id="startGame">Start Game</button>
+</div>
 
-<input id="whichkey">
-<div id="log"></div>
-
-<script>
-$( "#whichkey" ).on( "keydown", function( event ) {
-  $( "#log" ).html( event.type + ": " +  event.which );
-});
-</script>
-
-<div class="main" >
+</div>
 
 
-
-
-
-  </div>
-
-
-
+<div class="main"></div>
 <footer>
 	<p>Developed by <a href="https://www.ouwebs.com">randseed1724</a></p>
 </footer>
