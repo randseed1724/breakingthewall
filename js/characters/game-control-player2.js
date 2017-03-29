@@ -23,7 +23,7 @@
 
         $(document).on("keydown", function(e) {
 
-          
+
 
         var x = e.keyCode;
         if (x == 37 || x == 38 || x == 39 ) {

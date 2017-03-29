@@ -3,7 +3,7 @@
 var game = {
   init: function () {
     this.renderRows();
-    this.layout(); //layouts affects columns don't move up
+    this.layout();
     this.hideLayout();
     this.gamePlayer1();
     this.gamePlayer2();
@@ -37,13 +37,5 @@ var game = {
   var gamePlay2 = new GameKeyPlayer2();
   gamePlay2.controlPlayer2();
   },
-  // over: function() {
-  // var isOver = new gameOver();
-  // isOver.over();
-  // },
-  // welcome: function() {
-  // var begin = new Layout();
-  // begin.displayStart();
-  // },
 
 };

@@ -10,7 +10,7 @@
   GameKeyPlayer1.prototype.controlPlayer1 = function() {
 
 // movement
-
+    var previous;
     var direction = 1 ;
 
     var start = $("#grid"+ direction);
@@ -21,12 +21,11 @@
     var keyPressed = false;
 
 
+
+
         $(document).on("keydown", function(e) {
 
-          // if($('.column').children('.block:visible').length === 45) {
-          //
-          // alert("Trump WIN!");
-          // }
+
 
         var x = e.keyCode;
         if (x == 65 || x == 68 || x == 83 ) {
@@ -41,20 +40,28 @@
             move.addClass("trump");
             return;
           }
+
             if (direction < 65) {
+
             direction += 9;
+              previous = move;
+              previous.addClass("trump-move-right");
             move = $("#grid"+ direction);
-            move.addClass("trump-right");
+            setTimeout(function() {
+}, 1000);
+
             }
 
             keyPressed = true;
+            // before.removeClass("trump-right");
 
             setTimeout(function() {
             move.removeClass("trump-right");
+            previous.removeClass("trump-move-right");
 
             before = move;
             keyPressed = false;
-            }, 600);
+          }, 1200);
           }
 
 //left key
@@ -113,7 +120,9 @@ console.log(   'This is going on',    move.prev());
 
     $(document).on("keyup", function(e) {
              if (e.keyCode == 68 ) {
-           move.addClass("trump");
+               setTimeout(function() {
+                 move.addClass("trump");
+   }, 1000);
            console.log('KEY UP:',move);
      }
      });

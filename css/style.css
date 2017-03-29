@@ -137,7 +137,7 @@ li {
     /*border: 1px solid green;*/
     vertical-align: top;
     background-size: contain;
-    background: rgba(0, 255, 228, 0.24);
+    /*background: rgba(0, 255, 228, 0.24);*/
 }
 
 .floor {
@@ -213,11 +213,31 @@ li {
     background-position: center;
 }
 /* Trump Right */
+.trump-move-right {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transition: all 1s ease;
+    transform: translate(100px, 0);
+    -webkit-transform: translate(100px,0);
+    -o-transform: translate(100px,0);
+    -moz-transform: translate(100px,0);
+}
+
 .trump-right {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+    /*transition: all 1s ease;
+    transform: translate(20px, 0);
+    -webkit-transform: translate(30px,0);
+    -o-transform: translate(30px,0);
+    -moz-transform: translate(30px,0);*/
+
 }
 
 
