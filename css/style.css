@@ -159,6 +159,14 @@ li {
     position: relative;
     bottom: 6em;
 }
+.m-hide {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/cactus01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 8em;
+}
 /* Mexican Right */
 .m-right {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-right.png');
@@ -221,7 +229,7 @@ li {
 }
 
 /* Trump Right */
-.trump-move-right {
+/*.trump-move-right {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -232,7 +240,7 @@ li {
     -webkit-transform: translate(100px,0);
     -o-transform: translate(100px,0);
     -moz-transform: translate(100px,0);
-}
+}*/
 
 .trump-right {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
@@ -515,4 +523,20 @@ li {
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.girlFromLeft {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.girlFromRight {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
 }

@@ -26,7 +26,7 @@
 
 
         var x = e.keyCode;
-        if (x == 37 || x == 38 || x == 39 ) {
+        if (x == 37 || x == 38 || x == 39 || x == 40) {
           before.removeClass('mexican');
 }
 
@@ -79,6 +79,33 @@
             before = move;
             keyPressed = false;
           }, 500);
+}
+
+//key 40 hide
+
+        if (e.keyCode == 40 && ! keyPressed) {
+          // if (direction < 2 ) {
+          //   move.addClass("trump");
+          //   return;
+          // }
+            // if (direction > 2) {
+            direction += 1;
+            move = $("#grid"+ direction);
+            move.addClass("m-hide");
+            // }
+
+            keyPressed = true;
+
+            setTimeout(function() {
+            move.removeClass("m-hide");
+            // move.removeClass("trump-right");
+            direction -= 1;
+            move = $("#grid"+ direction);
+            move.addClass("mexican");
+
+            before = move;
+            keyPressed = false;
+          }, 800);
 }
 
 //Breaking Bricks

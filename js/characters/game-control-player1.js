@@ -89,21 +89,26 @@
 
 //key 87 jump
 
-        if (e.keyCode == 87 && ! keyPressed) {
+        if (e.keyCode == 87 && !keyPressed) {
           // if (direction < 2 ) {
           //   move.addClass("trump");
           //   return;
           // }
             // if (direction > 2) {
+            keyPressed = true;
+
+            move.removeClass("trump");
+
             direction -= 1;
             move = $("#grid"+ direction);
             move.addClass("trump-jump");
             // }
 
-            keyPressed = true;
 
             setTimeout(function() {
             move.removeClass("trump-jump");
+            move.removeClass("trump");
+
             // move.removeClass("trump-right");
             direction += 1;
             move = $("#grid"+ direction);
