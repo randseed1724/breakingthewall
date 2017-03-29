@@ -53,7 +53,7 @@
 
             before = move;
             keyPressed = false;
-            }, 600);
+          }, 500);
           }
 
 //left key
@@ -78,7 +78,7 @@
 
             before = move;
             keyPressed = false;
-            }, 600);
+          }, 500);
 }
 
 //Breaking Bricks
@@ -90,11 +90,11 @@
 
         setTimeout(function() { move.removeClass("mm1");
         move.addClass( "mm2" );
-      }, 300);
+      }, 200);
 
         setTimeout(function() { move.removeClass("mm2");
         move.addClass( "mm3" );
-      }, 600);
+      }, 300);
 
       setTimeout(function() { move.removeClass("mm3");
       var newSky = 'newSky';
@@ -115,7 +115,7 @@
      }
 
        keyPressed = false;
-      }, 1000);
+     }, 500);
       }
     });
 

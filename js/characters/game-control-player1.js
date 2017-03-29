@@ -28,7 +28,7 @@
 
 
         var x = e.keyCode;
-        if (x == 65 || x == 68 || x == 83 ) {
+        if (x == 65 || x == 68 || x == 83 || x == 87) {
           before.removeClass('trump');
 }
 
@@ -42,14 +42,12 @@
           }
 
             if (direction < 65) {
+            // previous = move;
+            // previous.addClass("trump-move-right");
 
             direction += 9;
-              previous = move;
-              previous.addClass("trump-move-right");
             move = $("#grid"+ direction);
-            setTimeout(function() {
-}, 1000);
-
+            move.addClass("trump-right");
             }
 
             keyPressed = true;
@@ -57,11 +55,11 @@
 
             setTimeout(function() {
             move.removeClass("trump-right");
-            previous.removeClass("trump-move-right");
+            // previous.removeClass("trump-move-right");
 
             before = move;
             keyPressed = false;
-          }, 1200);
+          }, 500);
           }
 
 //left key
@@ -86,7 +84,34 @@
 
             before = move;
             keyPressed = false;
-            }, 600);
+          }, 500);
+}
+
+//key 87 jump
+
+        if (e.keyCode == 87 && ! keyPressed) {
+          // if (direction < 2 ) {
+          //   move.addClass("trump");
+          //   return;
+          // }
+            // if (direction > 2) {
+            direction -= 1;
+            move = $("#grid"+ direction);
+            move.addClass("trump-jump");
+            // }
+
+            keyPressed = true;
+
+            setTimeout(function() {
+            move.removeClass("trump-jump");
+            // move.removeClass("trump-right");
+            direction += 1;
+            move = $("#grid"+ direction);
+            move.addClass("trump");
+
+            before = move;
+            keyPressed = false;
+          }, 800);
 }
 
 //Dropping Bricks
@@ -98,11 +123,11 @@
 
         setTimeout(function() { move.removeClass("trump-brick");
         move.addClass( "trump-brick-2" );
-      }, 300);
+      }, 200);
 
         setTimeout(function() { move.removeClass("trump-brick-2");
         move.addClass( "trump-brick-3" );
-      }, 600);
+      }, 300);
 
         setTimeout(function() { move.removeClass("trump-brick-3");
        move.addClass( "trump" );
@@ -110,7 +135,7 @@
        move.prev().prev().detach();
 console.log(   'This is going on',    move.prev());
        keyPressed = false;
-      }, 1000);
+     }, 500);
       }
     });
 
@@ -120,9 +145,8 @@ console.log(   'This is going on',    move.prev());
 
     $(document).on("keyup", function(e) {
              if (e.keyCode == 68 ) {
-               setTimeout(function() {
                  move.addClass("trump");
-   }, 1000);
+
            console.log('KEY UP:',move);
      }
      });

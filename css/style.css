@@ -212,6 +212,14 @@ li {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.trump-jump {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-jump.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* Trump Right */
 .trump-move-right {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
