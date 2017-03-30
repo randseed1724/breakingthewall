@@ -7,7 +7,7 @@ var game = {
     this.hideLayout();
     this.gamePlayer1();
     this.gamePlayer2();
-
+    this.obs1();
   },
 
 
@@ -36,6 +36,10 @@ var game = {
   gamePlayer2: function() {
   var gamePlay2 = new GameKeyPlayer2();
   gamePlay2.controlPlayer2();
+  },
+  obs1: function() {
+  var girl = new Girl();
+  girl.girlRun();
   },
 
 };

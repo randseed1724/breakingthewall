@@ -30,7 +30,12 @@
         var x = e.keyCode;
         if (x == 65 || x == 68 || x == 83 || x == 87) {
           before.removeClass('trump');
-}
+        }
+
+        if (move.hasClass("inLove") === true) {
+
+          return;
+        }
 
 
 //right key

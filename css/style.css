@@ -323,11 +323,12 @@ li {
     font-size: 26px;
     font-weight: bold;
 }
+
 #exple {
     font-weight: bold;
     font-size: 22px;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 0px;
 }
 
 
@@ -336,11 +337,13 @@ li {
     width: 27%;
     float: left;
     margin-left: 4em;
+        margin-top: 1em;
 }
 .keys2 {
     width: 27%;
     float: left;
-    margin-left: 2em;
+    margin-left: 2.1em;
+        margin-top: 1em;
 }
 .character {
     width: 12%;
@@ -371,26 +374,20 @@ li {
 }
 #btt {
     clear: both;
-    padding-top: 5em;
+    padding-top: 3em;
 }
 #btt2 {
     padding-top: 1.2em;
     width: 300px;
     float: left;
 }
-/*#play {
-    font-size: 32px;
-    background-color: chartreuse;
-    border: 1px solid black;
-    padding: 0.3em;
-    width: 400px;
-}*/
+
 .keysI {
     list-style: none;
     float: left;
     text-align: left;
     font-size: 16px;
-    margin: 0.6em 0em 0em 3em;
+    margin-left: 3em;
     padding: 0px;
     line-height: 26px;
 }
@@ -535,6 +532,13 @@ li {
 
 .girlFromRight {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.inLove {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-love.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
