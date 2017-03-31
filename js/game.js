@@ -9,6 +9,8 @@ var game = {
     this.gamePlayer2();
     this.obs1();
     // this.obs2();
+    this.audioStart();
+
   },
 
 
@@ -29,6 +31,10 @@ var game = {
   hideLayout: function() {
   var hide = new LayoutHide();
   hide.hidding();
+  },
+  audioStart: function() {
+  var audio = new Sound();
+  audio.startGame();
   },
   gamePlayer1: function() {
   var gamePlay = new GameKeyPlayer1();
