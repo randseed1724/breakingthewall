@@ -150,69 +150,7 @@ li {
     /*background: rgba(213, 186, 63, 0.83);*/
 }
 
-/* Mexican Front */
-.mexican {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mexican.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 6em;
-}
-.m-hide {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/cactus01.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 8em;
-}
-/* Mexican Right */
-.m-right {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-right.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 6em;
-}
-/* Mexican Left */
-.m-left {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-left.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 6em;
-}
 
-.mm1 {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm1.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 6em;
-
-}
-.mm2 {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm2.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 6em;
-
-}
-.mm3 {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm3.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    bottom: 6em;
-
-}
 /* Trump Front */
 .trump {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-front.png');
@@ -523,7 +461,7 @@ li {
 }
 
 .girlFromLeft {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/girl-right.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -531,7 +469,7 @@ li {
 }
 
 .girlFromRight {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-left.png');
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/girl-left.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -544,3 +482,104 @@ li {
     background-position: center;
     position: relative;
 }
+
+
+
+
+
+/* Mexican Styles */
+.mexican {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mexican.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+}
+/* Mexican Right */
+.m-right {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+}
+/* Mexican Left */
+.m-left {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+}
+
+.mm1 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+
+}
+.mm2 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+
+}
+.mm3 {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mm3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+
+}
+.policeFromLeft {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+
+
+}
+
+.policeFromRight {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+
+
+}
+.mexInLove {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-love.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+
+
+}
+.m-hide {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/cactus01.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 8em;
+}
+
+/* END MEXICAN */

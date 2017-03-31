@@ -2,7 +2,6 @@
 
 
     function Layout(){
-      console.log("this is layout constructor");
     }
 
 
@@ -54,6 +53,3 @@
       $(location).attr('href', 'http://www.ouwebs.com');
     });
   };
-
-
-  

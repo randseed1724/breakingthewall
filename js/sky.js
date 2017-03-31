@@ -2,7 +2,6 @@
     function Sky(index, column){
       this.index = index;
       this.column = column;
-      console.log("this is sky constructor", this.index);
     }
 
         Sky.prototype.createSky = function() {

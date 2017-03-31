@@ -1,7 +1,6 @@
 
     function Column(index){
       this.index = index;
-      console.log("this is the Column contruction function", this.index);
     }
 
 

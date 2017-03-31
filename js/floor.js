@@ -2,7 +2,6 @@
     function Floor(index, column){
       this.index = index;
       this.column = column;
-      console.log("this is floor constructor", this.index);
     }
 
         Floor.prototype.createFloor = function() {

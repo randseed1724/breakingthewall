@@ -2,7 +2,6 @@
 
 
     function GameKeyPlayer2(){
-      console.log('Game Control Present');
     }
 
 
@@ -128,10 +127,8 @@
       var sky = "<div class='sky' id='sky_"+ newSky +"' >";
 
   if (move.prevAll('.block:visible')) {
-    console.log('THIS IMPORTANT: ',move.prevAll('.block:visible'));
        move.addClass( "mexican" );
        move.prevAll('.block:visible:first').hide();
-       console.log('LENGHT: ', move.siblings().length);
      }
 
   if (  move.siblings().length < 13) {

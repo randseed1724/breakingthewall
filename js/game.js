@@ -8,6 +8,7 @@ var game = {
     this.gamePlayer1();
     this.gamePlayer2();
     this.obs1();
+    // this.obs2();
   },
 
 
@@ -40,6 +41,10 @@ var game = {
   obs1: function() {
   var girl = new Girl();
   girl.girlRun();
+  },
+  obs2: function() {
+  var police = new Police();
+  police.policeRun();
   },
 
 };

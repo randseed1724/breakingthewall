@@ -2,7 +2,6 @@
 
 
     function GameKeyPlayer1(){
-      console.log('Game Control Present');
     }
 
 
@@ -32,8 +31,9 @@
           before.removeClass('trump');
         }
 
-        if (move.hasClass("inLove") === true) {
+//obstacle 1 girl
 
+        if (move.hasClass("inLove") === true) {
           return;
         }
 
@@ -143,10 +143,11 @@
        move.addClass( "trump" );
        move.nextAll(':hidden:first').show();
        move.prev().prev().detach();
-console.log(   'This is going on',    move.prev());
        keyPressed = false;
      }, 500);
       }
+      $(document).off('click', function(e) {return;});
+
     });
 
 
@@ -157,14 +158,12 @@ console.log(   'This is going on',    move.prev());
              if (e.keyCode == 68 ) {
                  move.addClass("trump");
 
-           console.log('KEY UP:',move);
      }
      });
 
      $(document).on("keyup", function(e) {
               if (e.keyCode == 65 ) {
             move.addClass("trump");
-            console.log('KEY UP:',move);
       }
       });
 

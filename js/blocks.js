@@ -2,7 +2,6 @@
     function Block(index, column){
       this.index = index;
       this.column = column;
-      console.log("this is Block constructor", this.index);
     }
 
         Block.prototype.createBlock = function() {
