@@ -21,6 +21,8 @@
     $("#play").click(function () {
         $("#gameStart").hide();
         $(".main").show();
+
+ $("#grid8,#grid17, #grid26, #grid35, #grid44, #grid53, #grid62, #grid71, #grid80").addClass("m-hide");
     });
   };
 

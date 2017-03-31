@@ -32,7 +32,7 @@
               }, 3500);
 
               setTimeout(function() {
-              audioElement.volume = (75 / 100);
+              audioElement.volume = (55 / 100);
             }, 6500);
 
           }, true);
@@ -89,7 +89,9 @@
 
  });
 
-//characters
+
+
+//CHARACTERS
 
       var building = document.createElement('audio');
       building.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/building-wall.wav');
@@ -132,13 +134,13 @@ $(document).on("keydown", function(e) {
 
     $(document).on("keydown", function(e) {
 
-      if (e.keyCode == 37 && ! keyPressed) {
+      if (e.keyCode == 37 || e.keyCode == 39  && ! keyPressed) {
 
 
 
         random = Math.floor(Math.random() * 100);
 
-       if (random >= 97 ) {
+       if (random >= 95 ) {
 
          keyPressed = true;
          setTimeout(function() {
@@ -149,49 +151,33 @@ $(document).on("keydown", function(e) {
      }
 
            });
- // $(document).on("keyup", function(e) {
- //   if (e.keyCode == 83 && ! keyPressed) {
- //         keyPressed = true;
- //           building.pause();
- //         }
- //         keyPressed = false;
- //
- //  });
-      //
-      // audioElement.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/A Journey Awaits.mp3');
-      // $("#gameStart").append(audioElement);
 
 
-      // $(document).load(function() {
-      //   alert("2");
-      // });
+           var boss = document.createElement('audio');
+           boss.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/boss-laugh.mp3');
+           $.get();
 
-      // audioElement.addEventListener('ended', function() {
-      //     this.play();
-      // }, false);
-      //
-      // audioElement.addEventListener("canplay",function(){
-      //     $("#length").text("Duration:" + audioElement.duration + " seconds");
-      //     $("#source").text("Source:" + audioElement.src);
-      //     $("#status").text("Status: Ready to play").css("color","green");
-      // });
-      //
-      // audioElement.addEventListener("timeupdate",function(){
-      //     $("#currentTime").text("Current second:" + audioElement.currentTime);
-      // });
-      //
-      // $('#play').click(function() {
-      //     audioElement.play();
-      //     $("#status").text("Status: Playing");
-      // });
-      //
-      // $('#pause').click(function() {
-      //     audioElement.pause();
-      //     $("#status").text("Status: Paused");
-      // });
-      //
-      // $('#restart').click(function() {
-      //     audioElement.currentTime = 0;
-      // });
+           $(document).on("keydown", function(e) {
+
+             if (e.keyCode == 87) {
+
+
+
+               random = Math.floor(Math.random() * 100);
+
+              if (random >= 35 ) {
+
+                keyPressed = true;
+                setTimeout(function() {
+                  boss.play();
+                  boss.volume = (50 / 100);
+              }, 1000);
+              }
+              keyPressed = false;
+            }
+
+                  });
+
+
 
     };
