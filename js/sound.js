@@ -134,18 +134,20 @@ $(document).on("keydown", function(e) {
 
     $(document).on("keydown", function(e) {
 
-      if (e.keyCode == 37 || e.keyCode == 39  && ! keyPressed) {
+      if (e.keyCode == 40 && ! keyPressed) {
 
 
 
         random = Math.floor(Math.random() * 100);
 
-       if (random >= 95 ) {
+       if (random >= 80 ) {
 
          keyPressed = true;
          setTimeout(function() {
+           wey.playbackRate= 1.2;
+
            wey.play();
-       }, 1000);
+       }, 10);
        }
        keyPressed = false;
      }
@@ -165,13 +167,15 @@ $(document).on("keydown", function(e) {
 
                random = Math.floor(Math.random() * 100);
 
-              if (random >= 35 ) {
+              if (random >= 15 ) {
 
                 keyPressed = true;
                 setTimeout(function() {
                   boss.play();
-                  boss.volume = (50 / 100);
-              }, 1000);
+                  boss.volume = (60 / 100);
+                  boss.playbackRate= 2.5;
+
+              }, 10);
               }
               keyPressed = false;
             }

@@ -6,7 +6,7 @@
 
 
     Layout.prototype.displayLayout = function() {
-      $('.main').css({'background-image':'url(img/bc22.png)','background-size':'cover','background-repeat':'no-repeat','background-position': 'bottom'} );
+      $('.main').css({'background-image':'url(img/bc21.png)','background-size':'cover','background-repeat':'no-repeat','background-position': 'bottom'} );
 
       $('.column *').each(function(i) {
           $(this).attr('id', 'grid' + i);
@@ -22,7 +22,7 @@
         $("#gameStart").hide();
         $(".main").show();
 
- $("#grid8,#grid17, #grid26, #grid35, #grid44, #grid53, #grid62, #grid71, #grid80").addClass("m-hide");
+ $("#grid8,#grid17, #grid26, #grid35, #grid44, #grid53, #grid62, #grid71, #grid80").addClass("cactus-hide");
     });
   };
 
