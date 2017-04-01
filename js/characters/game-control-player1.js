@@ -22,12 +22,12 @@
 
 
 
-        $(document).on("keydown", function(e) {
-
+        $(document).on("keypress", function(e) {
+          console.log(e.keypress);
 
 
         var x = e.keyCode;
-        if (x == 65 || x == 68 || x == 83 || x == 87) {
+        if (x == 97 || x == 100 || x == 115 || x == 119) {
           before.removeClass('trump');
         }
 
@@ -40,13 +40,13 @@
 
 //right key
 
-        if (e.keyCode == 68 && ! keyPressed) {
-          if (direction >= 65) {
+        if (e.keyCode == 100 && ! keyPressed) {
+          if (direction >= 97) {
             move.addClass("trump");
             return;
           }
 
-            if (direction < 65) {
+            if (direction < 97) {
             // previous = move;
             // previous.addClass("trump-move-right");
 
@@ -69,7 +69,7 @@
 
 //left key
 
-        if (e.keyCode == 65 && ! keyPressed) {
+        if (e.keyCode == 97 && ! keyPressed) {
           if (direction < 2 ) {
             move.addClass("trump");
             return;
@@ -92,9 +92,9 @@
           }, 500);
 }
 
-//key 87 jump
+//key 119 jump
 
-        if (e.keyCode == 87 && !keyPressed) {
+        if (e.keyCode == 119 && !keyPressed) {
           // if (direction < 2 ) {
           //   move.addClass("trump");
           //   return;
@@ -126,7 +126,7 @@
 
 //Dropping Bricks
 // key down
-      if (e.keyCode == 83 && ! keyPressed) {
+      if (e.keyCode == 115 && ! keyPressed) {
         keyPressed = true;
         move.removeClass("trump");
         move.addClass("trump-brick");
@@ -148,24 +148,25 @@
       }
       $(document).off('click', function(e) {return;});
 
+
+          $(document).on("keyup", function(e) {
+                   if (e.keyCode == 68 ) {
+                       move.addClass("trump");
+
+           }
+           });
+
+           $(document).on("keyup", function(e) {
+                    if (e.keyCode == 65 ) {
+                  move.addClass("trump");
+            }
+            });
     });
 
 
 //KEY UP
 
 
-    $(document).on("keyup", function(e) {
-             if (e.keyCode == 68 ) {
-                 move.addClass("trump");
-
-     }
-     });
-
-     $(document).on("keyup", function(e) {
-              if (e.keyCode == 65 ) {
-            move.addClass("trump");
-      }
-      });
 
 
   };

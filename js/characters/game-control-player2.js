@@ -20,7 +20,7 @@
     var keyPressed = false;
 
 
-        $(document).on("keydown", function(e) {
+        $(document).on("keypress", function(e) {
 
 
 

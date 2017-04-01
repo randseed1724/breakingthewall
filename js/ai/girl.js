@@ -2,7 +2,6 @@
 
 
       function Girl(){
-        console.log('Girl present');
       }
 
 
