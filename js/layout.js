@@ -30,14 +30,32 @@
 
     $(document).on("keydown", function(e) {
 
-    if($('.column').children('.block:visible').length === 0 && $('#grid80:visible').length === 1) {
+    if($('.column').children('.block:visible').length === 0 && $('#grid80:visible').length === 1 && e.keyCode == 38) {
       $("#win").show();
       $("#tittle-2").text("Congratulations mexican you win!");
+
+// Music if mexican wins
+                            var mWins = document.createElement('audio');
+                            mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
+                            $.get();
+
+                                   mWins.play();
+                                   mWins.volume = (20 / 100);
+
     }
 
-    if($('.column').children('.block:visible').length === 45) {
+
+    if($('.column').children('.block:visible').length === 45 && e.keyCode == 83) {
       $("#win").show();
       $("#tittle-2").text("Congratulations Trump you win!");
+
+      // Music if mexican wins
+                                  var tWins = document.createElement('audio');
+                                  tWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/again.mp3');
+                                  $.get();
+
+                                         tWins.play();
+                                         tWins.volume = (30 / 100);
     }
   });
   };

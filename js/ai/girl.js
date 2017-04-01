@@ -68,6 +68,7 @@
                               clearInterval(myInterval);
 
 
+
                               move.addClass('inLove');
                               move.removeClass('girlFromRight');
 
@@ -76,9 +77,10 @@
                               move.addClass('trump');
 
                               }, 3000);
+
                         }
 
-
+                        c++;
                         if (c == 9){
                           clearInterval(myInterval);
                         }
@@ -97,17 +99,12 @@
       if (rN >= 95 && or === 1) {
 
 
-      console.log('keypress active');
 
       randomTime = Math.ceil(Math.random() * 1000) + 2000;
-      console.log(randomTime);
 
 
       setTimeout(function() {
 
-              var z = 0;
-              z++;
-              console.log('z',z);
 
         var c = 0;
         if (c !==0) {
@@ -123,7 +120,6 @@
                   runFromLeft += 9;
                   move = $("#grid"+ runFromLeft);
                   move.addClass("girlFromLeft");
-                  console.log(c);
 
 
                   if (move.hasClass("trump") === true ||
@@ -155,10 +151,10 @@
                   if (c == 9){
                     clearInterval(myInterval);
                   }
-                }, 500);
+                  }, 300);
 
 
-      var keyPressed = false;
+      keyPressed = false;
       }, randomTime);
       }
       }

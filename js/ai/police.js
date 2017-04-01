@@ -96,27 +96,23 @@
                 if (mr >= 95 && or === 1) {
 
                 randomTime = Math.ceil(Math.random() * 1000) + 2000;
-                console.log(randomTime);
 
 
                 setTimeout(function() {
-
-
                   var c = 0;
                   if (c !==0) {
-                    move.removeClass( "policeFromLeft" );
+                    position.removeClass( "policeFromLeft" );
                   }
 
-                var move = $("#grid"+ runFromLeft);
-                move.addClass( "policeFromLeft" );  //Inicial Position
+                var position = $("#grid"+ runFromLeft);
+                position.addClass( "policeFromLeft" );  //Inicial Position
 
                            var myInterval =  setInterval(function() {
-                            move.removeClass( "policeFromLeft" );
+                            position.removeClass( "policeFromLeft" );
 
                             runFromLeft += 9;
-                            move = $("#grid"+ runFromLeft);
-                            move.addClass("policeFromLeft");
-                            console.log(c);
+                            position = $("#grid"+ runFromLeft);
+                            position.addClass("policeFromLeft");
 
 
                             if (position.hasClass("mexican") === true ||
@@ -129,10 +125,8 @@
 
                                   clearInterval(myInterval);
 
-                                  position.removeClass('mexican');
-
                                   position.addClass('inLove');
-                                  position.removeClass('policeFromRight');
+                                  position.removeClass('policeFromLeft');
 
                                   setTimeout(function() {
                                   position.removeClass('inLove');
@@ -155,4 +149,4 @@
 }
           });
           });
-                };
+          };

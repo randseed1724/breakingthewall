@@ -154,7 +154,7 @@ $(document).on("keydown", function(e) {
 
            });
 
-// great walls
+// great wall
            var greatWall = document.createElement('audio');
            greatWall.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/great-wall.mp3');
            $.get();
@@ -167,7 +167,7 @@ $(document).on("keydown", function(e) {
 
                random = Math.floor(Math.random() * 100);
 
-              if (random >= 97 ) {
+              if (random >= 99 ) {
 
                 keyPressed = true;
                 setTimeout(function() {
@@ -183,16 +183,16 @@ $(document).on("keydown", function(e) {
                   });
 
 //Player 2 wins
+                //
+                //   var mWins = document.createElement('audio');
+                //   mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
+                //   $.get();
+                //
+                //          mWins.pause();
+                // var playMexicanMusic =  mWins.play();
+                //
+                //          mWins.volume = (20 / 100);
 
-               if( $('#win:visible') ) {
 
-                  var mWins = document.createElement('audio');
-                  mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
-                  $.get();
-
-                         mWins.play();
-                         mWins.volume = (20 / 100);
-
-                     }
 
   };

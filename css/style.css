@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: Lato, sans-serif !Important;
 }
 
-footer {
+.footer {
     margin: auto;
     margin-top: 6em;
     background-color: rgba(232, 208, 23, 0.83);
@@ -18,6 +18,15 @@ footer {
     padding-bottom: 0px;
     font-weight: bold;
     border-radius: 4%;
+}
+.sucket {
+    margin-top: 10px;
+    background: transparent;
+    border: none;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
 }
 body {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/wall2.jpg');
