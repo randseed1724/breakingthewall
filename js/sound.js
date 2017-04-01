@@ -85,7 +85,7 @@
 
       $('#btt').on("click", function(e) {
         audioElement.pause();
-        audioElement2.play();
+        // audioElement2.play();
 
  });
 
@@ -140,7 +140,7 @@ $(document).on("keydown", function(e) {
 
         random = Math.floor(Math.random() * 100);
 
-       if (random >= 80 ) {
+       if (random >= 92 ) {
 
          keyPressed = true;
          setTimeout(function() {
@@ -154,26 +154,26 @@ $(document).on("keydown", function(e) {
 
            });
 
-
-           var boss = document.createElement('audio');
-           boss.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/boss-laugh.mp3');
+// great walls
+           var greatWall = document.createElement('audio');
+           greatWall.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/great-wall.mp3');
            $.get();
 
            $(document).on("keydown", function(e) {
 
-             if (e.keyCode == 87) {
+             if (e.keyCode == 83) {
 
 
 
                random = Math.floor(Math.random() * 100);
 
-              if (random >= 15 ) {
+              if (random >= 97 ) {
 
                 keyPressed = true;
                 setTimeout(function() {
-                  boss.play();
-                  boss.volume = (60 / 100);
-                  boss.playbackRate= 2.5;
+                  greatWall.play();
+                  greatWall.volume = (40 / 100);
+                  greatWall.playbackRate= 1.5;
 
               }, 10);
               }
@@ -182,6 +182,17 @@ $(document).on("keydown", function(e) {
 
                   });
 
+//Player 2 wins
 
+               if( $('#win:visible') ) {
 
-    };
+                  var mWins = document.createElement('audio');
+                  mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
+                  $.get();
+
+                         mWins.play();
+                         mWins.volume = (20 / 100);
+
+                     }
+
+  };

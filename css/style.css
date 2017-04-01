@@ -543,7 +543,7 @@ li {
 
 }
 .policeFromLeft {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-right.png');
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/girl-right.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -554,14 +554,12 @@ li {
 }
 
 .policeFromRight {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-left.png');
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/girl-left.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
     bottom: 6em;
-
-
 }
 .mexInLove {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-love.png');

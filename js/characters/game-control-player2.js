@@ -30,7 +30,11 @@
 }
 
 
+//obstacle 1 girl
 
+        if (move.hasClass("inLove") === true) {
+          return;
+        }
 
 //right key
 

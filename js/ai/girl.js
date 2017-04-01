@@ -16,14 +16,9 @@
             var keyPressed = false;
 
             if (e.keyCode == 83 && ! keyPressed) {
-                  keyPressed = true;
 
-            var x = e.keyCode;
-            console.log(x);
-            // if (x !== 83) {
-            //   alert(x);
-            //   return;
-            // }
+            keyPressed = true;
+
 
             var runFromRight = 73 ;
 
@@ -41,14 +36,10 @@
             if (rN >= 95 && or === 0 ) {
 
             randomTime = Math.ceil(Math.random() * 1000) + 2000;
-            console.log(randomTime);
 
 
             setTimeout(function() {
 
-                    var z = 0;
-                    z++;
-                    console.log('z',z);
 
               var c = 0;
               if (c !==0) {
@@ -85,15 +76,13 @@
                               move.addClass('trump');
 
                               }, 3000);
-
-
                         }
 
 
                         if (c == 9){
                           clearInterval(myInterval);
                         }
-                        }, 300);
+                      }, 400);
 
 
                        keyPressed = false;
@@ -166,7 +155,7 @@
                   if (c == 9){
                     clearInterval(myInterval);
                   }
-                  }, 300);
+                }, 500);
 
 
       var keyPressed = false;

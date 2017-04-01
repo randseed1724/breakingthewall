@@ -8,7 +8,7 @@ var game = {
     this.gamePlayer1();
     this.gamePlayer2();
     this.obs1();
-    // this.obs2();
+    this.obs2();
     this.audioStart();
 
   },
