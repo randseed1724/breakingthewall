@@ -8,11 +8,11 @@
 
 
       var keyPressed = false;
+      var lastEvent;
 
       var audioElement = document.createElement('audio');
       var audioElementSrc = $(this).attr('data-audio-src');
       audioElement.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/A Journey Awaits.mp3');
-      $.get();
 
       // changed "load" t0 "loadeddata"
           audioElement.addEventListener("loadeddata", function(){
@@ -43,7 +43,6 @@
       var audioElement2 = document.createElement('audio');
       var audioElementSrc2 = $(this).attr('data-audio-src');
       audioElement2.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/Grey Sector v0_86.mp3');
-      $.get();
       // audioElement2.pause();
 
       // audioElement2.addEventListener("click", function(){
@@ -96,30 +95,41 @@
 
       var building = document.createElement('audio');
       building.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/building-wall.wav');
-      $.get();
 
-      // changed "load" t0 "loadeddata"
 
-// sounds controls 2
 
-$(document).on("keydown", function(e) {
+      $(document).on("keydown", function(e) {
 
-  if (e.keyCode == 83 && ! keyPressed) {
-        keyPressed = true;
-        setTimeout(function() {
-          building.play();
-      }, 500);
- }
- keyPressed = false;
-  });
+        if (e.keyCode == 83 && ! keyPressed) {
+              keyPressed = true;
+              setTimeout(function() {
+                building.play();
+            }, 500);
+       }
+       keyPressed = false;
 
+
+        });
+
+
+
+
+//axepick audio
   var axepick = document.createElement('audio');
   axepick.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/axepick.wav');
   $.get();
 
   $(document).on("keydown", function(e) {
 
+
+
     if (e.keyCode == 38 && ! keyPressed) {
+      if (lastEvent && lastEvent.keyCode == event.keyCode) {
+             return;
+         }
+         lastEvent = event;
+
+
           keyPressed = true;
           setTimeout(function() {
             axepick.play();
@@ -128,7 +138,11 @@ $(document).on("keydown", function(e) {
    keyPressed = false;
     });
 
+    $(document).on("keyup", function(event) {
+      lastEvent = null;
+   });
 
+// wey audio
     var wey = document.createElement('audio');
     wey.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/no-mames-wey.mp3');
     $.get();
@@ -158,7 +172,6 @@ $(document).on("keydown", function(e) {
 // great wall
            var greatWall = document.createElement('audio');
            greatWall.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/great-wall.mp3');
-           $.get();
 
            $(document).on("keydown", function(e) {
 
@@ -173,7 +186,7 @@ $(document).on("keydown", function(e) {
                 keyPressed = true;
                 setTimeout(function() {
                   greatWall.play();
-                  greatWall.volume = (40 / 100);
+                  greatWall.volume = (70 / 100);
                   greatWall.playbackRate= 1.5;
 
               }, 10);
