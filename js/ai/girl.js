@@ -9,10 +9,18 @@
 
         $('#btt').on("click", function(e) {
 
+        var keyPressed = false;
 
-          $(document).on("keydown", function(e) {
+        var lastEvent;
 
-            var keyPressed = false;
+
+          $(document).on("keydown", function(event) {
+            if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                   return;
+               }
+               lastEvent = event;
+
+
 
             if (e.keyCode == 83 && ! keyPressed) {
 
@@ -23,7 +31,7 @@
 
 
             rN = Math.floor(Math.random() * 100);
-            console.log(rN);
+            console.log('atention!:  ',rN);
 
             var or = Math.ceil(Math.random() * 2) - 1;
             console.log('or: ',or);
@@ -157,6 +165,12 @@
       }, randomTime);
       }
       }
+
+
+                      $(document).on("keyup", function(event) {
+                        lastEvent = null;
+
+        });
 });
 });
 };

@@ -6,6 +6,7 @@
 
     Sound.prototype.startGame = function() {
 
+
       var keyPressed = false;
 
       var audioElement = document.createElement('audio');
