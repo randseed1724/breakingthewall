@@ -19,18 +19,25 @@
 
     var keyPressed = false;
 
-
-        $(document).on("keypress", function(e) {
-
+    var lastEvent;
 
 
-        var x = e.keyCode;
+
+        $(document).on("keydown", function(event) {
+          if (lastEvent && lastEvent.keyCode == event.keyCode) {
+            console.log('hELLO');
+                 return;
+             }
+             lastEvent = event;
+
+
+        var x = event.keyCode;
         if (x == 37 || x == 38 || x == 39 || x == 40) {
           before.removeClass('mexican');
-}
+        }
 
 
-//obstacle 1 girl
+//obstacle 2 POLICE
 
         if (move.hasClass("inLove") === true) {
           return;
@@ -38,20 +45,20 @@
 
 //right key
 
-        if (e.keyCode == 39 && ! keyPressed) {
+        if (event.keyCode == 39 && ! keyPressed) {
           if (direction >= 79) {
             move.addClass("mexican");
             return;
           }
             if (direction < 79) {
+            keyPressed = true;
             direction += 9;
             move = $("#grid"+ direction);
             move.addClass("m-right");
             }
 
-            keyPressed = true;
-
             setTimeout(function() {
+            move.addClass("mexican");
             move.removeClass("m-right");
 
             before = move;
@@ -61,7 +68,7 @@
 
 //left key
 
-        if (e.keyCode == 37 && ! keyPressed) {
+        if (event.keyCode == 37 && ! keyPressed) {
           if (direction < 8 ) {
             move.addClass("mexican");
             return;
@@ -76,7 +83,7 @@
 
             setTimeout(function() {
             move.removeClass("m-left");
-            // move.removeClass("mexican-right");
+            move.addClass("mexican");
 
 
             before = move;
@@ -86,18 +93,15 @@
 
 //key 40 hide
 
-        if (e.keyCode == 40 && ! keyPressed) {
-          // if (direction < 2 ) {
-          //   move.addClass("trump");
-          //   return;
-          // }
-            // if (direction > 2) {
+        if (event.keyCode == 40 && ! keyPressed) {
+
+            keyPressed = true;
+
             direction += 1;
             move = $("#grid"+ direction);
             move.addClass("m-hide");
             // }
 
-            keyPressed = true;
 
             setTimeout(function() {
             move.removeClass("m-hide");
@@ -113,7 +117,7 @@
 
 //Breaking Bricks
 // key up
-      if (e.keyCode == 38 && ! keyPressed) {
+      if (event.keyCode == 38 && ! keyPressed) {
         keyPressed = true;
         move.removeClass("mexican");
         move.addClass("mm1");
@@ -147,29 +151,21 @@
       }
     });
 
-
-
-
-
 //KEY UP
 
 
-    $(document).on("keyup", function(e) {
-             if (e.keyCode == 39 ) {
+    $(document).on("keyup", function(event) {
+      lastEvent = null;
+
+             if (event.keyCode == 39 ) {
            move.addClass("mexican");
-           console.log('KEY UP:',move);
-     }
-     });
 
-     $(document).on("keyup", function(e) {
-              if (e.keyCode == 37 ) {
+              if (event.keyCode == 37 ) {
             move.addClass("mexican");
-            console.log('KEY UP:',move);
       }
-      });
-
-
-  };
+    }
+  });
+};
 
 // DONT DELATE THIS EVER  element.parentNode.children would be all siblings.
 // DONT DELATE THIS EVER  nextElementSibling and previousElementSibling will get you the next/prev siblings

@@ -1,6 +1,5 @@
 
 
-
     function GameKeyPlayer1(){
     }
 
@@ -9,7 +8,6 @@
   GameKeyPlayer1.prototype.controlPlayer1 = function() {
 
 // movement
-    var previous;
     var direction = 1 ;
 
     var start = $("#grid"+ direction);
@@ -19,15 +17,21 @@
 
     var keyPressed = false;
 
+    var lastEvent;
 
 
 
-        $(document).on("keypress", function(e) {
-          console.log(e.keypress);
+
+        $(document).on("keydown", function(event) {
+          if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                 return;
+             }
+             lastEvent = event;
 
 
-        var x = e.keyCode;
-        if (x == 97 || x == 100 || x == 115 || x == 119) {
+
+        var x = event.keyCode;
+        if (x == 65 || x == 68 || x == 83 || x == 87) {
           before.removeClass('trump');
         }
 
@@ -40,27 +44,24 @@
 
 //right key
 
-        if (e.keyCode == 100 && ! keyPressed) {
-          if (direction >= 97) {
+        if (event.keyCode == 68 && ! keyPressed) {
+          if (direction >= 65) {
             move.addClass("trump");
             return;
           }
 
-            if (direction < 97) {
-            // previous = move;
-            // previous.addClass("trump-move-right");
+            if (direction < 65) {
 
+            keyPressed = true;
             direction += 9;
             move = $("#grid"+ direction);
             move.addClass("trump-right");
             }
 
-            keyPressed = true;
-            // before.removeClass("trump-right");
-
             setTimeout(function() {
+            move.addClass("trump");
             move.removeClass("trump-right");
-            // previous.removeClass("trump-move-right");
+
 
             before = move;
             keyPressed = false;
@@ -69,7 +70,7 @@
 
 //left key
 
-        if (e.keyCode == 97 && ! keyPressed) {
+        if (event.keyCode == 65 && ! keyPressed) {
           if (direction < 2 ) {
             move.addClass("trump");
             return;
@@ -83,8 +84,8 @@
             keyPressed = true;
 
             setTimeout(function() {
+            move.addClass("trump");
             move.removeClass("trump-left");
-            // move.removeClass("trump-right");
 
 
             before = move;
@@ -92,14 +93,10 @@
           }, 500);
 }
 
-//key 119 jump
+//key 87 jump
 
-        if (e.keyCode == 119 && !keyPressed) {
-          // if (direction < 2 ) {
-          //   move.addClass("trump");
-          //   return;
-          // }
-            // if (direction > 2) {
+        if (event.keyCode == 87 && !keyPressed) {
+
             keyPressed = true;
 
             move.removeClass("trump");
@@ -126,7 +123,7 @@
 
 //Dropping Bricks
 // key down
-      if (e.keyCode == 115 && ! keyPressed) {
+      if (event.keyCode == 83 && ! keyPressed) {
         keyPressed = true;
         move.removeClass("trump");
         move.addClass("trump-brick");
@@ -146,30 +143,25 @@
        keyPressed = false;
      }, 500);
       }
-      $(document).off('click', function(e) {return;});
-
-
-          $(document).on("keyup", function(e) {
-                   if (e.keyCode == 68 ) {
-                       move.addClass("trump");
-
-           }
-           });
-
-           $(document).on("keyup", function(e) {
-                    if (e.keyCode == 65 ) {
-                  move.addClass("trump");
-            }
-            });
     });
 
 
 //KEY UP
 
 
+    $(document).on("keyup", function(event) {
+      lastEvent = null;
 
 
-  };
+             if (event.keyCode == 68 ) {
+                 move.addClass("trump");
+
+                 if (event.keyCode == 65 ) {
+               move.addClass("trump");
+         }
+       }
+  });
+};
 
 // DONT DELATE THIS EVER  element.parentNode.children would be all siblings.
 // DONT DELATE THIS EVER  nextElementSibling and previousElementSibling will get you the next/prev siblings
