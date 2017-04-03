@@ -20,10 +20,8 @@
                }
                lastEvent = event;
 
-               console.log('YEARS');
 
             if (event.keyCode == 83 && ! keyPressed) {
-
 
 
             var runFromRight = 73 ;
@@ -35,7 +33,6 @@
 
 
 //APPEAR FROM RIGHT
-// if (rN >= 4800 && or === 1 && !keyPressed) {
 
             if (rN >= 90 && or === 0 ) {
               keyPressed = true;
@@ -44,7 +41,6 @@
 
 
             setTimeout(function() {
-
 
               var c = 0;
               if (c !==0) {
@@ -71,8 +67,6 @@
                             {
 
                               clearInterval(myInterval);
-
-
 
                               move.addClass('inLove');
                               move.removeClass('girlFromRight');
@@ -157,7 +151,7 @@
                   if (c == 9){
                     clearInterval(myInterval);
                   }
-                  }, 300);
+                }, 400);
 
 
       keyPressed = false;

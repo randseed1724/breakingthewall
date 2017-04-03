@@ -2,7 +2,6 @@
 
 
       function Police(){
-        console.log('Police Present');
       }
 
 
@@ -10,16 +9,20 @@
 
           $('#btt').on("click", function(e) {
 
+          var keyPressed = false;
+          var lastEvent;
 
 
-            $(document).on("keydown", function(e) {
+           $(document).on("keydown", function(event) {
+//HERE LAST EVENT
+            if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                   return;
+               }
+               lastEvent = event;
 
-              var keyPressed = false;
+              if (event.keyCode == 38 && ! keyPressed) {
+                console.log('look');
 
-
-              if (e.keyCode == 38 && ! keyPressed) {
-
-              keyPressed = true;
 
               var runFromRight = 79 ;
 
@@ -31,10 +34,11 @@
 
   //APPEAR FROM RIGHT
 
-              if (mr >= 95 && or === 0) {
+              if (mr >= 90 && or === 0) {
+              keyPressed = true;
 
 
-              randomTime = Math.ceil(Math.random() * 1000) + 2000;
+              randomTime = Math.ceil(Math.random() * 1000);
 
 
               setTimeout(function() {
@@ -53,7 +57,6 @@
                 runFromRight -= 9;
                 position = $("#grid"+ runFromRight);
                 position.addClass("policeFromRight");
-                console.log(c);
 
 
                   if (position.hasClass("mexican") === true ||
@@ -93,7 +96,7 @@
           // APPEAR FROM LEFT
                 var runFromLeft = 7 ;
 
-                if (mr >= 95 && or === 1) {
+                if (mr >= 90 && or === 1) {
 
                 randomTime = Math.ceil(Math.random() * 1000) + 2000;
 
@@ -125,6 +128,9 @@
 
                                   clearInterval(myInterval);
 
+                                  position.removeClass('mexican');
+
+
                                   position.addClass('inLove');
                                   position.removeClass('policeFromLeft');
 
@@ -140,13 +146,18 @@
                             if (c == 9){
                               clearInterval(myInterval);
                             }
-                          }, 500);
+                          }, 400);
 
 
-                var keyPressed = false;
+                 keyPressed = false;
                 }, randomTime);
                 }
-}
+                }
+
+$(document).on("keyup", function(event) {
+  lastEvent = null;
+
+});
           });
           });
           };
