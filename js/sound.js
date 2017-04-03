@@ -149,7 +149,7 @@
 // wey audio
     var wey = document.createElement('audio');
     wey.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/no-mames-wey.mp3');
-    $.get();
+
 
     $(document).on("keydown", function(e) {
 
@@ -184,6 +184,10 @@
            $(document).on("keydown", function(e) {
 
              if (e.keyCode == 83) {
+               if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                      return;
+                  }
+                  lastEvent = event;
 
            //HERE LAST EVENT
                              if (lastEvent && lastEvent.keyCode == event.keyCode) {

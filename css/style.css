@@ -552,7 +552,7 @@ li {
 
 }
 .policeFromLeft {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/girl-right.png');
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/police-right.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -563,7 +563,7 @@ li {
 }
 
 .policeFromRight {
-    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/girl-left.png');
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/police-left.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

@@ -45,7 +45,6 @@
 // Music if mexican wins
                             var mWins = document.createElement('audio');
                             mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
-                            $.get();
 
                                    mWins.play();
                                    mWins.volume = (70 / 100);
@@ -67,7 +66,6 @@
   // Music if t wins
                                   var tWins = document.createElement('audio');
                                   tWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/again.mp3');
-                                  $.get();
 
                                          tWins.play();
                                          tWins.volume = (70 / 100);
