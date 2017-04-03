@@ -25,7 +25,6 @@
 
         $(document).on("keydown", function(event) {
           if (lastEvent && lastEvent.keyCode == event.keyCode) {
-            console.log('hELLO');
                  return;
              }
              lastEvent = event;

@@ -10,39 +10,37 @@
         $('#btt').on("click", function(e) {
 
         var keyPressed = false;
-
         var lastEvent;
 
 
           $(document).on("keydown", function(event) {
+//HERE LAST EVENT
             if (lastEvent && lastEvent.keyCode == event.keyCode) {
                    return;
                }
                lastEvent = event;
 
+               console.log('YEARS');
 
+            if (event.keyCode == 83 && ! keyPressed) {
 
-            if (e.keyCode == 83 && ! keyPressed) {
-
-            keyPressed = true;
 
 
             var runFromRight = 73 ;
 
 
             rN = Math.floor(Math.random() * 100);
-            console.log('atention!:  ',rN);
 
             var or = Math.ceil(Math.random() * 2) - 1;
-            console.log('or: ',or);
 
 
 //APPEAR FROM RIGHT
 // if (rN >= 4800 && or === 1 && !keyPressed) {
 
-            if (rN >= 95 && or === 0 ) {
+            if (rN >= 90 && or === 0 ) {
+              keyPressed = true;
 
-            randomTime = Math.ceil(Math.random() * 1000) + 2000;
+            randomTime = Math.ceil(Math.random() * 1000);
 
 
             setTimeout(function() {
@@ -94,7 +92,7 @@
                       }, 400);
 
 
-                       keyPressed = false;
+                      keyPressed = false;
 
             }, randomTime);
 }
@@ -103,11 +101,12 @@
       var runFromLeft = 1 ;
       // if (rN >= 4800 && or === 1 && !keyPressed) {
 
-      if (rN >= 95 && or === 1) {
+      if (rN >= 90 && or === 1) {
+        keyPressed = true;
 
 
 
-      randomTime = Math.ceil(Math.random() * 1000) + 2000;
+      randomTime = Math.ceil(Math.random() * 1000);
 
 
       setTimeout(function() {

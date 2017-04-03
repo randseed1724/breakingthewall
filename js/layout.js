@@ -48,7 +48,7 @@
                             $.get();
 
                                    mWins.play();
-                                   mWins.volume = (80 / 100);
+                                   mWins.volume = (70 / 100);
 
     }
 
@@ -70,7 +70,7 @@
                                   $.get();
 
                                          tWins.play();
-                                         tWins.volume = (80 / 100);
+                                         tWins.volume = (70 / 100);
     }
     $(document).on("keyup", function(event) {
       lastEvent = null;
