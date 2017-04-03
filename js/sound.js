@@ -103,7 +103,7 @@
 //Bricks sounds
       $(document).on("keydown", function(event) {
 
-        if (  stopBrick == 1) {
+        if (  stop == 1) {
           return;
         }
 
@@ -118,8 +118,7 @@
               setTimeout(function() {
                 building.play();
             }, 500);
-       }
-       keyPressed = false;
+
 
 // I'm  going to build a great wall
        random = Math.floor(Math.random() * 100);
@@ -134,8 +133,9 @@
 
           }, 10);
           }
-          keyPressed = false;
-        });
+        }
+        keyPressed = false;
+              });
 
 
 
@@ -146,7 +146,11 @@
 
   $(document).on("keydown", function(event) {
 
+console.log("stop",stop);
 
+    if (  stop == 1) {
+      return;
+    }
 
     if (event.keyCode == 38 && ! keyPressed) {
 //HERE LAST EVENT
@@ -172,6 +176,9 @@
 
 
     $(document).on("keydown", function(event) {
+      if (  stop == 1) {
+        return;
+      }
 
       if (event.keyCode == 40 && ! keyPressed) {
 //HERE LAST EVENT

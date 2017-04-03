@@ -66,7 +66,7 @@
                       position.hasClass("mm2") === true ||
                       position.hasClass("mm3") === true )
                                       {
-
+                                        stop = 1;
 
                                         clearInterval(myInterval);
 
@@ -78,6 +78,7 @@
                                         setTimeout(function() {
                                         position.removeClass('mexInjured');
                                         position.addClass('mexican');
+                                        stop = 0;
                                         }, 3000);
                                   }
 
@@ -125,6 +126,7 @@
                             position.hasClass("mm2") === true ||
                             position.hasClass("mm3") === true )
                                 {
+                                  stop = 1;
 
                                   clearInterval(myInterval);
 
@@ -137,6 +139,8 @@
                                   setTimeout(function() {
                                   position.removeClass('mexInjured');
                                   position.addClass('mexican');
+                                  stop = 0;
+
                                   }, 3000);
 
                             }

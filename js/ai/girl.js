@@ -1,4 +1,4 @@
-var stopBrick = 0;
+var stop = 0;
 
 
 
@@ -66,7 +66,7 @@ var stopBrick = 0;
                             move.hasClass("trump-brick-2") === true ||
                             move.hasClass("trump-brick-3") === true )
                             {
-                              stopBrick = 1;
+                              stop = 1;
                               clearInterval(myInterval);
 
                               move.addClass('inLove');
@@ -75,7 +75,7 @@ var stopBrick = 0;
                               setTimeout(function() {
                               move.removeClass('inLove');
                               move.addClass('trump');
-                              stopBrick = 0;
+                              stop = 0;
                               }, 3000);
 
                         }
@@ -130,7 +130,7 @@ var stopBrick = 0;
                       move.hasClass("trump-brick-2") === true ||
                       move.hasClass("trump-brick-3") === true )
                       {
-                        stopBrick = 1;
+                        stop = 1;
 
 
                         clearInterval(myInterval);
@@ -142,7 +142,7 @@ var stopBrick = 0;
                         setTimeout(function() {
                         move.removeClass('inLove');
                         move.addClass('trump');
-                        stopBrick = 0;
+                        stop = 0;
 
                         }, 3000);
 
