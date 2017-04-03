@@ -96,16 +96,23 @@
       var building = document.createElement('audio');
       building.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/building-wall.wav');
 
+       var greatWall = document.createElement('audio');
+       greatWall.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/great-wall.mp3');
 
-//BUILDING T
+
+//Bricks sounds
       $(document).on("keydown", function(event) {
+
+        if (  stopBrick == 1) {
+          return;
+        }
 
         if (event.keyCode == 83 && ! keyPressed) {
           //HERE LAST EVENT
-                        if (lastEvent && lastEvent.keyCode == event.keyCode) {
-                               return;
-                           }
-                           lastEvent = event;
+                if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                       return;
+                   }
+                   lastEvent = event;
 
               keyPressed = true;
               setTimeout(function() {
@@ -114,7 +121,20 @@
        }
        keyPressed = false;
 
+// I'm  going to build a great wall
+       random = Math.floor(Math.random() * 100);
 
+          if (random >= 98 ) {
+
+            keyPressed = true;
+            setTimeout(function() {
+              greatWall.play();
+              greatWall.volume = (80 / 100);
+              greatWall.playbackRate= 1.5;
+
+          }, 10);
+          }
+          keyPressed = false;
         });
 
 
@@ -163,7 +183,7 @@
 
         random = Math.floor(Math.random() * 100);
 
-       if (random >= 92 ) {
+       if (random >= 60 ) {
 
          keyPressed = true;
          setTimeout(function() {
@@ -176,43 +196,6 @@
      }
 
            });
-
-// great wall
-           var greatWall = document.createElement('audio');
-           greatWall.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/great-wall.mp3');
-
-           $(document).on("keydown", function(event) {
-
-             if (event.keyCode == 83) {
-               if (lastEvent && lastEvent.keyCode == event.keyCode) {
-                      return;
-                  }
-                  lastEvent = event;
-
-           //HERE LAST EVENT
-                             if (lastEvent && lastEvent.keyCode == event.keyCode) {
-                                    return;
-                                }
-                                lastEvent = event;
-
-
-               random = Math.floor(Math.random() * 100);
-
-              if (random >= 10 ) {
-
-                keyPressed = true;
-                setTimeout(function() {
-                  greatWall.play();
-                  greatWall.volume = (80 / 100);
-                  greatWall.playbackRate= 1.5;
-
-              }, 10);
-              }
-              keyPressed = false;
-            }
-
-                  });
-
 
                 $(document).on("keyup", function(event) {
                   lastEvent = null;

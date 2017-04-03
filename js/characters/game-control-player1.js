@@ -21,7 +21,6 @@
 
 
 
-
         $(document).on("keydown", function(event) {
 //HERE LAST EVENT
           if (lastEvent && lastEvent.keyCode == event.keyCode) {

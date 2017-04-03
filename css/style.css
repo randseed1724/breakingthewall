@@ -166,6 +166,7 @@ li {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+        visibility: visible;
 }
 
 .trump-jump {
