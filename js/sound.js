@@ -83,7 +83,7 @@
 
 // sounds controls
 
-      $('#btt').on("click", function(e) {
+      $('#btt').on("click", function(event) {
         audioElement.pause();
         // audioElement2.play();
 
@@ -98,9 +98,9 @@
 
 
 //BUILDING T
-      $(document).on("keydown", function(e) {
+      $(document).on("keydown", function(event) {
 
-        if (e.keyCode == 83 && ! keyPressed) {
+        if (event.keyCode == 83 && ! keyPressed) {
           //HERE LAST EVENT
                         if (lastEvent && lastEvent.keyCode == event.keyCode) {
                                return;
@@ -124,11 +124,11 @@
   var axepick = document.createElement('audio');
   axepick.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/axepick.wav');
 
-  $(document).on("keydown", function(e) {
+  $(document).on("keydown", function(event) {
 
 
 
-    if (e.keyCode == 38 && ! keyPressed) {
+    if (event.keyCode == 38 && ! keyPressed) {
 //HERE LAST EVENT
       if (lastEvent && lastEvent.keyCode == event.keyCode) {
              return;
@@ -151,9 +151,9 @@
     wey.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/no-mames-wey.mp3');
 
 
-    $(document).on("keydown", function(e) {
+    $(document).on("keydown", function(event) {
 
-      if (e.keyCode == 40 && ! keyPressed) {
+      if (event.keyCode == 40 && ! keyPressed) {
 //HERE LAST EVENT
               if (lastEvent && lastEvent.keyCode == event.keyCode) {
                      return;
@@ -181,9 +181,9 @@
            var greatWall = document.createElement('audio');
            greatWall.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/great-wall.mp3');
 
-           $(document).on("keydown", function(e) {
+           $(document).on("keydown", function(event) {
 
-             if (e.keyCode == 83) {
+             if (event.keyCode == 83) {
                if (lastEvent && lastEvent.keyCode == event.keyCode) {
                       return;
                   }
@@ -198,7 +198,7 @@
 
                random = Math.floor(Math.random() * 100);
 
-              if (random >= 99 ) {
+              if (random >= 10 ) {
 
                 keyPressed = true;
                 setTimeout(function() {

@@ -72,11 +72,11 @@
 
                                         position.removeClass('mexican');
 
-                                        position.addClass('inLove');
+                                        position.addClass('mexInjured');
                                         position.removeClass('policeFromRight');
 
                                         setTimeout(function() {
-                                        position.removeClass('inLove');
+                                        position.removeClass('mexInjured');
                                         position.addClass('mexican');
                                         }, 3000);
                                   }
@@ -131,11 +131,11 @@
                                   position.removeClass('mexican');
 
 
-                                  position.addClass('inLove');
+                                  position.addClass('mexInjured');
                                   position.removeClass('policeFromLeft');
 
                                   setTimeout(function() {
-                                  position.removeClass('inLove');
+                                  position.removeClass('mexInjured');
                                   position.addClass('mexican');
                                   }, 3000);
 

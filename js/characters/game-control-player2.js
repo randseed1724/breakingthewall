@@ -38,7 +38,7 @@
 
 //obstacle 2 POLICE
 
-        if (move.hasClass("inLove") === true) {
+        if (move.hasClass("mexInjured") === true) {
           return;
         }
 
