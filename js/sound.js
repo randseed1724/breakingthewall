@@ -97,10 +97,16 @@
       building.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/building-wall.wav');
 
 
-
+//BUILDING T
       $(document).on("keydown", function(e) {
 
         if (e.keyCode == 83 && ! keyPressed) {
+          //HERE LAST EVENT
+                        if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                               return;
+                           }
+                           lastEvent = event;
+
               keyPressed = true;
               setTimeout(function() {
                 building.play();
@@ -117,13 +123,13 @@
 //axepick audio
   var axepick = document.createElement('audio');
   axepick.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/axepick.wav');
-  $.get();
 
   $(document).on("keydown", function(e) {
 
 
 
     if (e.keyCode == 38 && ! keyPressed) {
+//HERE LAST EVENT
       if (lastEvent && lastEvent.keyCode == event.keyCode) {
              return;
          }
@@ -138,9 +144,7 @@
    keyPressed = false;
     });
 
-    $(document).on("keyup", function(event) {
-      lastEvent = null;
-   });
+
 
 // wey audio
     var wey = document.createElement('audio');
@@ -150,7 +154,11 @@
     $(document).on("keydown", function(e) {
 
       if (e.keyCode == 40 && ! keyPressed) {
-
+//HERE LAST EVENT
+              if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                     return;
+                 }
+                 lastEvent = event;
 
 
         random = Math.floor(Math.random() * 100);
@@ -177,6 +185,11 @@
 
              if (e.keyCode == 83) {
 
+           //HERE LAST EVENT
+                             if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                                    return;
+                                }
+                                lastEvent = event;
 
 
                random = Math.floor(Math.random() * 100);
@@ -186,7 +199,7 @@
                 keyPressed = true;
                 setTimeout(function() {
                   greatWall.play();
-                  greatWall.volume = (70 / 100);
+                  greatWall.volume = (80 / 100);
                   greatWall.playbackRate= 1.5;
 
               }, 10);
@@ -196,17 +209,8 @@
 
                   });
 
-//Player 2 wins
-                //
-                //   var mWins = document.createElement('audio');
-                //   mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
-                //   $.get();
-                //
-                //          mWins.pause();
-                // var playMexicanMusic =  mWins.play();
-                //
-                //          mWins.volume = (20 / 100);
 
-
-
+                $(document).on("keyup", function(event) {
+                  lastEvent = null;
+               });
   };

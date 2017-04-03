@@ -27,10 +27,18 @@
   };
 
   Layout.prototype.Win = function() {
+    var lastEvent;
+    var count = 0;
 
     $(document).on("keydown", function(e) {
 
-    if($('.column').children('.block:visible').length === 0 && $('#grid80:visible').length === 1 && e.keyCode == 38) {
+    if($('.column').children('.block:visible').length === 0 && $('#grid80:visible').length === 1 && e.keyCode == 38 && count === 0) {
+//HERE LAST EVENT
+            if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                   return;
+               }
+               lastEvent = event;
+     count++;
       $("#win").show();
       $("#tittle-2").text("Congratulations mexican you win!");
 
@@ -40,23 +48,33 @@
                             $.get();
 
                                    mWins.play();
-                                   mWins.volume = (20 / 100);
+                                   mWins.volume = (80 / 100);
 
     }
 
 
-    if($('.column').children('.block:visible').length === 45 && e.keyCode == 83) {
+    if($('.column').children('.block:visible').length === 45 && e.keyCode == 83 && count === 0) {
+      //HERE LAST EVENT
+                  if (lastEvent && lastEvent.keyCode == event.keyCode) {
+                         return;
+                     }
+                     lastEvent = event;
+                     count++;
+
       $("#win").show();
       $("#tittle-2").text("Congratulations Trump you win!");
 
-      // Music if mexican wins
+  // Music if t wins
                                   var tWins = document.createElement('audio');
                                   tWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/again.mp3');
                                   $.get();
 
                                          tWins.play();
-                                         tWins.volume = (30 / 100);
+                                         tWins.volume = (80 / 100);
     }
+    $(document).on("keyup", function(event) {
+      lastEvent = null;
+   });
   });
   };
 
