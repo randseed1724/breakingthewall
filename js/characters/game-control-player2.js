@@ -18,15 +18,12 @@
     var move = $("#grid"+ direction);
 
     var keyPressed = false;
-
     var lastEvent;
-    var extraSpeed = 0;
     var speed1 = 100;
     var speed2 = 200;
     var speed3 = 300;
+    var bounceBack = 0;
     var speedCounter = 0;
-
-
 
         $(document).on("keydown", function(event) {
           if (lastEvent && lastEvent.keyCode == event.keyCode) {
@@ -54,32 +51,54 @@
             return;
           }
             if (direction < 79) {
+            move.removeClass("mexican-hot");
+            move.removeClass("mexican");
+            move.removeClass("mm3");
+
+
+
             keyPressed = true;
             direction += 9;
             move = $("#grid"+ direction);
             move.addClass("m-right");
-            }
-            if (move.hasClass("spicy") === true ) {
-              if (speedCounter === 3 ){
-                return;
-              }
-              speedCounter++;
-              console.log(speedCounter);
-              move.removeClass("spicy");
-              extraSpeed = 10;
-              setTimeout(function() {
-              extraSpeed = 0;
-
-            }, 5000);
             }
 
             setTimeout(function() {
             move.addClass("mexican");
             move.removeClass("m-right");
 
+            if (move.hasClass("spicy") === true ) {
+              move.removeClass("spicy");
+              move.removeClass("mexican");
+              move.addClass("mexican-hot");
+
+            if (speedCounter < 1) {
+               console.log('speedCounter',speedCounter);
+
+
+               speed1 = 50;
+               speed2 = 100;
+               speed3 = 150;
+               speedCounter++;
+               console.log("speedCounter",speedCounter);
+
+              setTimeout(function() {
+                 speed1 = 100;
+                 speed2 = 200;
+                 speed3 = 300;
+                 speedCounter = 0;
+                 move.removeClass("mexican-hot");
+                 move.addClass("mexican");
+
+              }, 6000);
+            }
+          }
+
             before = move;
             keyPressed = false;
-          }, 500);
+
+            }, 500);
+
           }
 
 //left key
@@ -90,31 +109,50 @@
             return;
           }
             if (direction > 7) {
+              move.removeClass("mexican-hot");
+              move.removeClass("mexican");
+              move.removeClass("mm3");
+
             direction -= 9;
             move = $("#grid"+ direction);
             move.addClass("m-left");
+            move.removeClass( "mm3" );
+
             }
-
-            if (move.hasClass("spicy") === true ) {
-              if (speedCounter === 3 ){
-                return;
-              }
-              speedCounter++;
-              console.log(speedCounter);
-              move.removeClass("spicy");
-              extraSpeed = 10;
-
-              setTimeout(function() {
-              extraSpeed = 0;
-
-              }, 5000);
-            }
-
             keyPressed = true;
 
             setTimeout(function() {
             move.removeClass("m-left");
+            move.removeClass("mexican-hot");
+
             move.addClass("mexican");
+
+            if (move.hasClass("spicy") === true ) {
+              move.removeClass("spicy");
+              move.removeClass("mexican");
+              move.addClass("mexican-hot");
+
+            if (speedCounter < 1) {
+               console.log('speedCounter',speedCounter);
+
+
+               speed1 = 50;
+               speed2 = 100;
+               speed3 = 150;
+               speedCounter++;
+               console.log("speedCounter",speedCounter);
+
+              setTimeout(function() {
+                 speed1 = 100;
+                 speed2 = 200;
+                 speed3 = 300;
+                 speedCounter = 0;
+                 move.removeClass("mexican-hot");
+                 move.addClass("mexican");
+
+              }, 6000);
+            }
+          }
 
 
             before = move;
@@ -151,18 +189,15 @@
     if (event.keyCode == 38 && ! keyPressed) {
 
         keyPressed = true;
-        move.removeClass("mexican");
         move.addClass("mm1");
 
         setTimeout(function() { move.removeClass("mm1");
         move.addClass( "mm2" );
-      }, speed1 -= extraSpeed );
+      }, speed1);
 console.log("speed1",speed1);
-console.log("extraSpeed1",extraSpeed);
-
         setTimeout(function() { move.removeClass("mm2");
         move.addClass( "mm3" );
-      }, speed2 -= extraSpeed );
+     }, speed2);
       console.log("speed2",speed2);
 
       setTimeout(function() { move.removeClass("mm3");
@@ -170,19 +205,22 @@ console.log("extraSpeed1",extraSpeed);
       var sky = "<div class='sky' id='sky_"+ newSky +"' >";
 
   if (move.prevAll('.block:visible')) {
-       move.addClass( "mexican" );
+    move.addClass( "mm3" );
        move.prevAll('.block:visible:first').hide();
+       setTimeout(function() {
+         move.removeClass( "mm3" );
+         move.addClass( "mexican" );
+       }, 200);
+
      }
 
   if (  move.siblings().length < 13) {
        move.parent().prepend(sky);
      }
-     else {
-       move.addClass( "mexican" );
-     }
+
 
        keyPressed = false;
-     }, speed3 -= extraSpeed );
+     }, speed3);
      console.log("speed3",speed3);
 
       }

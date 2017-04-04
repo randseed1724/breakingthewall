@@ -506,6 +506,14 @@ li {
     position: relative;
     bottom: 6em;
 }
+.mexican-hot {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mexican-hot.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 6em;
+}
 /* Mexican Right */
 .m-right {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/m-right.png');
