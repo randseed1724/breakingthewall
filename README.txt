@@ -1,17 +1,14 @@
-Braking the Wall
+Game: Braking the Wall
+
+This game is intelectual property of Alejandro Jimenez Dominguez,
 
 
-Game boss or character laughter SOUND ATTRIBUTE TO: lalazzylee1   https://www.freesound.org/s/322459/
+Copyright/Attribution Notice: 
+
+Thank you to IronHack's TA Nick and special thanks to Kaysser, who tough me how to structure my files and helped me a lot with his advice.
 
 Layout Author:  bevouliin.com
 Cactus Author: bevouliin.com
 PickAxe: bevouliin.com
 
-
-Copyright/Attribution Notice: 
-"A Journey Awaits" by Pierre Bondoerffer (@pbondoer)
-
-Attribution Instructions: 
-Please credit me as FoxSynergy. If you let me know what you're working on I'd get a big kick out of it and also link to and promote your project if you like. Either way, thanks!
-
-police truck: Chupup Games
+Music: "A Journey Awaits" by Pierre Bondoerffer (@pbondoer)

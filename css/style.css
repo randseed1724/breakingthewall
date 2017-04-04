@@ -589,6 +589,14 @@ li {
     position: relative;
     bottom: 8em;
 }
+.spicy {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/spicy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 2em;
+}
 
 .m-hide {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/mexican-hide.png');

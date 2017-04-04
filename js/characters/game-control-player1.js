@@ -132,11 +132,11 @@
 
         setTimeout(function() { move.removeClass("trump-brick");
         move.addClass( "trump-brick-2" );
-      }, 50);
+      }, 100);
 
         setTimeout(function() { move.removeClass("trump-brick-2");
         move.addClass( "trump-brick-3" );
-      }, 150);
+      }, 200);
 
         setTimeout(function() { move.removeClass("trump-brick-3");
        move.addClass( "trump" );

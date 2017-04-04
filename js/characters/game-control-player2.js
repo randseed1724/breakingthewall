@@ -20,6 +20,11 @@
     var keyPressed = false;
 
     var lastEvent;
+    var extraSpeed = 0;
+    var speed1 = 100;
+    var speed2 = 200;
+    var speed3 = 300;
+    var speedCounter = 0;
 
 
 
@@ -28,7 +33,6 @@
                  return;
              }
              lastEvent = event;
-
 
         var x = event.keyCode;
         if (x == 37 || x == 38 || x == 39 || x == 40) {
@@ -55,6 +59,19 @@
             move = $("#grid"+ direction);
             move.addClass("m-right");
             }
+            if (move.hasClass("spicy") === true ) {
+              if (speedCounter === 3 ){
+                return;
+              }
+              speedCounter++;
+              console.log(speedCounter);
+              move.removeClass("spicy");
+              extraSpeed = 10;
+              setTimeout(function() {
+              extraSpeed = 0;
+
+            }, 5000);
+            }
 
             setTimeout(function() {
             move.addClass("mexican");
@@ -76,6 +93,21 @@
             direction -= 9;
             move = $("#grid"+ direction);
             move.addClass("m-left");
+            }
+
+            if (move.hasClass("spicy") === true ) {
+              if (speedCounter === 3 ){
+                return;
+              }
+              speedCounter++;
+              console.log(speedCounter);
+              move.removeClass("spicy");
+              extraSpeed = 10;
+
+              setTimeout(function() {
+              extraSpeed = 0;
+
+              }, 5000);
             }
 
             keyPressed = true;
@@ -116,18 +148,22 @@
 
 //Breaking Bricks
 // key up
-      if (event.keyCode == 38 && ! keyPressed) {
+    if (event.keyCode == 38 && ! keyPressed) {
+
         keyPressed = true;
         move.removeClass("mexican");
         move.addClass("mm1");
 
         setTimeout(function() { move.removeClass("mm1");
         move.addClass( "mm2" );
-      }, 50);
+      }, speed1 -= extraSpeed );
+console.log("speed1",speed1);
+console.log("extraSpeed1",extraSpeed);
 
         setTimeout(function() { move.removeClass("mm2");
         move.addClass( "mm3" );
-      }, 100);
+      }, speed2 -= extraSpeed );
+      console.log("speed2",speed2);
 
       setTimeout(function() { move.removeClass("mm3");
       var newSky = 'newSky';
@@ -146,7 +182,9 @@
      }
 
        keyPressed = false;
-     }, 150);
+     }, speed3 -= extraSpeed );
+     console.log("speed3",speed3);
+
       }
     });
 
