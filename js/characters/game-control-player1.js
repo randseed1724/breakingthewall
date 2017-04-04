@@ -123,6 +123,8 @@
 
 //Dropping Bricks
 // key down
+
+
       if (event.keyCode == 83 && ! keyPressed) {
         keyPressed = true;
         move.removeClass("trump");
@@ -130,18 +132,18 @@
 
         setTimeout(function() { move.removeClass("trump-brick");
         move.addClass( "trump-brick-2" );
-      }, 200);
+      }, 50);
 
         setTimeout(function() { move.removeClass("trump-brick-2");
         move.addClass( "trump-brick-3" );
-      }, 300);
+      }, 150);
 
         setTimeout(function() { move.removeClass("trump-brick-3");
        move.addClass( "trump" );
        move.nextAll(':hidden:first').show();
        move.prev().prev().detach();
        keyPressed = false;
-     }, 500);
+     }, 300);
       }
     });
 

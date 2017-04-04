@@ -123,7 +123,7 @@
 // I'm  going to build a great wall
        random = Math.floor(Math.random() * 100);
 
-          if (random >= 98 ) {
+          if (random >= 96 ) {
 
             keyPressed = true;
             setTimeout(function() {
@@ -146,7 +146,6 @@
 
   $(document).on("keydown", function(event) {
 
-console.log("stop",stop);
 
     if (  stop == 1) {
       return;

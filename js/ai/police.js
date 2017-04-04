@@ -21,7 +21,6 @@
                lastEvent = event;
 
               if (event.keyCode == 38 && ! keyPressed) {
-                console.log('look');
 
 
               var runFromRight = 79 ;
@@ -34,7 +33,7 @@
 
   //APPEAR FROM RIGHT
 
-              if (mr >= 90 && or === 0) {
+              if (mr >= 95 && or === 0 && !$( ".floor" ).hasClass( "policeFromLeft") ) {
               keyPressed = true;
 
 
@@ -45,7 +44,7 @@
 
                 var c = 0;
                 if (c !==0) {
-                  move.removeClass( "girlFromRight" );
+                  move.removeClass( "policeFromRight" );
                 }
 
               var position = $("#grid"+ runFromRight);
@@ -97,7 +96,7 @@
           // APPEAR FROM LEFT
                 var runFromLeft = 7 ;
 
-                if (mr >= 90 && or === 1) {
+                if (mr >= 95 && or === 1 && !$( ".floor" ).hasClass( "policeFromRight") ) {
 
                 randomTime = Math.ceil(Math.random() * 1000) + 2000;
 

@@ -68,7 +68,6 @@
                                   tWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/again.mp3');
 
                                          tWins.play();
-                                         tWins.volume = (70 / 100);
     }
     $(document).on("keyup", function(event) {
       lastEvent = null;

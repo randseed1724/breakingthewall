@@ -123,11 +123,11 @@
 
         setTimeout(function() { move.removeClass("mm1");
         move.addClass( "mm2" );
-      }, 200);
+      }, 50);
 
         setTimeout(function() { move.removeClass("mm2");
         move.addClass( "mm3" );
-      }, 300);
+      }, 100);
 
       setTimeout(function() { move.removeClass("mm3");
       var newSky = 'newSky';
@@ -146,7 +146,7 @@
      }
 
        keyPressed = false;
-     }, 500);
+     }, 150);
       }
     });
 

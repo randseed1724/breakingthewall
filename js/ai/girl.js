@@ -32,10 +32,12 @@ var stop = 0;
 
             var or = Math.ceil(Math.random() * 2) - 1;
 
+console.log("Girl: ",rN);
+            console.log("or",or);
 
 //APPEAR FROM RIGHT
 
-            if (rN >= 90 && or === 0 ) {
+            if (rN >= 95 && or === 0 && !$( ".sky" ).hasClass( "girlFromRLeft")) {
               keyPressed = true;
 
             randomTime = Math.ceil(Math.random() * 1000);
@@ -57,7 +59,6 @@ var stop = 0;
                         runFromRight -= 9;
                         move = $("#grid"+ runFromRight);
                         move.addClass("girlFromRight");
-
 
                         if (move.hasClass("trump") === true ||
                             move.hasClass("trump-right") === true ||
@@ -95,8 +96,9 @@ var stop = 0;
 // APPEAR FROM LEFT
       var runFromLeft = 1 ;
       // if (rN >= 4800 && or === 1 && !keyPressed) {
+// console.log(!$( ".sky" ).hasClass( "girlFromRight"));
 
-      if (rN >= 90 && or === 1) {
+      if (rN >= 95 && or === 1 && !$( ".sky" ).hasClass( "girlFromRight")) {
         keyPressed = true;
 
 
