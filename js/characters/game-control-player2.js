@@ -48,6 +48,9 @@
         if (event.keyCode == 39 && ! keyPressed) {
           if (direction >= 79) {
             move.addClass("mexican");
+            if (speedCounter === 1) {
+            move.addClass("mexican-hot");
+            }
             return;
           }
             if (direction < 79) {
@@ -66,6 +69,9 @@
             setTimeout(function() {
             move.addClass("mexican");
             move.removeClass("m-right");
+            if (speedCounter === 1) {
+            move.addClass("mexican-hot");
+            }
 
             if (move.hasClass("spicy") === true ) {
               move.removeClass("spicy");
@@ -106,11 +112,15 @@
         if (event.keyCode == 37 && ! keyPressed) {
           if (direction < 8 ) {
             move.addClass("mexican");
+            if (speedCounter === 1) {
+            move.addClass("mexican-hot");
+            }
             return;
           }
             if (direction > 7) {
-              move.removeClass("mexican-hot");
               move.removeClass("mexican");
+              move.removeClass("mexican-left");
+              move.removeClass("mexican-hot");
               move.removeClass("mm3");
 
             direction -= 9;
@@ -126,6 +136,9 @@
             move.removeClass("mexican-hot");
 
             move.addClass("mexican");
+            if (speedCounter === 1) {
+            move.addClass("mexican-hot");
+            }
 
             if (move.hasClass("spicy") === true ) {
               move.removeClass("spicy");
@@ -169,6 +182,9 @@
             direction += 1;
             move = $("#grid"+ direction);
             move.addClass("m-hide");
+            move.removeClass("mexican-hot");
+            move.removeClass("mexInjured");
+
             // }
 
 
@@ -178,6 +194,10 @@
             direction -= 1;
             move = $("#grid"+ direction);
             move.addClass("mexican");
+
+            if (speedCounter === 1) {
+            move.addClass("mexican-hot");
+            }
 
             before = move;
             keyPressed = false;
@@ -234,13 +254,60 @@ console.log("speed1",speed1);
 
              if (event.keyCode == 39 ) {
            move.addClass("mexican");
+           if (speedCounter === 1) {
+           move.addClass("mexican-hot");
+           }
 
               if (event.keyCode == 37 ) {
             move.addClass("mexican");
+            if (speedCounter === 1) {
+            move.addClass("mexican-hot");
+            }
       }
     }
   });
+
+//POWER 1
+
+  $('#btt').on("click", function(e) {
+
+  $(document).on("keydown", function(event) {
+
+  ra = Math.floor(Math.random() * 100);
+ console.log("ra",ra);
+ keyPressed = false;
+  if (event.keyCode == 38 && !keyPressed && ra >= 98) {
+
+  keyPressed = true;
+
+  var grids = [$("#grid7"),
+   $("#grid16"), $("#grid25"),
+   $("#grid34"), $("#grid43"),
+   $("#grid52"), $("#grid61"),
+   $("#grid70"), $("#grid79")];
+   //
+  //  direction -= 9;
+  //  move = $("#grid"+ direction);
+
+
+   randomPlace = Math.floor(Math.random() * 9);
+
+
+
+   if (grids[randomPlace].attr('id') == move.attr('id')) {
+     console.log("working!");
+     return;
+   }
+    grids[randomPlace].addClass("spicy");
+    keyPressed = false;
+  }
+  });
+  });
+
 };
+
+
+
 
 // DONT DELATE THIS EVER  element.parentNode.children would be all siblings.
 // DONT DELATE THIS EVER  nextElementSibling and previousElementSibling will get you the next/prev siblings

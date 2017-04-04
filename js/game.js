@@ -10,7 +10,7 @@ var game = {
     this.obs1();
     this.obs2();
     this.audioStart();
-    this.power1();
+    // this.power1();
 
   },
 
