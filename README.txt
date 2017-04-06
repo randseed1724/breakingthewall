@@ -8,7 +8,7 @@ All image and sprites that are not being attributed bellow belong to my authorsh
 
 Attribution Notice: 
 
-Thank you to IronHack's TA Nick and special thanks to Kaysser, who tough me how to structure my files and helped me a lot with his advice.
+Thank you to IronHack's TA Nick and special thanks to Kaysser, who tough me how to structure my files and helped me with the function of movement.
 
 Pixel bricks: ecstaticSalamander
 

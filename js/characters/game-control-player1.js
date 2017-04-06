@@ -16,8 +16,12 @@
     var move = $("#grid"+ direction);
 
     var keyPressed = false;
-
     var lastEvent;
+    var speed1 = 100;
+    var speed2 = 200;
+    var speed3 = 300;
+    var speedCounter = 1;
+    var lockChile = 0;
 
 
 

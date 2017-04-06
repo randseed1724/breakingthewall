@@ -168,6 +168,13 @@ li {
     background-position: center;
         visibility: visible;
 }
+.t-money {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-money.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+        visibility: visible;
+}
 
 .trump-jump {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/characters/t-jump.png');
@@ -604,6 +611,13 @@ li {
     background-position: center;
     position: relative;
     bottom: 2em;
+}
+.money {
+    background-image: url('/home/alejandro/Desktop/Breaking the wall/img/money-bag.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
 }
 
 .m-hide {
