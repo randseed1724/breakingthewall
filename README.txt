@@ -1,5 +1,5 @@
 Breaking the Wall
-...or buidling it
+...or building it
 
 Call a friend and choose your character. Depending on your selection you will have to build or distroy the wall. Accomplish your task and win!
 
