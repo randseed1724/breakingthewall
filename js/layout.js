@@ -55,9 +55,9 @@
 // Music if mexican wins
                             var mWins = document.createElement('audio');
                             mWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/mariachi.mp3');
+                            mWins.volume = (30 / 100);
 
                                    mWins.play();
-                                   mWins.volume = (70 / 100);
 
     }
 

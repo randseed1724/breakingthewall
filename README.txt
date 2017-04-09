@@ -1,10 +1,31 @@
-Game: Braking the Wall
+Breaking the Wall
+...or buidling it
 
-This game is intelectual property of Alejandro Jimenez Dominguez,
+Call a friend and choose your character. Depending on your selection you will have to build or distroy the wall. Accomplish your task and win!
+
+How to play?
+
+1st Player
+Key S: Build
+Key W: Jump
+Key A: Move Left
+Key D: Move Right
+
+2nd Player
+Key Up: Destroy
+Key Down: Hide
+Key Left: Move Left
+Key Right: Move Right
+
+
+
+
 
 
 Copyright Notice:
-All image and sprites that are not being attributed bellow belong to my authorship or are public domain images and Creative Commons.
+This game is intelectual property of Alejandro Jimenez Dominguez. All images and sprites that are not being attributed bellow belong to my authorship or are public domain images and/or under Creative Commons.
+
+
 
 Attribution Notice: 
 
@@ -16,5 +37,9 @@ Layout Author:  bevouliin.com *I modified original layout to my game convinience
 PickAxe: bevouliin.com
 
 Music: "A Journey Awaits" by Pierre Bondoerffer (@pbondoer)
+
+Click sound effect called "acept": David McKee (ViRiX) soundcloud.com/virix
+
+
 
 

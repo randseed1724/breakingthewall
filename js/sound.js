@@ -38,6 +38,13 @@
 
           }, true);
 
+// Play now button effect
+
+          var clickAccept = document.createElement('audio');
+          var clickAcceptSrc = $(this).attr('data-audio-src');
+          clickAccept.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/accept.mp3');
+          clickAccept.volume = (80 / 100);
+
 
 
       var audioElement2 = document.createElement('audio');
@@ -85,9 +92,11 @@
 
       $('#btt').on("click", function(event) {
         audioElement.pause();
+        clickAccept.play();
         // audioElement2.play();
 
  });
+
 
 
 

@@ -131,9 +131,8 @@ li {
 
 .block {
     height: 11.11%;
-    width: 100%;
+    width: 101%;
     display: inline-block;
-    /*border: 1px solid green;*/
     vertical-align: top;
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/bricks.jpg');
     background-size: contain;
