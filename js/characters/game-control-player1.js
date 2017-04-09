@@ -7,21 +7,21 @@
 
   GameKeyPlayer1.prototype.controlPlayer1 = function() {
 
-// movement
-    var direction = 1 ;
 
+    var keyPressed = false;
+    var lastEvent;
+    var speed1 = 50;
+    var speed2 = 100;
+    var speed3 = 150;
+    var speedCounter = 1;
+
+
+    var direction = 1 ;
     var start = $("#grid"+ direction);
     var before = start;
     start.addClass( "trump" );  //Inicial Position
     var move = $("#grid"+ direction);
 
-    var keyPressed = false;
-    var lastEvent;
-    var speed1 = 100;
-    var speed2 = 200;
-    var speed3 = 300;
-    var speedCounter = 1;
-    var lockChile = 0;
 
 
 
@@ -136,18 +136,18 @@
 
         setTimeout(function() { move.removeClass("trump-brick");
         move.addClass( "trump-brick-2" );
-      }, 100);
+      }, speed1);
 
         setTimeout(function() { move.removeClass("trump-brick-2");
         move.addClass( "trump-brick-3" );
-      }, 200);
+      }, speed2);
 
         setTimeout(function() { move.removeClass("trump-brick-3");
        move.addClass( "trump" );
        move.nextAll(':hidden:first').show();
        move.prev().prev().detach();
        keyPressed = false;
-     }, 300);
+     }, speed3);
       }
     });
 

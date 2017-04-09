@@ -19,22 +19,18 @@
               audioElement.play();
 
               audioElement.volume = (5 / 100);
-
               setTimeout(function() {
               audioElement.volume = (15 / 100);
-            }, 500);
-
+              }, 500);
               setTimeout(function() {
               audioElement.volume = (30 / 100);
-            }, 1000);
-
-                setTimeout(function() {
-                audioElement.volume = (60 / 100);
+              }, 1000);
+              setTimeout(function() {
+              audioElement.volume = (60 / 100);
               }, 3500);
-
               setTimeout(function() {
               audioElement.volume = (55 / 100);
-            }, 6500);
+              }, 6500);
 
           }, true);
 
@@ -43,56 +39,44 @@
           var clickAccept = document.createElement('audio');
           var clickAcceptSrc = $(this).attr('data-audio-src');
           clickAccept.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/accept.mp3');
-          clickAccept.volume = (80 / 100);
-
+          clickAccept.volume = (70 / 100);
 
 
       var audioElement2 = document.createElement('audio');
       var audioElementSrc2 = $(this).attr('data-audio-src');
       audioElement2.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/Grey Sector v0_86.mp3');
-      // audioElement2.pause();
-
-      // audioElement2.addEventListener("click", function(){
 
       audioElement2.volume = (5 / 100);
-
       setTimeout(function() {
       audioElement2.volume = (10 / 100);
-    }, 2000);
-
-    setTimeout(function() {
-    audioElement2.volume = (20 / 100);
-  }, 4000);
-
+      }, 2000);
+      setTimeout(function() {
+      audioElement2.volume = (20 / 100);
+      }, 4000);
       setTimeout(function() {
       audioElement2.volume = (25 / 100);
-    }, 4000);
-
-        setTimeout(function() {
-        audioElement2.volume = (30 / 100);
+      }, 4000);
+      setTimeout(function() {
+      audioElement2.volume = (30 / 100);
       }, 6500);
-
       setTimeout(function() {
       audioElement2.volume = (40 / 100);
-    }, 8500);
-
-    setTimeout(function() {
-    audioElement2.volume = (45 / 100);
-  }, 10500);
-
-    setTimeout(function() {
-    audioElement2.volume = (50 / 100);
-  }, 13000);
-
-  setTimeout(function() {
-  audioElement2.volume = (40 / 100);
-}, 19000);
+      }, 8500);
+      setTimeout(function() {
+        audioElement2.volume = (45 / 100);
+      }, 10500);
+      setTimeout(function() {
+      audioElement2.volume = (50 / 100);
+      }, 13000);
+      setTimeout(function() {
+      audioElement2.volume = (40 / 100);
+      }, 19000);
 
 // sounds controls
 
       $('#btt').on("click", function(event) {
         audioElement.pause();
-        clickAccept.play();
+         clickAccept.play();
         // audioElement2.play();
 
  });
@@ -126,7 +110,7 @@
               keyPressed = true;
               setTimeout(function() {
                 building.play();
-            }, 500);
+            }, 300);
 
 
 // I'm  going to build a great wall
@@ -171,7 +155,7 @@
           keyPressed = true;
           setTimeout(function() {
             axepick.play();
-        }, 500);
+        }, 300);
    }
    keyPressed = false;
     });

@@ -2,27 +2,25 @@
     function GameKeyPlayer2(){
     }
 
-
-
   GameKeyPlayer2.prototype.controlPlayer2 = function() {
 
 // movement
 
-    var direction = 79 ;
+    var keyPressed = false;
+    var lastEvent;
+    var extraSpeed = 0;
+    var speedCounter = 0;
 
+    var speed1 = 50;
+    var speed2 = 100;
+    var speed3 = 150;
+
+    var direction = 79 ;
     var start = $("#grid"+ direction);
     var before = start;
     start.addClass( "mexican" );  //Inicial Position
     var move = $("#grid"+ direction);
 
-    var keyPressed = false;
-
-    var lastEvent;
-    var extraSpeed = 0;
-    var speed1 = 100;
-    var speed2 = 200;
-    var speed3 = 300;
-    var speedCounter = 0;
 
 
 
