@@ -29,7 +29,7 @@
       });
 
 
-  var play =  $("#play").click(function () {
+        $("#play").click(function () {
         $("#gameStart").hide();
         $(".main").show();
 

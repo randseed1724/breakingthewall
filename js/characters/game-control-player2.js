@@ -4,16 +4,25 @@
 
   GameKeyPlayer2.prototype.controlPlayer2 = function() {
 
-// movement
-
+// controlers
     var keyPressed = false;
     var lastEvent;
-    var extraSpeed = 0;
     var speedCounter = 0;
+    var lock = 0;
 
-    var speed1 = 50;
-    var speed2 = 100;
-    var speed3 = 150;
+
+//speed
+    var speed1 = 100;
+    var speed2 = 200;
+    var speed3 = 300;
+
+//shotcuts
+
+   //this did not work, ask for help to do this
+  //  var mexHot =  move.addClass("mexican-hot");
+  //  var mexCool = move.removeClass("mexican-hot");
+
+// start player
 
     var direction = 79 ;
     var start = $("#grid"+ direction);
@@ -58,21 +67,33 @@
             }
 
             if (move.hasClass("spicy") === true ) {
-              if (speedCounter === 3 ){
-                return;
-              }
-              speedCounter++;
-              console.log(speedCounter);
-              move.removeClass("spicy");
-              extraSpeed = 10;
-              setTimeout(function() {
-              extraSpeed = 0;
 
-            }, 5000);
+                if (speedCounter === 1 ) {
+                  move.removeClass("spicy");
+                  return;
+                }
+
+             move.removeClass("spicy");
+             speedCounter = 1;
+             speed1 = 50;
+             speed2 = 100;
+             speed3 = 150;
+
+             setTimeout(function() {
+             move.removeClass("mexican-hot");
+             speedCounter = 0;
+             speed1 = 100;
+             speed2 = 200;
+             speed3 = 300;
+             }, 5000);
             }
 
             setTimeout(function() {
             move.addClass("mexican");
+
+            if ( speedCounter === 1) {
+              move.addClass("mexican-hot");
+            }
             move.removeClass("m-right");
 
             before = move;
@@ -164,15 +185,18 @@
 
         move.addClass("mm1");
 
-        setTimeout(function() { move.removeClass("mm1");
+        setTimeout(function() {
+        move.removeClass("mm1");
         move.addClass( "mm2" );
         }, speed1 -= extraSpeed );
 
-        setTimeout(function() { move.removeClass("mm2");
+        setTimeout(function() {
+        move.removeClass("mm2");
         move.addClass( "mm3" );
         }, speed2 -= extraSpeed );
 
-        setTimeout(function() { move.removeClass("mm3");
+        setTimeout(function() {
+        move.removeClass("mm3");
         var newSky = 'newSky';
         var sky = "<div class='sky' id='sky_"+ newSky +"' >";
 
@@ -199,14 +223,25 @@
 
 
     $(document).on("keyup", function(event) {
-      lastEvent = null;
+    lastEvent = null;
 
-             if (event.keyCode == 39 ) {
-           move.addClass("mexican");
+       if (event.keyCode == 39 ) {
+       move.addClass("mexican");
+       }
 
-              if (event.keyCode == 37 ) {
-            move.addClass("mexican");
-      }
-    }
-  });
+       if (event.keyCode == 39 && speedCounter === 2) {
+       move.removeClass("mexican");
+       move.addClass("mexican-hot");
+       }
+
+       if (event.keyCode == 37 ) {
+       move.addClass("mexican");
+       }
+
+       if (event.keyCode == 37 && speedCounter === 2) {
+       move.removeClass("mexican");
+       move.addClass("mexican-hot");
+       }
+
+    });
 };
