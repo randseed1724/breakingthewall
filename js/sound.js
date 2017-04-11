@@ -78,8 +78,14 @@
         audioElement.pause();
          clickAccept.play();
         // audioElement2.play();
-
  });
+
+ $(document).keypress(function(e) {
+     if(e.which == 13) {
+       audioElement.pause();
+        clickAccept.play();
+     }
+   });
 
 
 

@@ -17,8 +17,19 @@
     $(".main").hide();
     $("#win").hide();
 
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+          $("#gameStart").hide();
+          $(".main").show();
 
-    $("#play").click(function () {
+         $(`#grid8,#grid17, #grid26, #grid35,
+           #grid44, #grid53, #grid62, #grid71, #grid80`)
+           .addClass("cactus-hide");
+        }
+      });
+
+
+  var play =  $("#play").click(function () {
         $("#gameStart").hide();
         $(".main").show();
 

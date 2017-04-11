@@ -49,12 +49,14 @@
             move.addClass("mexican");
             return;
           }
+
             if (direction < 79) {
             keyPressed = true;
             direction += 9;
             move = $("#grid"+ direction);
             move.addClass("m-right");
             }
+
             if (move.hasClass("spicy") === true ) {
               if (speedCounter === 3 ){
                 return;
@@ -79,12 +81,20 @@
           }
 
 //left key
-
         if (event.keyCode == 37 && ! keyPressed) {
-          if (direction < 8 ) {
+
+              if (direction < 8 ) {
             move.addClass("mexican");
             return;
-          }
+            }
+
+            if ( direction < 8 && speedCounter === 2) {
+            move.removeClass("mexican");
+            move.addClass("mexican-hot");
+            return;
+            }
+
+
             if (direction > 7) {
             direction -= 9;
             move = $("#grid"+ direction);
@@ -92,6 +102,7 @@
             }
 
             if (move.hasClass("spicy") === true ) {
+
               if (speedCounter === 3 ){
                 return;
               }
@@ -115,67 +126,67 @@
 
             before = move;
             keyPressed = false;
-          }, 500);
-}
+            }, 500);
+            }
 
 //key 40 hide
 
         if (event.keyCode == 40 && ! keyPressed) {
 
-            keyPressed = true;
+          keyPressed = true;
 
-            direction += 1;
-            move = $("#grid"+ direction);
-            move.addClass("m-hide");
-            // }
+          direction += 1;
+          move = $("#grid"+ direction);
+          move.addClass("m-hide");
 
+          setTimeout(function() {
+          move.removeClass("m-hide");
+          direction -= 1;
+          move = $("#grid"+ direction);
+          move.addClass("mexican");
 
-            setTimeout(function() {
-            move.removeClass("m-hide");
-            // move.removeClass("trump-right");
-            direction -= 1;
-            move = $("#grid"+ direction);
-            move.addClass("mexican");
+          if (speedCounter === 2) {
+          move.addClass("mexican-hot");
+          }
 
-            before = move;
-            keyPressed = false;
-          }, 800);
-}
+          before = move;
+          keyPressed = false;
+        }, 1000);
+      }
 
 //Breaking Bricks
 // key up
     if (event.keyCode == 38 && ! keyPressed) {
 
         keyPressed = true;
-        move.removeClass("mexican");
+        move.removeClass("mexican mexican-hot");
+
+
         move.addClass("mm1");
 
         setTimeout(function() { move.removeClass("mm1");
         move.addClass( "mm2" );
-      }, speed1 -= extraSpeed );
-console.log("speed1",speed1);
-console.log("extraSpeed1",extraSpeed);
+        }, speed1 -= extraSpeed );
 
         setTimeout(function() { move.removeClass("mm2");
         move.addClass( "mm3" );
-      }, speed2 -= extraSpeed );
-      console.log("speed2",speed2);
+        }, speed2 -= extraSpeed );
 
-      setTimeout(function() { move.removeClass("mm3");
-      var newSky = 'newSky';
-      var sky = "<div class='sky' id='sky_"+ newSky +"' >";
+        setTimeout(function() { move.removeClass("mm3");
+        var newSky = 'newSky';
+        var sky = "<div class='sky' id='sky_"+ newSky +"' >";
 
-  if (move.prevAll('.block:visible')) {
-       move.addClass( "mexican" );
-       move.prevAll('.block:visible:first').hide();
-     }
+        if (move.prevAll('.block:visible')) {
+        move.addClass( "mexican" );
+        move.prevAll('.block:visible:first').hide();
+        }
 
-  if (  move.siblings().length < 13) {
+        if (move.siblings().length < 13) {
        move.parent().prepend(sky);
-     }
-     else {
+      }
+        else {
        move.addClass( "mexican" );
-     }
+      }
 
        keyPressed = false;
      }, speed3 -= extraSpeed );
