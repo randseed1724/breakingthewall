@@ -12,7 +12,7 @@
 
       var audioElement = document.createElement('audio');
       var audioElementSrc = $(this).attr('data-audio-src');
-      audioElement.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/A Journey Awaits.mp3');
+      audioElement.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/a-Journey-awaits.mp3');
 
       // changed "load" t0 "loadeddata"
           audioElement.addEventListener("loadeddata", function(){
@@ -74,7 +74,7 @@
 
 // sounds controls
 
-      $('#btt').on("click", function(event) {
+      $('.button12').on("click", function(event) {
         audioElement.pause();
          clickAccept.play();
         // audioElement2.play();

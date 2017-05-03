@@ -1,4 +1,5 @@
 
+//code that makes the game work
 
 var game = {
   init: function () {
@@ -10,7 +11,7 @@ var game = {
     this.obs1();
     this.obs2();
     this.audioStart();
-    // this.power1();
+    this.power1();
 
   },
 
@@ -54,7 +55,9 @@ var game = {
   police.policeRun();
   },
   power1: function() {
-  var chile = new Spicy();
+  var chile = new Chile();
   chile.hot();
   },
 };
+
+// end of code that makes the game work

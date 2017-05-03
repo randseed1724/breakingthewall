@@ -8,7 +8,7 @@
 
         Girl.prototype.girlRun = function() {
 
-        $('#btt').on("click", function(e) {
+        $('.button12').on("click", function(e) {
 
         var keyPressed = false;
         var lastEvent;

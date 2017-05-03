@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: auto;
     margin-top: 6em;
     background-color: rgba(232, 208, 23, 0.83);
-    width: 235px;
+    width: 650px;
     border: 2px solid black;
     text-align: center;
     padding: 5px;
@@ -23,7 +23,6 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: 10px;
     background: transparent;
     border: none;
-    float: right;
     font-size: 12px;
     font-weight: bold;
     color: white;

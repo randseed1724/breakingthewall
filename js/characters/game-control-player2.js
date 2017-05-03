@@ -1,3 +1,5 @@
+//Exporting variables to global
+
 
     function GameKeyPlayer2(){
     }
@@ -12,6 +14,7 @@
 
 
 //speed
+    var extraSpeed = 0;
     var speed1 = 100;
     var speed2 = 200;
     var speed3 = 300;
@@ -28,7 +31,7 @@
     var start = $("#grid"+ direction);
     var before = start;
     start.addClass( "mexican" );  //Inicial Position
-    var move = $("#grid"+ direction);
+    move = $("#grid"+ direction);
 
 
 
@@ -177,12 +180,10 @@
 
 //Breaking Bricks
 // key up
-    if (event.keyCode == 38 && ! keyPressed) {
+    if (event.keyCode == 38 && !keyPressed) {
 
         keyPressed = true;
         move.removeClass("mexican mexican-hot");
-
-
         move.addClass("mm1");
 
         setTimeout(function() {
