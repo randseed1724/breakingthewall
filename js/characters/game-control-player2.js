@@ -11,17 +11,6 @@
     var lastEvent;
     var lock = 0;
 
-
-//speed
-    var extraSpeed = 0;
-
-
-//shotcuts
-
-   //this did not work, ask for help to do this
-  //  var mexHot =  move.addClass("mexican-hot");
-  //  var mexCool = move.removeClass("mexican-hot");
-
 // start player
 
     var direction = 79 ;
@@ -42,6 +31,8 @@
         var x = event.keyCode;
         if (x == 37 || x == 38 || x == 39 || x == 40) {
           before.removeClass('mexican');
+          before.removeClass('mexican-hot');
+
         }
 
 //obstacle 2 POLICE
@@ -78,22 +69,9 @@
              speed1 = speed1Fast;
              speed2 = speed2Fast;
              speed3 = speed3Fast;
-
              setTimeout(speedSlow,5000);
-
             }
-
-            setTimeout(function() {
-            moveMexican.addClass("mexican");
-
-            if ( speedCounter === 1) {
-              moveMexican.addClass("mexican-hot");
-            }
-            moveMexican.removeClass("m-right");
-
-            before = moveMexican;
-            keyPressed = false;
-          }, 500);
+            setTimeout(lookFrontMexican,500);
           }
 
 //left key
@@ -104,7 +82,7 @@
             return;
             }
 
-            if ( direction < 8 && speedCounter === 2) {
+            if ( direction < 8 && speedCounter === 1) {
             moveMexican.removeClass("mexican");
             moveMexican.addClass("mexican-hot");
             return;
@@ -119,10 +97,9 @@
 
             if (moveMexican.hasClass("spicy") === true ) {
 
-              if (speedCounter === 3 ){
+              if (speedCounter === 1 ){
                 return;
               }
-              speedCounter++;
               console.log(speedCounter);
               moveMexican.removeClass("spicy");
               extraSpeed = 10;
@@ -161,7 +138,7 @@
           moveMexican = $("#grid"+ direction);
           moveMexican.addClass("mexican");
 
-          if (speedCounter === 2) {
+          if (speedCounter === 1) {
           moveMexican.addClass("mexican-hot");
           }
 
@@ -228,7 +205,7 @@
        moveMexican.addClass("mexican");
        }
 
-       if (event.keyCode == 39 && speedCounter === 2) {
+       if (event.keyCode == 39 && speedCounter === 1) {
        moveMexican.removeClass("mexican");
        moveMexican.addClass("mexican-hot");
        }
@@ -237,7 +214,7 @@
        moveMexican.addClass("mexican");
        }
 
-       if (event.keyCode == 37 && speedCounter === 2) {
+       if (event.keyCode == 37 && speedCounter === 1) {
        moveMexican.removeClass("mexican");
        moveMexican.addClass("mexican-hot");
        }

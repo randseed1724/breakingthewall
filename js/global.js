@@ -29,5 +29,17 @@ var speedSlow = function() {
   speed1 = 100;
   speed2 = 200;
   speed3 = 300;
-  speedCounter = 0;
+};
+
+var lookFrontMexican = function() {
+
+  moveMexican.removeClass("m-right");
+  moveMexican.addClass("mexican");
+
+  if ( speedCounter === 1) {
+    moveMexican.addClass("mexican-hot");
+  }
+
+  before = moveMexican;
+  keyPressed = false;
 };
