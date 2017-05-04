@@ -1,4 +1,5 @@
 
+var moveTrump;
 
     function GameKeyPlayer1(){
     }
@@ -18,7 +19,7 @@
     var start = $("#grid"+ direction);
     var before = start;
     start.addClass( "trump" );  //Inicial Position
-    var move = $("#grid"+ direction);
+    moveTrump = $("#grid"+ direction);
 
 
 
@@ -39,7 +40,7 @@
 
 //obstacle 1 girl
 
-        if (move.hasClass("inLove") === true) {
+        if (moveTrump.hasClass("inLove") === true) {
           return;
         }
 
@@ -48,7 +49,7 @@
 
         if (event.keyCode == 68 && ! keyPressed) {
           if (direction >= 65) {
-            move.addClass("trump");
+            moveTrump.addClass("trump");
             return;
           }
 
@@ -56,16 +57,16 @@
 
             keyPressed = true;
             direction += 9;
-            move = $("#grid"+ direction);
-            move.addClass("trump-right");
+            moveTrump = $("#grid"+ direction);
+            moveTrump.addClass("trump-right");
             }
 
             setTimeout(function() {
-            move.addClass("trump");
-            move.removeClass("trump-right");
+            moveTrump.addClass("trump");
+            moveTrump.removeClass("trump-right");
 
 
-            before = move;
+            before = moveTrump;
             keyPressed = false;
           }, 500);
           }
@@ -74,23 +75,23 @@
 
         if (event.keyCode == 65 && ! keyPressed) {
           if (direction < 2 ) {
-            move.addClass("trump");
+            moveTrump.addClass("trump");
             return;
           }
             if (direction > 2) {
             direction -= 9;
-            move = $("#grid"+ direction);
-            move.addClass("trump-left");
+            moveTrump = $("#grid"+ direction);
+            moveTrump.addClass("trump-left");
             }
 
             keyPressed = true;
 
             setTimeout(function() {
-            move.addClass("trump");
-            move.removeClass("trump-left");
+            moveTrump.addClass("trump");
+            moveTrump.removeClass("trump-left");
 
 
-            before = move;
+            before = moveTrump;
             keyPressed = false;
           }, 500);
 }
@@ -101,24 +102,24 @@
 
             keyPressed = true;
 
-            move.removeClass("trump");
+            moveTrump.removeClass("trump");
 
             direction -= 1;
-            move = $("#grid"+ direction);
-            move.addClass("trump-jump");
+            moveTrump = $("#grid"+ direction);
+            moveTrump.addClass("trump-jump");
             // }
 
 
             setTimeout(function() {
-            move.removeClass("trump-jump");
-            move.removeClass("trump");
+            moveTrump.removeClass("trump-jump");
+            moveTrump.removeClass("trump");
 
-            // move.removeClass("trump-right");
+            // moveTrump.removeClass("trump-right");
             direction += 1;
-            move = $("#grid"+ direction);
-            move.addClass("trump");
+            moveTrump = $("#grid"+ direction);
+            moveTrump.addClass("trump");
 
-            before = move;
+            before = moveTrump;
             keyPressed = false;
           }, 800);
 }
@@ -129,21 +130,21 @@
 
       if (event.keyCode == 83 && ! keyPressed) {
         keyPressed = true;
-        move.removeClass("trump");
-        move.addClass("trump-brick");
+        moveTrump.removeClass("trump");
+        moveTrump.addClass("trump-brick");
 
-        setTimeout(function() { move.removeClass("trump-brick");
-        move.addClass( "trump-brick-2" );
+        setTimeout(function() { moveTrump.removeClass("trump-brick");
+        moveTrump.addClass( "trump-brick-2" );
       }, speed1);
 
-        setTimeout(function() { move.removeClass("trump-brick-2");
-        move.addClass( "trump-brick-3" );
+        setTimeout(function() { moveTrump.removeClass("trump-brick-2");
+        moveTrump.addClass( "trump-brick-3" );
       }, speed2);
 
-        setTimeout(function() { move.removeClass("trump-brick-3");
-       move.addClass( "trump" );
-       move.nextAll(':hidden:first').show();
-       move.prev().prev().detach();
+        setTimeout(function() { moveTrump.removeClass("trump-brick-3");
+       moveTrump.addClass( "trump" );
+       moveTrump.nextAll(':hidden:first').show();
+       moveTrump.prev().prev().detach();
        keyPressed = false;
      }, speed3);
       }
@@ -158,10 +159,10 @@
 
 
              if (event.keyCode == 68 ) {
-                 move.addClass("trump");
+                 moveTrump.addClass("trump");
 
                  if (event.keyCode == 65 ) {
-               move.addClass("trump");
+               moveTrump.addClass("trump");
          }
        }
   });
