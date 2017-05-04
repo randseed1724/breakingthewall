@@ -3,8 +3,6 @@
     function GameKeyPlayer1(){
     }
 
-
-
   GameKeyPlayer1.prototype.controlPlayer1 = function() {
 
 
