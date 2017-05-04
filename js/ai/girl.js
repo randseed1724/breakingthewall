@@ -164,11 +164,10 @@ console.log("Girl: ",rN);
       }
       }
 
-
-                      $(document).on("keyup", function(event) {
-                        lastEvent = null;
+          $(document).on("keyup", function(event) {
+          lastEvent = null;
 
         });
-});
-});
-};
+      });
+    });
+  };
