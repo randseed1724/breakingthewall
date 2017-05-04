@@ -30,16 +30,13 @@ Chile.prototype.hot = function() {
    var randomPlace = Math.floor(Math.random() * 9);
    console.log("randomPlace",randomPlace);
    ra = Math.floor(Math.random() * 100);
-console.log("stop status: ",stop);
-console.log("chilesCount status: ",chilesCount);
-console.log("ra status: ",ra);
+
 
 
 
    if (grids[randomPlace].attr('id') === moveMexican.attr('id')) {
      return;
    } else if (stop && chilesCount <= 2 && ra >= 10) {
-     console.log('RETURNEDRETURNEDRETURNEDRETURNED');
        stop = false;
        chilesCount ++;
        grids[randomPlace].addClass("spicy");

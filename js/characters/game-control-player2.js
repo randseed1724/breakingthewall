@@ -11,7 +11,6 @@ var player2Position;
 // controlers
     var keyPressed = false;
     var lastEvent;
-    var speedCounter = 0;
     var lock = 0;
 
 
@@ -47,7 +46,6 @@ var player2Position;
           before.removeClass('mexican');
         }
 
-
 //obstacle 2 POLICE
 
         if (moveMexican.hasClass("mexInjured") === true) {
@@ -55,6 +53,7 @@ var player2Position;
         }
 
 //right key
+
 
         if (event.keyCode == 39 && ! keyPressed) {
           if (direction >= 79) {
@@ -70,6 +69,7 @@ var player2Position;
             }
 
             if (moveMexican.hasClass("spicy") === true ) {
+              console.log('speedCounter',speedCounter);
               // code that check if fast speed is active:
                 if (speedCounter === 1 ) {
                   moveMexican.removeClass("spicy");
@@ -82,13 +82,8 @@ var player2Position;
              speed2 = speed2Fast;
              speed3 = speed3Fast;
 
-             setTimeout(function() {
-             moveMexican.removeClass("mexican-hot");
-             speedCounter = 0;
-             speed1 = 100;
-             speed2 = 200;
-             speed3 = 300;
-             }, 5000);
+             setTimeout(speedSlow,5000);
+
             }
 
             setTimeout(function() {
@@ -189,12 +184,18 @@ var player2Position;
         setTimeout(function() {
         moveMexican.removeClass("mm1");
         moveMexican.addClass( "mm2" );
-        }, speed1 -= extraSpeed );
+        }, speed1 );
+
+        setTimeout(function() {
+        speed1 = 100;
+        }, 5000);
+
+
 
         setTimeout(function() {
         moveMexican.removeClass("mm2");
         moveMexican.addClass( "mm3" );
-        }, speed2 -= extraSpeed );
+        }, speed2 );
 
         setTimeout(function() {
         moveMexican.removeClass("mm3");
@@ -214,7 +215,7 @@ var player2Position;
       }
 
        keyPressed = false;
-     }, speed3 -= extraSpeed );
+     }, speed3 );
      console.log("speed3",speed3);
 
       }
