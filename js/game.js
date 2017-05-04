@@ -6,13 +6,13 @@ var game = {
     this.renderRows();
     this.layout();
     this.hideLayout();
+    // this.speed();
     this.gamePlayer1();
     this.gamePlayer2();
     this.obs1();
     this.obs2();
     this.audioStart();
     this.power1();
-
   },
 
 
@@ -37,6 +37,10 @@ var game = {
   audioStart: function() {
   var audio = new Sound();
   audio.startGame();
+  },
+  speed: function() {
+  var run = new Speed();
+  run.playersSpeed();
   },
   gamePlayer1: function() {
   var gamePlay = new GameKeyPlayer1();

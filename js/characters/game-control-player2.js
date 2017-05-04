@@ -8,7 +8,6 @@ var player2Position;
     }
 
   GameKeyPlayer2.prototype.controlPlayer2 = function() {
-
 // controlers
     var keyPressed = false;
     var lastEvent;
@@ -18,9 +17,7 @@ var player2Position;
 
 //speed
     var extraSpeed = 0;
-    var speed1 = 100;
-    var speed2 = 200;
-    var speed3 = 300;
+
 
 //shotcuts
 
@@ -73,7 +70,7 @@ var player2Position;
             }
 
             if (moveMexican.hasClass("spicy") === true ) {
-
+              // code that check if fast speed is active:
                 if (speedCounter === 1 ) {
                   moveMexican.removeClass("spicy");
                   return;
@@ -81,9 +78,9 @@ var player2Position;
 
              moveMexican.removeClass("spicy");
              speedCounter = 1;
-             speed1 = 50;
-             speed2 = 100;
-             speed3 = 150;
+             speed1 = speed1Fast;
+             speed2 = speed2Fast;
+             speed3 = speed3Fast;
 
              setTimeout(function() {
              moveMexican.removeClass("mexican-hot");

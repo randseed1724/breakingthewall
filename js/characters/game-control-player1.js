@@ -9,9 +9,7 @@ var moveTrump;
 
     var keyPressed = false;
     var lastEvent;
-    var speed1 = 50;
-    var speed2 = 100;
-    var speed3 = 150;
+
     var speedCounter = 1;
 
 
