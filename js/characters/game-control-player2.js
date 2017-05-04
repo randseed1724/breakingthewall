@@ -1,8 +1,6 @@
 //Exporting variables to global
-var moveMexican;
 
 
-var player2Position;
 
     function GameKeyPlayer2(){
     }
@@ -69,7 +67,6 @@ var player2Position;
             }
 
             if (moveMexican.hasClass("spicy") === true ) {
-              console.log('speedCounter',speedCounter);
               // code that check if fast speed is active:
                 if (speedCounter === 1 ) {
                   moveMexican.removeClass("spicy");
