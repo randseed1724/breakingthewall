@@ -18,8 +18,15 @@ var speedCounter = 0;
 //Mexican
 var moveMexican;
 var player2Position;
+var chilesCount = 0;
 
 //Powers Mexican
+
+//Restart Chile
+var restartChile = function(){
+chilesCount = 0;
+console.log('RESET',chilesCount);
+};
 
 var faster = false;
 
