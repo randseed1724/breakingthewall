@@ -31,17 +31,18 @@ Chile.prototype.hot = function() {
       return;
     }
 
-    if (chilesCount <= 2 && ra >= 10) {
-       chilesCount ++;
+    if (chilesCount <= 2 && ra >= 95) {
        grids[randomPlace].addClass("spicy");
+       chilesCount ++;
+    }
+    if (chilesCount >= 3){
+      return;
     }
 
-//RE-START POWER 1
-var myVar = setInterval(function(){
-    restartChile();
-  }, 20000);
-
-
+  setInterval(function () {
+    chilesCount = 0;
+  }, 10000);
+  console.log('RESET',chilesCount);
 
     $(document).on("keyup", function(event) {
       lastEvent = null;
