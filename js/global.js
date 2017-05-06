@@ -23,12 +23,11 @@ var chilesCount = 0;
 //Powers Mexican
 
 //Restart Chile
-var restartChile = function(){
-chilesCount = 0;
-console.log('RESET',chilesCount);
-};
+// var restartChile = function(){
+// chilesCount = 0;
+// };
 
-var faster = false;
+var mexPowActive = false;
 
 var speedSlow = function() {
   moveMexican.removeClass("mexican-hot");
@@ -39,14 +38,14 @@ var speedSlow = function() {
 };
 
 var lookFrontMexican = function() {
+  keyPressed = false;
 
   moveMexican.removeClass("m-right");
   moveMexican.addClass("mexican");
 
-  if ( speedCounter === 1) {
+  if ( mexPowActive === true) {
     moveMexican.addClass("mexican-hot");
   }
-
+console.log('MOVING RIGHT');
   before = moveMexican;
-  keyPressed = false;
 };

@@ -1,7 +1,5 @@
 //Exporting variables to global
 
-
-
     function GameKeyPlayer2(){
     }
 
@@ -43,7 +41,7 @@
 
 //right key
 
-
+console.log('keyPressed',keyPressed);
         if (event.keyCode == 39 && ! keyPressed) {
           if (direction >= 79) {
             moveMexican.addClass("mexican");
@@ -56,23 +54,21 @@
             moveMexican = $("#grid"+ direction);
             moveMexican.addClass("m-right");
             }
+            console.log("ACTIVATING MOVING RIGHT");
+            setTimeout(lookFrontMexican,500);
+            keyPressed = false;
 
-            if (moveMexican.hasClass("spicy") === true ) {
-              // code that check if fast speed is active:
-                if (speedCounter === 1 ) {
-                  moveMexican.removeClass("spicy");
-                  return;
-                }
-
+            if (moveMexican.hasClass("spicy") === true &&
+                mexPowActive === false) {
              moveMexican.removeClass("spicy");
-             speedCounter = 1;
+             moveMexican.addClass("mexican-hot");
              speed1 = speed1Fast;
              speed2 = speed2Fast;
              speed3 = speed3Fast;
+             mexPowActive = true;
              setTimeout(speedSlow,5000);
             }
-            setTimeout(lookFrontMexican,500);
-          }
+            }
 
 //left key
         if (event.keyCode == 37 && ! keyPressed) {
@@ -82,7 +78,7 @@
             return;
             }
 
-            if ( direction < 8 && speedCounter === 1) {
+            if ( direction < 8 ) {
             moveMexican.removeClass("mexican");
             moveMexican.addClass("mexican-hot");
             return;
@@ -97,10 +93,10 @@
 
             if (moveMexican.hasClass("spicy") === true ) {
 
-              if (speedCounter === 1 ){
+              if (mexPowActive === true ){
                 return;
               }
-              console.log(speedCounter);
+              console.log(mexPowActive);
               moveMexican.removeClass("spicy");
               extraSpeed = 10;
 
@@ -138,7 +134,7 @@
           moveMexican = $("#grid"+ direction);
           moveMexican.addClass("mexican");
 
-          if (speedCounter === 1) {
+          if (mexPowActive === true) {
           moveMexican.addClass("mexican-hot");
           }
 
@@ -205,7 +201,7 @@
        moveMexican.addClass("mexican");
        }
 
-       if (event.keyCode == 39 && speedCounter === 1) {
+       if (event.keyCode == 39 && mexPowActive === true) {
        moveMexican.removeClass("mexican");
        moveMexican.addClass("mexican-hot");
        }
@@ -214,7 +210,7 @@
        moveMexican.addClass("mexican");
        }
 
-       if (event.keyCode == 37 && speedCounter === 1) {
+       if (event.keyCode == 37 && mexPowActive === true) {
        moveMexican.removeClass("mexican");
        moveMexican.addClass("mexican-hot");
        }
