@@ -1,21 +1,20 @@
 //Exporting variables to global
 
-    function GameKeyPlayer2(){
-    }
+function GameKeyPlayer2(){}
 
   GameKeyPlayer2.prototype.controlPlayer2 = function() {
 // controlers
-    var keyPressed = false;
     var lastEvent;
     var lock = 0;
 
 // start player
 
-    var direction = 79 ;
-    var start = $("#grid"+ direction);
-    var before = start;
+    // var play2Direction = 79 ;
+    // var before = start;
+    var start = $("#grid79");
     start.addClass( "mexican" );  //Inicial Position
-    moveMexican = $("#grid"+ direction);
+    before = start;
+    moveMexican = $("#grid"+ play2Direction);
 
 
 
@@ -28,9 +27,8 @@
 
         var x = event.keyCode;
         if (x == 37 || x == 38 || x == 39 || x == 40) {
-          before.removeClass('mexican');
+          before.removeClass('mexican'); //removes last position
           before.removeClass('mexican-hot');
-
         }
 
 //obstacle 2 POLICE
@@ -41,70 +39,60 @@
 
 //right key
 
-console.log('keyPressed',keyPressed);
         if (event.keyCode == 39 && ! keyPressed) {
-          if (direction >= 79) {
+
+          if (play2Direction >= 79) {
             moveMexican.addClass("mexican");
             return;
           }
 
-            if (direction < 79) {
-            keyPressed = true;
-            direction += 9;
-            moveMexican = $("#grid"+ direction);
+            if (play2Direction < 79) {
+            play2Direction += 9;
+            moveMexican = $("#grid"+ play2Direction);
             moveMexican.addClass("m-right");
             }
             console.log("ACTIVATING MOVING RIGHT");
-            setTimeout(lookFrontMexican,500);
-            keyPressed = false;
+            keyPressed = true;
 
-            if (moveMexican.hasClass("spicy") === true &&
-                mexPowActive === false) {
-             moveMexican.removeClass("spicy");
-             moveMexican.addClass("mexican-hot");
-             speed1 = speed1Fast;
-             speed2 = speed2Fast;
-             speed3 = speed3Fast;
-             mexPowActive = true;
-             setTimeout(speedSlow,5000);
-            }
+            setTimeout(lookFrontMexican,500);
+
+            play2Power();
+
+
+            // if (moveMexican.hasClass("power") === true &&
+            //     mexPowActive === false) {
+            //  moveMexican.removeClass("power");
+            //  moveMexican.addClass("mexican-hot");
+            //  speed1 = speed1Fast;
+            //  speed2 = speed2Fast;
+            //  speed3 = speed3Fast;
+            //  mexPowActive = true;
+            //  setTimeout(speedSlow,5000);
+            // }
             }
 
 //left key
         if (event.keyCode == 37 && ! keyPressed) {
 
-              if (direction < 8 ) {
-            moveMexican.addClass("mexican");
-            return;
+            if (play2Direction < 8 ) {
+              moveMexican.addClass("mexican");
+              return;
             }
 
-            if ( direction < 8 ) {
+            if ( play2Direction < 8 ) {
             moveMexican.removeClass("mexican");
             moveMexican.addClass("mexican-hot");
             return;
             }
 
 
-            if (direction > 7) {
-            direction -= 9;
-            moveMexican = $("#grid"+ direction);
+            if (play2Direction > 7) {
+            play2Direction -= 9;
+            moveMexican = $("#grid"+ play2Direction);
             moveMexican.addClass("m-left");
             }
 
-            if (moveMexican.hasClass("spicy") === true ) {
 
-              if (mexPowActive === true ){
-                return;
-              }
-              console.log(mexPowActive);
-              moveMexican.removeClass("spicy");
-              extraSpeed = 10;
-
-              setTimeout(function() {
-              extraSpeed = 0;
-
-              }, 5000);
-            }
 
             keyPressed = true;
 
@@ -116,6 +104,10 @@ console.log('keyPressed',keyPressed);
             before = moveMexican;
             keyPressed = false;
             }, 500);
+
+            play2Power();
+
+
             }
 
 //key 40 hide
@@ -124,14 +116,14 @@ console.log('keyPressed',keyPressed);
 
           keyPressed = true;
 
-          direction += 1;
-          moveMexican = $("#grid"+ direction);
+          play2Direction += 1;
+          moveMexican = $("#grid"+ play2Direction);
           moveMexican.addClass("m-hide");
 
           setTimeout(function() {
           moveMexican.removeClass("m-hide");
-          direction -= 1;
-          moveMexican = $("#grid"+ direction);
+          play2Direction -= 1;
+          moveMexican = $("#grid"+ play2Direction);
           moveMexican.addClass("mexican");
 
           if (mexPowActive === true) {
@@ -198,12 +190,12 @@ console.log('keyPressed',keyPressed);
     lastEvent = null;
 
        if (event.keyCode == 39 ) {
-       moveMexican.addClass("mexican");
+         moveMexican.addClass("mexican");
        }
 
        if (event.keyCode == 39 && mexPowActive === true) {
-       moveMexican.removeClass("mexican");
-       moveMexican.addClass("mexican-hot");
+         moveMexican.removeClass("mexican");
+         moveMexican.addClass("mexican-hot");
        }
 
        if (event.keyCode == 37 ) {
@@ -211,8 +203,8 @@ console.log('keyPressed',keyPressed);
        }
 
        if (event.keyCode == 37 && mexPowActive === true) {
-       moveMexican.removeClass("mexican");
-       moveMexican.addClass("mexican-hot");
+         moveMexican.removeClass("mexican");
+         moveMexican.addClass("mexican-hot");
        }
     });
 };
