@@ -1,24 +1,21 @@
+function Police(){
+}
 
 
+Police.prototype.policeRun = function() {
 
-      function Police(){
-      }
+  $('.button12').on("click", function(e) {
 
-
-        Police.prototype.policeRun = function() {
-
-          $('.button12').on("click", function(e) {
-
-          var keyPressed = false;
-          var lastEvent;
+    var keyPressed = false;
+    var lastEvent;
 
 
-           $(document).on("keydown", function(event) {
+      $(document).on("keydown", function(event) {
 //HERE LAST EVENT
-            if (lastEvent && lastEvent.keyCode == event.keyCode) {
-                   return;
-               }
-               lastEvent = event;
+          if (lastEvent && lastEvent.keyCode == event.keyCode) {
+             return;
+          }
+             lastEvent = event;
 
               if (event.keyCode == 38 && ! keyPressed) {
 
@@ -56,10 +53,8 @@
                 position = $("#grid"+ runFromRight);
                 position.addClass("policeFromRight");
 
-console.log('position', position);
     if (position.hasClass("spicy") ) {
-      console.log("%cWell Done!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
-
+        console.log("%cWell Done!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
         position.removeClass("spicy");
     }
 
@@ -84,34 +79,40 @@ console.log('position', position);
             }, 3000);
     }
 
+    c++;
+    if (c == 9){
+    clearInterval(myInterval);
+    }
+    }, 400);
 
-                                  c++;
-                                  if (c == 9){
-                                    clearInterval(myInterval);
-                                  }
-                                }, 400);
+    keyPressed = false;
+    }, randomTime);
+    }
+
+// APPEAR FROM LEFT
+
+    var runFromLeft = 7 ;
+
+    if (mr >= 95 && or === 1 && !$( ".floor" ).hasClass( "policeFromRight") ) {
+
+    randomTime = Math.ceil(Math.random() * 1000) + 2000;
 
 
-                       keyPressed = false;
-                      }, randomTime);
-          }
-
-          // APPEAR FROM LEFT
-                var runFromLeft = 7 ;
-
-                if (mr >= 95 && or === 1 && !$( ".floor" ).hasClass( "policeFromRight") ) {
-
-                randomTime = Math.ceil(Math.random() * 1000) + 2000;
-
-
-                setTimeout(function() {
-                  var c = 0;
-                  if (c !==0) {
-                    position.removeClass( "policeFromLeft" );
-                  }
+    setTimeout(function() {
+    var c = 0;
+    if (c !==0) {
+    position.removeClass( "policeFromLeft" );
+    }
 
                 var position = $("#grid"+ runFromLeft);
                 position.addClass( "policeFromLeft" );  //Inicial Position
+
+
+                if (position.hasClass("spicy") ) {
+                    console.log("%cWell Done!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
+                    position.removeClass("spicy");
+                }
+
 
                            var myInterval =  setInterval(function() {
                             position.removeClass( "policeFromLeft" );
@@ -120,6 +121,10 @@ console.log('position', position);
                             position = $("#grid"+ runFromLeft);
                             position.addClass("policeFromLeft");
 
+                            if (position.hasClass("spicy") ) {
+                                console.log("%cWell Done!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
+                                position.removeClass("spicy");
+                            }
 
                             if (position.hasClass("mexican") === true ||
                             position.hasClass("m-right") === true ||

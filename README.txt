@@ -23,11 +23,13 @@ Key Right: Move Right
 
 
 Copyright Notice:
-This game is intelectual property of Alejandro Jimenez Dominguez. All images and sprites that are not being attributed bellow belong to my authorship or are public domain images and/or under Creative Commons.
+This game is intellectual property of Alejandro Jimenez Dominguez, all right reserved.
+
+All images and sprites that are not being attributed bellow belong to my authorship or are public domain images and/or under Creative Commons.
 
 
 
-Attribution Notice: 
+Attribution Notice:
 
 Thank you to IronHack's TA Nick and special thanks to Kaysser, who tough me how to structure my files and helped me with the function of movement.
 
@@ -38,8 +40,4 @@ PickAxe: bevouliin.com
 
 Music: "A Journey Awaits" by Pierre Bondoerffer (@pbondoer)
 
-Click sound effect called "acept": David McKee (ViRiX) soundcloud.com/virix
-
-
-
-
+Click sound effect called "accept": David McKee (ViRiX) soundcloud.com/virix
