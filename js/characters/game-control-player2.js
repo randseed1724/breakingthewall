@@ -54,14 +54,13 @@ function GameKeyPlayer2(){}
             console.log("ACTIVATING MOVING RIGHT");
             keyPressed = true;
 
-            setTimeout(lookFrontMexican,500);
-
+            setTimeout(play2MoveRight,500);
             play2Power();
 
 
-            // if (moveMexican.hasClass("power") === true &&
+            // if (moveMexican.hasClass("spicy") === true &&
             //     mexPowActive === false) {
-            //  moveMexican.removeClass("power");
+            //  moveMexican.removeClass("spicy");
             //  moveMexican.addClass("mexican-hot");
             //  speed1 = speed1Fast;
             //  speed2 = speed2Fast;

@@ -38,7 +38,7 @@ var speedSlow = function() {
   speed3 = 300;
 };
 
-var lookFrontMexican = function() {
+var play2MoveRight = function() {
 
   moveMexican.removeClass("m-right");
   moveMexican.addClass("mexican");
@@ -51,18 +51,26 @@ var lookFrontMexican = function() {
 
 
 var play2Power = function() {
-  // console.log("NASHIRA!!!");
 
-if (moveMexican.hasClass("spicy") === true ) {
+var powerTrue = moveMexican.hasClass("spicy");
 
-    moveMexican.removeClass("spicy");
+  if (powerTrue && !mexPowActive ) {
 
-    if (mexPowActive === true ){
-      return;
+     moveMexican.removeClass("spicy");
+     moveMexican.addClass("mexican-hot");
+     speed1 = speed1Fast;
+     speed2 = speed2Fast;
+     speed3 = speed3Fast;
+     mexPowActive = true;
+     setTimeout(speedSlow,5000);
     }
 
-    setTimeout(function() {
-    extraSpeed = 0;
-    }, 5000);
+      if (mexPowActive === true ) {
+        return;
+      }
+
+      setTimeout(function() {
+      extraSpeed = 0;
+      }, 5000);
   }
 };
