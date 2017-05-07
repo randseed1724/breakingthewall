@@ -32,10 +32,20 @@ var mexPowActive = false;
 
 var speedSlow = function() {
   moveMexican.removeClass("mexican-hot");
-  speedCounter = 0;
   speed1 = 100;
   speed2 = 200;
   speed3 = 300;
+  mexPowActive = false;
+  console.log('speed3',speed3);
+};
+
+var speedFast = function() {
+  moveMexican.addClass("mexican-hot");
+  mexPowActive = true;
+  speed1 = 50;
+  speed2 = 100;
+  speed3 = 150;
+  console.log('speed3 FAST',speed3);
 };
 
 var play2MoveRight = function() {
@@ -43,10 +53,8 @@ var play2MoveRight = function() {
   moveMexican.removeClass("m-right");
   moveMexican.addClass("mexican");
 
-  console.log('MOVING RIGHT  OUTSIDE');
-
-     before = moveMexican;
-     keyPressed = false;
+  before = moveMexican;
+  keyPressed = false;
 };
 
 
@@ -54,23 +62,14 @@ var play2Power = function() {
 
 var powerTrue = moveMexican.hasClass("spicy");
 
-  if (powerTrue && !mexPowActive ) {
-
-     moveMexican.removeClass("spicy");
-     moveMexican.addClass("mexican-hot");
-     speed1 = speed1Fast;
-     speed2 = speed2Fast;
-     speed3 = speed3Fast;
-     mexPowActive = true;
-     setTimeout(speedSlow,5000);
+    if (powerTrue) {
+      moveMexican.removeClass("spicy");
     }
-
-      if (mexPowActive === true ) {
-        return;
-      }
-
-      setTimeout(function() {
-      extraSpeed = 0;
-      }, 5000);
-  }
+    if (mexPowActive) {
+      return;
+    }
+    if (powerTrue && !mexPowActive ) {
+      speedFast();
+      setTimeout(speedSlow,5000);
+    }
 };

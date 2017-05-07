@@ -27,8 +27,7 @@
 
 
                mr = Math.floor(Math.random() * 100);
-
-              var or = Math.ceil(Math.random() * 2) - 1;
+               var or = Math.ceil(Math.random() * 2) - 1;
 
 
   //APPEAR FROM RIGHT
@@ -57,29 +56,33 @@
                 position = $("#grid"+ runFromRight);
                 position.addClass("policeFromRight");
 
+console.log('position', position);
+    if (position.hasClass("spicy") ) {
+      console.log("%cWell Done!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
 
-                  if (position.hasClass("mexican") === true ||
-                      position.hasClass("m-right") === true ||
-                      position.hasClass("m-left") === true ||
-                      position.hasClass("mm1") === true ||
-                      position.hasClass("mm2") === true ||
-                      position.hasClass("mm3") === true )
-                                      {
-                                        stop = 1;
+        position.removeClass("spicy");
+    }
 
-                                        clearInterval(myInterval);
+    if (position.hasClass("mexican") === true ||
+        position.hasClass("m-right") === true ||
+        position.hasClass("m-left")  === true ||
+        position.hasClass("mm1")     === true ||
+        position.hasClass("mm2")     === true ||
+        position.hasClass("mm3")     === true ) {
+        stop = 1;
 
-                                        position.removeClass('mexican');
+            clearInterval(myInterval);
 
-                                        position.addClass('mexInjured');
-                                        position.removeClass('policeFromRight');
+            position.removeClass('mexican');
+            position.addClass('mexInjured');
+            position.removeClass('policeFromRight');
 
-                                        setTimeout(function() {
-                                        position.removeClass('mexInjured');
-                                        position.addClass('mexican');
-                                        stop = 0;
-                                        }, 3000);
-                                  }
+            setTimeout(function() {
+            position.removeClass('mexInjured');
+            position.addClass('mexican');
+            stop = 0;
+            }, 3000);
+    }
 
 
                                   c++;

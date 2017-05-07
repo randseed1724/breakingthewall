@@ -51,23 +51,9 @@ function GameKeyPlayer2(){}
             moveMexican = $("#grid"+ play2Direction);
             moveMexican.addClass("m-right");
             }
-            console.log("ACTIVATING MOVING RIGHT");
             keyPressed = true;
-
             setTimeout(play2MoveRight,500);
             play2Power();
-
-
-            // if (moveMexican.hasClass("spicy") === true &&
-            //     mexPowActive === false) {
-            //  moveMexican.removeClass("spicy");
-            //  moveMexican.addClass("mexican-hot");
-            //  speed1 = speed1Fast;
-            //  speed2 = speed2Fast;
-            //  speed3 = speed3Fast;
-            //  mexPowActive = true;
-            //  setTimeout(speedSlow,5000);
-            // }
             }
 
 //left key

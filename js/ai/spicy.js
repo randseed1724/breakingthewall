@@ -14,6 +14,11 @@ Chile.prototype.hot = function() {
 
   $(document).on("keydown", (event) => {
 
+    var totalSpicy = $(".main").find(".spicy");
+    if (totalSpicy.length >= 3) {
+      console.log("%cSpicy is Full!", "color: red; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
+      return;
+    }
 
     var randomPlace = Math.floor(Math.random() * 9);
     ra = Math.floor(Math.random() * 100);
@@ -31,7 +36,11 @@ Chile.prototype.hot = function() {
       return;
     }
 
-    if (chilesCount <= 2 && ra >= 5) {
+ console.log('findAll all spicy',totalSpicy);
+
+
+
+    if (chilesCount <= 2 && ra >= 95) {
        grids[randomPlace].addClass("spicy");
        chilesCount ++;
     }
