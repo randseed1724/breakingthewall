@@ -15,6 +15,9 @@ var speed2Fast = 100;
 var speed3Fast = 150;
 var speedCounter = 0;
 
+//Player 1
+var movePlayer1;
+var moneyCount = 0;
 
 //Player 2
 var moveMexican;
@@ -22,12 +25,6 @@ var player2Position;
 var chilesCount = 0;
 
 //Powers
-
-//Restart Chile
-// var restartChile = function(){
-// chilesCount = 0;
-// };
-
 var mexPowActive = false;
 
 var speedSlow = function() {
@@ -51,6 +48,15 @@ var speedFast = function() {
 var play2MoveRight = function() {
 
   moveMexican.removeClass("m-right");
+  moveMexican.addClass("mexican");
+
+  before = moveMexican;
+  keyPressed = false;
+};
+
+var play2MoveLeft = function() {
+
+  moveMexican.removeClass("m-left");
   moveMexican.addClass("mexican");
 
   before = moveMexican;

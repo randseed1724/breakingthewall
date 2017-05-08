@@ -41,20 +41,21 @@ function GameKeyPlayer2(){}
 
         if (event.keyCode == 39 && ! keyPressed) {
 
-          if (play2Direction >= 79) {
-            moveMexican.addClass("mexican");
-            return;
-          }
+            if (play2Direction >= 79) {
+              moveMexican.addClass("mexican");
+              return;
+            }
 
             if (play2Direction < 79) {
             play2Direction += 9;
             moveMexican = $("#grid"+ play2Direction);
             moveMexican.addClass("m-right");
             }
+
             keyPressed = true;
             setTimeout(play2MoveRight,500);
             play2Power();
-            }
+        }
 
 //left key
         if (event.keyCode == 37 && ! keyPressed) {
@@ -64,35 +65,15 @@ function GameKeyPlayer2(){}
               return;
             }
 
-            if ( play2Direction < 8 ) {
-            moveMexican.removeClass("mexican");
-            moveMexican.addClass("mexican-hot");
-            return;
-            }
-
-
             if (play2Direction > 7) {
             play2Direction -= 9;
             moveMexican = $("#grid"+ play2Direction);
             moveMexican.addClass("m-left");
             }
 
-
-
             keyPressed = true;
-
-            setTimeout(function() {
-            moveMexican.removeClass("m-left");
-            moveMexican.addClass("mexican");
-
-
-            before = moveMexican;
-            keyPressed = false;
-            }, 500);
-
+            setTimeout(play2MoveLeft,500);
             play2Power();
-
-
             }
 
 //key 40 hide

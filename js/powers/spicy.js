@@ -4,25 +4,32 @@ Chile.prototype.hot = function() {
 // POWER 1
 
    var lastEvent;
-   var grids =  [$("#grid7"),
+   var grids =  [
+  //  $("#grid7"),
    $("#grid16"), $("#grid25"),
    $("#grid34"), $("#grid43"),
    $("#grid52"), $("#grid61"),
-   $("#grid70"), $("#grid79")];
+   $("#grid70"),
+  //  $("#grid79")
+   ];
 
  $('.button12').on("click", (event) => {
 
   $(document).on("keydown", (event) => {
 
+
+    if (event.keyCode != 38) {
+      return;
+    }
+
     var totalSpicy = $(".main").find(".spicy");
     if (totalSpicy.length >= 3) {
-      console.log("%cSpicy is Full!", "color: red; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
       return;
     }
 
     var randomPlace = Math.floor(Math.random() * 9);
-    ra = Math.floor(Math.random() * 100);
-    console.log("randomPlace",randomPlace);
+    var ra = Math.floor(Math.random() * 100);
+
 
     if (lastEvent && lastEvent.keyCode == event.keyCode) {
            return;
@@ -36,11 +43,7 @@ Chile.prototype.hot = function() {
       return;
     }
 
- console.log('findAll all spicy',totalSpicy);
-
-
-
-    if (chilesCount <= 2 && ra >= 95) {
+    if (chilesCount <= 2 && ra >= 5) {
        grids[randomPlace].addClass("spicy");
        chilesCount ++;
     }
@@ -51,12 +54,10 @@ Chile.prototype.hot = function() {
   setInterval(function () {
     chilesCount = 0;
   }, 10000);
-  console.log('RESET',chilesCount);
 
     $(document).on("keyup", function(event) {
       lastEvent = null;
     });
-
   });
  });
 };

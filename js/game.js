@@ -13,6 +13,7 @@ var game = {
     this.obs2();
     this.audioStart();
     this.power1();
+    this.power2();
   },
 
 
@@ -59,9 +60,14 @@ var game = {
   police.policeRun();
   },
   power1: function() {
+  var money = new Money();
+  money.bullion();
+  },
+  power2: function() {
   var chile = new Chile();
   chile.hot();
   },
+
 };
 
 // end of code that makes the game work
