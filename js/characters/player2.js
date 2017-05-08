@@ -1,45 +1,35 @@
-//Exporting variables to global
-
 function GameKeyPlayer2(){}
 
   GameKeyPlayer2.prototype.controlPlayer2 = function() {
-// controlers
     var lastEvent;
-    var lock = 0;
 
-// start player
-
-    // var play2Direction = 79 ;
-    // var before = start;
     var start = $("#grid79");
     start.addClass( "mexican" );  //Inicial Position
-    before = start;
+    player2Before = start;
     moveMexican = $("#grid"+ play2Direction);
 
 
+    $(document).on("keydown", function(event) {
 
-
-        $(document).on("keydown", function(event) {
-          if (lastEvent && lastEvent.keyCode == event.keyCode) {
-                 return;
-             }
-             lastEvent = event;
+        if (lastEvent && lastEvent.keyCode == event.keyCode) {
+            return;
+        }
+        lastEvent = event;
 
         var x = event.keyCode;
         if (x == 37 || x == 38 || x == 39 || x == 40) {
-          before.removeClass('mexican'); //removes last position
-          before.removeClass('mexican-hot');
+          player2Before.removeClass('mexican'); //removes last position
+          player2Before.removeClass('mexican-hot');
         }
 
 //obstacle 2 POLICE
-
         if (moveMexican.hasClass("mexInjured") === true) {
           return;
         }
 
 //right key
 
-        if (event.keyCode == 39 && ! keyPressed) {
+        if (event.keyCode == 39 && ! player2KeyPressed) {
 
             if (play2Direction >= 79) {
               moveMexican.addClass("mexican");
@@ -51,15 +41,16 @@ function GameKeyPlayer2(){}
             moveMexican = $("#grid"+ play2Direction);
             moveMexican.addClass("m-right");
             }
+            player2KeyPressed = true;
 
-            keyPressed = true;
             setTimeout(play2MoveRight,500);
             play2Power();
         }
 
 //left key
-        if (event.keyCode == 37 && ! keyPressed) {
-
+console.log('player2KeyPressed',player2KeyPressed);
+        if (event.keyCode == 37 && !player2KeyPressed) {
+          console.log("%cWorking!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
             if (play2Direction < 8 ) {
               moveMexican.addClass("mexican");
               return;
@@ -71,16 +62,16 @@ function GameKeyPlayer2(){}
             moveMexican.addClass("m-left");
             }
 
-            keyPressed = true;
+            player2KeyPressed = true;
             setTimeout(play2MoveLeft,500);
             play2Power();
             }
 
 //key 40 hide
 
-        if (event.keyCode == 40 && ! keyPressed) {
+        if (event.keyCode == 40 && ! player2KeyPressed) {
 
-          keyPressed = true;
+          player2KeyPressed = true;
 
           play2Direction += 1;
           moveMexican = $("#grid"+ play2Direction);
@@ -96,16 +87,16 @@ function GameKeyPlayer2(){}
           moveMexican.addClass("mexican-hot");
           }
 
-          before = moveMexican;
-          keyPressed = false;
+          player2Before = moveMexican;
+          player2KeyPressed = false;
         }, 1000);
       }
 
 //Breaking Bricks
 // key up
-    if (event.keyCode == 38 && !keyPressed) {
+    if (event.keyCode == 38 && !player2KeyPressed) {
 
-        keyPressed = true;
+        player2KeyPressed = true;
         moveMexican.removeClass("mexican mexican-hot");
         moveMexican.addClass("mm1");
 
@@ -142,7 +133,7 @@ function GameKeyPlayer2(){}
        moveMexican.addClass( "mexican" );
       }
 
-       keyPressed = false;
+       player2KeyPressed = false;
      }, speed3 );
      console.log("speed3",speed3);
 

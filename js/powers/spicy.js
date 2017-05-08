@@ -5,13 +5,14 @@ Chile.prototype.hot = function() {
 
    var lastEvent;
    var grids =  [
-  //  $("#grid7"),
+// $("#grid7"), //MAKE SURE TO ADD 2 TO RANDOM PLACE MULTIPLICATION
    $("#grid16"), $("#grid25"),
    $("#grid34"), $("#grid43"),
    $("#grid52"), $("#grid61"),
    $("#grid70"),
-  //  $("#grid79")
+// $("#grid79")
    ];
+
 
  $('.button12').on("click", (event) => {
 
@@ -27,7 +28,7 @@ Chile.prototype.hot = function() {
       return;
     }
 
-    var randomPlace = Math.floor(Math.random() * 9);
+    var randomPlace = Math.floor(Math.random() * 7);
     var ra = Math.floor(Math.random() * 100);
 
 
@@ -39,6 +40,7 @@ Chile.prototype.hot = function() {
     if (event.keyCode != 38) {
       return;
     }
+
     if (grids[randomPlace].attr('id') === moveMexican.attr('id')) {
       return;
     }
