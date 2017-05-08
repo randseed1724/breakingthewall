@@ -42,7 +42,6 @@ function GameKeyPlayer2(){}
             moveMexican.addClass("m-right");
             }
             player2KeyPressed = true;
-
             setTimeout(play2MoveRight,500);
             play2Power();
         }
@@ -103,7 +102,7 @@ console.log('player2KeyPressed',player2KeyPressed);
         setTimeout(function() {
         moveMexican.removeClass("mm1");
         moveMexican.addClass( "mm2" );
-        }, speed1 );
+        }, player2Speed1 );
 
         setTimeout(function() {
         speed1 = 100;
@@ -114,7 +113,7 @@ console.log('player2KeyPressed',player2KeyPressed);
         setTimeout(function() {
         moveMexican.removeClass("mm2");
         moveMexican.addClass( "mm3" );
-        }, speed2 );
+        }, player2Speed2 );
 
         setTimeout(function() {
         moveMexican.removeClass("mm3");
@@ -134,8 +133,8 @@ console.log('player2KeyPressed',player2KeyPressed);
       }
 
        player2KeyPressed = false;
-     }, speed3 );
-     console.log("speed3",speed3);
+     }, player2Speed3 );
+     console.log("speed3",player2Speed3);
 
       }
     });

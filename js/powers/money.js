@@ -9,7 +9,7 @@ Money.prototype.bullion = function() {
    $("#grid10"), $("#grid19"),
    $("#grid28"), $("#grid37"),
    $("#grid46"), $("#grid55"),
-   $("#grid65"),
+   $("#grid64"),
   //  $("#grid73")
    ];
 
@@ -42,7 +42,7 @@ Money.prototype.bullion = function() {
       return;
     }
 
-    if (moneyCount <= 2 && randNum >= 5) {
+    if (moneyCount <= 2 && randNum >= 95) {
        grids[randomPlace].addClass("money");
        moneyCount ++;
     }

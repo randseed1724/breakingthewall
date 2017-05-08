@@ -45,7 +45,7 @@ Chile.prototype.hot = function() {
       return;
     }
 
-    if (chilesCount <= 2 && ra >= 5) {
+    if (chilesCount <= 2 && ra >= 95) {
        grids[randomPlace].addClass("spicy");
        chilesCount ++;
     }

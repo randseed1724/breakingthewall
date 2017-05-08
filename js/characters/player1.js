@@ -91,6 +91,7 @@ function GameKeyPlayer1(){}
             player1Before = movePlayer1;
             player1KeyPressed = false;
           }, 800);
+          play1Power();
 }
 
 //Dropping Bricks
@@ -104,18 +105,21 @@ function GameKeyPlayer1(){}
 
         setTimeout(function() { movePlayer1.removeClass("trump-brick");
         movePlayer1.addClass( "trump-brick-2" );
-      }, speed1);
+      }, player1Speed1);
 
         setTimeout(function() { movePlayer1.removeClass("trump-brick-2");
         movePlayer1.addClass( "trump-brick-3" );
-      }, speed2);
+      }, player1Speed2);
 
         setTimeout(function() { movePlayer1.removeClass("trump-brick-3");
        movePlayer1.addClass( "trump" );
        movePlayer1.nextAll(':hidden:first').show();
        movePlayer1.prev().prev().detach();
        player1KeyPressed = false;
-     }, speed3);
+     }, player1Speed3);
+
+     play1Power();
+
       }
     });
 

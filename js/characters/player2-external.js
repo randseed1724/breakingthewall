@@ -4,25 +4,49 @@ var player2Before;
 
 
 //Player 2
+//Players Normal  Speed
+var player2Speed1 = 100;
+var player2Speed2 = 200;
+var player2Speed3 = 300;
+
+//Players Fast Speed
+var player2Speed1Fast = 50;
+var player2Speed2Fast = 100;
+var player2Speed3Fast = 150;
+var player2SpeedCounter = 0;
+
+
 var play2Direction = 79 ;
 var moveMexican;
 var player2Position;
 var chilesCount = 0;
+var mexPowActive = false;
 
 //Movement
+
+//RIGHT
 var play2MoveRight = function() {
 
   moveMexican.removeClass("m-right");
   moveMexican.addClass("mexican");
 
+  if (mexPowActive) {
+    moveMexican.addClass("mexican-hot");
+  }
+
   player2Before = moveMexican;
   player2KeyPressed = false;
 };
 
+// LEFT
 var play2MoveLeft = function() {
 
   moveMexican.removeClass("m-left");
   moveMexican.addClass("mexican");
+
+  if (mexPowActive) {
+    moveMexican.addClass("mexican-hot");
+  }
 
   player2Before = moveMexican;
   player2KeyPressed = false;
@@ -30,39 +54,37 @@ var play2MoveLeft = function() {
 // Movement End
 
 //Powers
-var mexPowActive = false;
-
-var speedSlow = function() {
+var player2SpeedSlow = function() {
   moveMexican.removeClass("mexican-hot");
-  speed1 = 100;
-  speed2 = 200;
-  speed3 = 300;
+  player2Speed1 = 100;
+  player2Speed2 = 200;
+  player2Speed3 = 300;
   mexPowActive = false;
-  console.log('speed3',speed3);
+  console.log('player2Speed3',player2Speed3);
 };
 
-var speedFast = function() {
+var player2SpeedFast = function() {
   moveMexican.addClass("mexican-hot");
   mexPowActive = true;
-  speed1 = speed1Fast;
-  speed2 = speed2Fast;
-  speed3 = speed3Fast;
-  console.log('speed3 FAST',speed3);
+  player2Speed1 = player2Speed1Fast;
+  player2Speed2 = player2Speed2Fast;
+  player2Speed3 = player2Speed3Fast;
+  console.log('player2Speed3 FAST',player2Speed3);
 };
 
 
 var play2Power = function() {
 
-var powerTrue = moveMexican.hasClass("spicy");
+var player2PowerTrue = moveMexican.hasClass("spicy");
 
-    if (powerTrue) {
+    if (player2PowerTrue) {
       moveMexican.removeClass("spicy");
     }
     if (mexPowActive) {
       return;
     }
-    if (powerTrue && !mexPowActive ) {
-      speedFast();
-      setTimeout(speedSlow,5000);
+    if (player2PowerTrue && !mexPowActive ) {
+      player2SpeedFast();
+      setTimeout(player2SpeedSlow,5000);
     }
 };
