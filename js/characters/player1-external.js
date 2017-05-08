@@ -11,22 +11,26 @@ var player1PowerActive = false;
 
 
 //Movement
+
+//RIGHT
 var player1MoveRight = function() {
 
   movePlayer1.removeClass("trump-right");
   movePlayer1.addClass("trump");
 
   player1Before = movePlayer1;
-  keyPressed = false;
+  player1KeyPressed = false;
 };
 
+//LEFT
 var player1MoveLeft = function() {
+  console.log("%cWorking!", "color: green; font-family: sans-serif; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;");
 
-  movePlayer1.removeClass("m-left");
+  movePlayer1.removeClass("trump-left");
   movePlayer1.addClass("trump");
 
   player1Before = movePlayer1;
-  keyPressed = false;
+  player1KeyPressed = false;
 };
 // Movement End
 

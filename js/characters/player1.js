@@ -29,7 +29,7 @@ function GameKeyPlayer1(){}
 
 //right key
 
-        if (event.keyCode == 68 && ! player1KeyPressed) {
+        if (event.keyCode == 68 && !player1KeyPressed) {
 
           if (play1Direction >= 65) {
             movePlayer1.addClass("trump");
@@ -42,28 +42,28 @@ function GameKeyPlayer1(){}
           movePlayer1.addClass("trump-right");
           }
           player1KeyPressed = true;
-
           setTimeout(player1MoveRight,500);
           play1Power();
         }
 
 //left key
 
-        if (event.keyCode == 65 && ! player1KeyPressed) {
+        if (event.keyCode == 65 && !player1KeyPressed) {
+
           if (play1Direction < 2 ) {
             movePlayer1.addClass("trump");
             return;
           }
-            if (play1Direction > 2) {
-            play1Direction -= 9;
-            movePlayer1 = $("#grid"+ play1Direction);
-            movePlayer1.addClass("trump-left");
-            }
+          if (play1Direction > 2) {
+          play1Direction -= 9;
+          movePlayer1 = $("#grid"+ play1Direction);
+          movePlayer1.addClass("trump-left");
+          }
 
-            player1KeyPressed = true;
-            setTimeout(player1MoveLeft,500);
-            play1Power();
-            }
+          player1KeyPressed = true;
+          setTimeout(player1MoveLeft,500);
+          play1Power();
+        }
 
 //key 87 jump
 
