@@ -36,16 +36,7 @@
  $("#grid8,#grid17, #grid26, #grid35, #grid44, #grid53, #grid62, #grid71, #grid80").addClass("cactus-hide");
     });
   };
-//   Layout.prototype.chiles = function() {
-//
-//   var spicy = [
-//     $("#grid7"), $("#grid16"), $("#grid25"), $("#grid34"), $("#grid43"), $("#grid52"), $("#grid61"), $("#grid70"), $("#grid79")];
-//
-//     spicy[7].addClass("spicy");
-//
-//     for (var s = 0 ; s < 10; s++);
-//
-// };
+
 
   Layout.prototype.Win = function() {
     var lastEvent;
