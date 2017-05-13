@@ -11,6 +11,13 @@
       $('.column *').each(function(i) {
           $(this).attr('id', 'grid' + i);
       });
+      $(function() {
+  		$(".button12").click(function(){
+  		$("#bodySkin").css("background-color","rgba(0, 0, 0, 0.4)");
+  		  });
+  		});
+      document.getElementById("video").playbackRate = 3;
+
   };
 
 
