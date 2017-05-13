@@ -29,7 +29,6 @@ var game = {
   gameLayout.displayStart();
   gameLayout.Win();
   gameLayout.playAgain();
-  gameLayout.feedback();
   },
   hideLayout: function() {
   var hide = new LayoutHide();

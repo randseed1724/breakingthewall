@@ -18,7 +18,6 @@
   		});
 
       document.getElementById("video").playbackRate = 3;
-
   };
 
 
@@ -75,7 +74,6 @@
                             mWins.volume = (30 / 100);
 
                                    mWins.play();
-
     }
 
 
@@ -95,6 +93,7 @@
                                   tWins.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/again.mp3');
 
                                          tWins.play();
+
     }
     $(document).on("keyup", function(event) {
       lastEvent = null;
@@ -106,12 +105,5 @@
 
     $("#playAgain").click(function () {
      location.reload();
-    });
-  };
-
-  Layout.prototype.feedback = function() {
-
-    $("#feedback").click(function () {
-      $(location).attr('href', 'http://www.ouwebs.com');
     });
   };

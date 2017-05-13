@@ -12,7 +12,7 @@
 
       var audioElement = document.createElement('audio');
       var audioElementSrc = $(this).attr('data-audio-src');
-      audioElement.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/a-Journey-awaits.mp3');
+      audioElement.setAttribute('src', '/home/alejandro/Desktop/Breaking the wall/sounds/a-journey-awaits.mp3');
 
       // changed "load" t0 "loadeddata"
           audioElement.addEventListener("loadeddata", function(){
