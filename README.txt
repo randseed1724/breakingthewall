@@ -22,8 +22,6 @@ Key Right: Move Right
 
 
 
-
-
 Copyright Notice:
 This game is intellectual property of Alejandro Jimenez Dominguez, all right reserved.
 
