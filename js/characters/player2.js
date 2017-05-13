@@ -89,6 +89,7 @@ console.log('player2KeyPressed',player2KeyPressed);
           player2Before = moveMexican;
           player2KeyPressed = false;
         }, 1000);
+
       }
 
 //Breaking Bricks
@@ -96,7 +97,7 @@ console.log('player2KeyPressed',player2KeyPressed);
     if (event.keyCode == 38 && !player2KeyPressed) {
 
         player2KeyPressed = true;
-        moveMexican.removeClass("mexican mexican-hot");
+        moveMexican.removeClass("mexican");
         moveMexican.addClass("mm1");
 
         setTimeout(function() {
@@ -128,15 +129,17 @@ console.log('player2KeyPressed',player2KeyPressed);
         if (moveMexican.siblings().length < 13) {
        moveMexican.parent().prepend(sky);
       }
+      if (mexPowActive) {
+         moveMexican.addClass( "mexican-hot" );
+      }
         else {
        moveMexican.addClass( "mexican" );
       }
 
        player2KeyPressed = false;
      }, player2Speed3 );
-     console.log("speed3",player2Speed3);
-
       }
+
     });
 
 //KEY UP

@@ -112,10 +112,15 @@ function GameKeyPlayer1(){}
       }, player1Speed2);
 
         setTimeout(function() { movePlayer1.removeClass("trump-brick-3");
-       movePlayer1.addClass( "trump" );
+       if (player1PowerActive) {
+         movePlayer1.addClass("t-money");
+       } else {
+         movePlayer1.addClass( "trump" );
+       }
        movePlayer1.nextAll(':hidden:first').show();
        movePlayer1.prev().prev().detach();
        player1KeyPressed = false;
+
      }, player1Speed3);
 
      play1Power();

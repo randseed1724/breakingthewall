@@ -16,6 +16,7 @@
   		$("#bodySkin").css("background-color","rgba(0, 0, 0, 0.4)");
   		  });
   		});
+
       document.getElementById("video").playbackRate = 3;
 
   };

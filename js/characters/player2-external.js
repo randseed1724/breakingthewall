@@ -60,7 +60,6 @@ var player2SpeedSlow = function() {
   player2Speed2 = 200;
   player2Speed3 = 300;
   mexPowActive = false;
-  console.log('player2Speed3',player2Speed3);
 };
 
 var player2SpeedFast = function() {
@@ -69,7 +68,6 @@ var player2SpeedFast = function() {
   player2Speed1 = player2Speed1Fast;
   player2Speed2 = player2Speed2Fast;
   player2Speed3 = player2Speed3Fast;
-  console.log('player2Speed3 FAST',player2Speed3);
 };
 
 

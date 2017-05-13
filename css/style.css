@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: auto;
     margin-top: 6em;
     background-color: rgba(232, 208, 23, 0.83);
-    width: 650px;
+    width: 30%;
     border: 2px solid black;
     text-align: center;
     padding: 5px;
@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 body {
     background-image: url('/home/alejandro/Desktop/Breaking the wall/img/wall2.jpg');
+    background-size: ccontain;
     background-repeat: space;
 }
 
@@ -50,19 +51,19 @@ li {
 }
 /* ------ layout ------ */
 
+
 .main {
     margin: auto;
-    max-width: 899px;
-    min-width: 745px;
-    height: 754px;
-    border: 5px solid grey;
+    width: 899px;
+    height: 69.7vh;
+    border: 5px solid rgb(111, 99, 82);
     margin-top: 4em;
     border-radius: 5%;
     overflow: hidden;
     box-shadow: 5px 5px 47px #000000;
     position: relative;
-    cursor: none;
 }
+
 
 
 .rowofBricks {
