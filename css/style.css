@@ -50,11 +50,10 @@ li {
 }
 /* ------ layout ------ */
 
-
 .main {
     margin: auto;
-    width: 899px;
-    /*width: 67.8%;*/
+    max-width: 899px;
+    min-width: 745px;
     height: 754px;
     border: 5px solid grey;
     margin-top: 4em;
@@ -62,8 +61,8 @@ li {
     overflow: hidden;
     box-shadow: 5px 5px 47px #000000;
     position: relative;
+    cursor: none;
 }
-
 
 
 .rowofBricks {

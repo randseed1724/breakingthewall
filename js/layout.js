@@ -13,14 +13,21 @@
       });
   };
 
+
+
   Layout.prototype.displayStart = function() {
     $(".main").hide();
     $("#win").hide();
+
 
     $(document).keypress(function(e) {
         if(e.which == 13) {
           $("#gameStart").hide();
           $(".main").show();
+
+          $('.main').mouseover(function() {
+            $(this).css({cursor: 'none'});
+          });
 
          $(`#grid8,#grid17, #grid26, #grid35,
            #grid44, #grid53, #grid62, #grid71, #grid80`)

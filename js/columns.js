@@ -49,6 +49,7 @@
   }
   };
 
+
   // attachers
 
   Column.prototype.attachListener = function() {
@@ -65,4 +66,15 @@
   Column.prototype.attachTrump = function() {
     var that = this;
     $(this.column).find("#sky_1").one("click", that.displayTrump);
+  };
+
+
+  // Hides a target block
+  Column.prototype.handleClick = (event) => {
+    var target = $(event.target);
+
+  if( $(event.target).is('.main').children() ){
+      event.preventDefault();
+      return;
+  }
   };
